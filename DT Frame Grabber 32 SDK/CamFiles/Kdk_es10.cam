@@ -1,0 +1,113 @@
+
+[camvals]
+
+Comment=	'Kodak Magaplus Model ES 1.0'
+
+Pixel clock=		20000000
+; in Hz 
+
+Ext Pixclk=		1
+; 0 = internal, 1 = external
+
+Ext Pixclk Edge=	1
+; 0 = OLC_FG_CLOCK_EXT_ON_HI_TO_LO, 1 = OLC_FG_CLOCK_EXT_ON_LO_TO_HI
+
+Varscan=		1
+; 1 = only val for 3157 (true)	
+
+Input channel=		0
+; 0 = only val for 3157
+
+Sync channel=		0
+; 0 = only val for 3157
+
+Ext Sync mode=		1
+; 0 = board is sync master, 1 = camera is sync master
+
+Total pixels per line=	1280
+
+Pixel start=		32
+; first active pixel
+
+Pixel count=		992
+; nbr of active pixels
+
+Pixel step=		1
+
+Sync sentinel=		0
+; 0 = off, 1 = on
+
+Sync ignore length=	98.00
+; % of line (defined in sdk to a hundreth of a %)
+
+Sync insert position=	105.00
+; % of line (defined in sdk to a hundreth of a %)
+
+Total lines=		1100
+; nbr of lines between vert sync pulses
+
+Line start=		4
+; first active line
+
+Row length=		1018
+; nbr of active lines
+
+Row step=		1
+
+Sync ignore row=	95.00
+; % of line (defined in sdk to a hundreth of a %)
+
+Sync insert row=	101.00
+; % of line (defined in sdk to a hundreth of a %)
+
+Camera type=        	5
+; 0 = DT3157_DIGCAM_16BIT_INPUT
+; 1 = DT3157_DIGCAM_14BIT_INPUT
+; 2 = DT3157_DIGCAM_12BIT_INPUT
+; 3 = DT3157_DIGCAM_10BIT_INPUT
+; 4 = DT3157_DIGCAM_8BIT_SINGLE_CHANNEL_INPUT
+; 5 = DT3157_DIGCAM_8BIT_DUAL_CHANNEL_INPUT
+
+Bytes per pixel=	1
+; may not be necessary if camera type sets this up
+
+Exposure enable=	0
+; 0 = disable, 1 = enable
+
+Exposure time= 		1234.
+; in milliseconds
+; used if Exposure enable (above) = 1
+
+Exposure polarity=	0
+; 0 = active high, 1 = active low
+; used if Exposure enable (above) = 1
+
+Passthru Src Origin X= 0
+Passthru Src Origin Y= 0
+; default to (0, 0)
+
+Passthru Scaling X=960
+; default to same value as nbr of active pixels
+
+Passthru Scaling Y=720
+; default to same value as nbr of active lines
+
+DIO setup=		1
+; 1 = DIO setup required to operate camera
+; 0 = no DIO setup required to operate camera
+
+; Refer to Camera manual to ascertain whether any
+; DIO lines affectl the camera's operation
+
+DIO config=	         03
+; hex value indicating which DIO lines must be 
+; configured as outputs
+; ***NOTE the Visual Basic example programs require
+; the DIO values to be DECIMAL NOT HEXADECIMAL
+
+DIO write=		 03
+; hex value indicating what value to write to DIO 
+; lines previously configured as outputs		 
+; ***NOTE the Visual Basic example programs require
+; the DIO values to be DECIMAL NOT HEXADECIMAL
+

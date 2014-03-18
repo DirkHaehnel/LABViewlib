@@ -1,0 +1,45 @@
+[version]
+Signature="$WINDOWS NT$"
+Class=MEDIA
+ClassGUID="{4d36e96c-e325-11ce-bfc1-08002be10318}"
+Provider="Data Translation, Inc."
+
+[Manufacturer]
+"Data Translation, Inc."=Mfg0
+
+[Mfg0]
+%DT3153%=DT3153,PCI\VEN_8086&DEV_1223
+
+[DT3153.NT]
+DriverVer = 1/1/1998, 4.0.0.0
+AddReg=DT3153.AddReg
+CopyFiles=DT3153.CopyFiles.User,DT3153.CopyFiles.Kern
+Reboot
+
+[DT3153.NT.Services]
+AddService=,0x2
+
+[DT3153.AddReg]
+HKR,Drivers,SubClasses,,"DT3153"
+HKR,"Drivers\DT3153\DT3153.DRV", Driver,,DT3153.DRV
+HKR,"Drivers\DT3153\DT3153.DRV", Description,,%DT3153%
+
+[DT3153.CopyFiles.User]
+DT3153.DRV
+
+[DT3153.CopyFiles.Kern]
+DT3153.SYS
+
+[DestinationDirs]
+DT3153.CopyFiles.User = 11
+DT3153.CopyFiles.Kern = 12
+
+[SourceDisksNames]
+1 = "DT3153 Setup Disk #1","",1
+
+[SourceDisksFiles]
+DT3153.SYS=1
+DT3153.DRV=1
+
+[Strings]
+DT3153="DT3153 MACH Series Frame Grabber"

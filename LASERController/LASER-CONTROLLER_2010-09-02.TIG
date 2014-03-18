@@ -1,0 +1,1545 @@
+'--------------------------------------------------------------------
+'Mikroskop-Tisch Temperatur Controller
+'--------------------------------------------------------------------
+
+' Globale Variablen definieren
+user var strict                   		' unbedingte Var.deklaration
+long flash_gr
+word loop_wait, runparam
+
+array las_pos(8) of byte
+array las_led(8) of byte
+array las_move(8) of byte
+array min_pos(8) of long
+array max_pos(8) of long
+array zero_pos(8) of long
+array las_best(8) of long
+array act_pos(8) of long
+array las_pos_set(8) of long
+array tast_con(4) of byte
+array las_power(8) of long
+
+long lasernum
+byte lock, stop_cond
+'array temp_conv(10) of word
+
+#INCLUDE UFUNC3.INC        		       	' User Function Codes
+#INCLUDE DEFINE_A.INC             		' allg. Symbol-Definitionen
+#INCLUDE CAN.INC                  		' CAN-Definitionen
+
+'Definitionen für EP3-32-32 Erweiterungsmodul
+USER_EPORT ACT, ACTIVE
+USER_EPORT PHYSOFFS, 0F0h
+USER_EPORT NROFOUT, 4h
+USER_EPORT LASTLADR, 13h
+USER_EPORT INITIAL, 0, "&
+00 01 02 03"%
+
+'--------------------------------------------------------------------
+
+
+TASK MAIN
+  USER_STACK_SIZE 32767                   ' Hier mal ein bisschen Platz im User-Stack schaffen (default 2kb)
+  BYTE ever, x, x1, x2, lauf, j, i, k, l, init_call
+  word test1, test2
+  STRING CSET$
+  STRING DYN_WEIGHT$ (256)              	' Gewichts-Tabelle fuer DYN-Steps
+
+  install_device #LCD, "LCD1.TDD"       	' LCD-Treiber installieren (BASIC-Tiger)
+  install_device #CAN, "CAN1_K1.TDD", & 	' CAN-Treiber installieren
+    "00 00 00 00 &                      	' access code Empfängt nur Nachrichten auf 400h
+     FF FF FF FF &                      	' access mask
+     00 5C &                            	' bustim1, bustim2
+     08 1A"%                            	' single filter mode, outctrl
+
+
+
+  INSTALL_DEVICE #SER, "SER1B_K1.TDD",&		' install SERIAL + set the baudrates:
+  BD_4_800, DP_7E, YES, BD_4_800, DP_7E, YES
+
+  install_device #TA, "TIMERA.TDD",3,0		' TIMERA installieren, Zeitbasis 1 kHz
+
+  install_device #ENC, "ENC1_801.TDD", 2, 1     ' Encoder an Pins L80, L81 installieren
+
+  DYN_WEIGHT$ = "&				' Initialize weight table !!!ACHTUNG nur mit Treiber 1.00j!!!
+64 64 64 64 64 32 32 32 32 32 16 16 16 16 16 08&	
+08 08 08 08 04 04 04 04 04 02 02 02 02 02 02 02"%
+  put #ENC, #0, #UFCO_WEIGHTTAB, DYN_WEIGHT$ 	' dynamische Gewichtung
+
+  'Schriftsatz anpassen
+  CSET$ = "&                              ' Daten fuer USER-Font
+1C 14 1C 00 00 00 00 00&                ' Daten Zeichen 0   [°]-Zeichen
+00 00 00 00 00 00 00 00&                ' Daten Zeichen 1   Laufbalken
+1F 00 00 00 00 00 00 1F&                ' Daten Zeichen 2      -"-
+1F 10 10 10 10 10 10 1F&                ' Daten Zeichen 3      -"-
+1F 18 18 18 18 18 18 1F&                ' Daten Zeichen 4      -"-
+1F 1C 1C 1C 1C 1C 1C 1F&                ' Daten Zeichen 5      -"-
+1F 1E 1E 1E 1E 1E 1E 1F&                ' Daten Zeichen 6      -"-
+1F 1F 1F 1F 1F 1F 1F 1F"%               ' Daten Zeichen 7      -"-
+print #LCD,"<1Bh>c<0><0F0h>";	        ' Cursor aus
+PRINT #LCD, "<1Bh>L<7>";CSET$;"<F0h>";  ' Sonder-Font benutzerdefiniert
+PRINT #LCD, "<1Bh>S<7><F0h>";           ' Sonder-Font einschalten
+
+flash_gr = SYSVARN ( 35, 1 )            ' Feststellen wiegroß ein Flash-Sektor ist
+wait_duration(50)
+
+print #LCD,"<1Bh>A<0><0><0F0h> LASER-Contr.-Modul ";         'Programm-Info
+print #LCD,"<1Bh>A<0><1><0F0h>  Progr. Vers. 1.1  ";
+print #LCD,"<1Bh>A<0><2><0F0h> Uni-Goettingen DPI ";
+print #LCD,"<1Bh>A<0><3><0F0h>AK-Enderlein / B.Mue";
+
+call param_init
+
+for k = 1 to 8
+    out 10h,255,las_led(k)
+    wait_duration(500)
+next
+    out 10h,255,0
+
+for j = 0 to 3
+   print #LCD,"<1Bh>A<0>";chr$(j);"<0F0h>                    ";    'Display löschen
+next
+
+'überprüfe auf Erststart
+peek_flash 1,init_call,1                    ' default-Stage
+if init_call <> 1 then
+   j = SET_SERIAL_NO("0101",0,0)    			'Seriennummer des Gerätes festlegen
+   print #LCD, "<1Bh>A<5><1><0F0h>First Init"
+   wait_duration(500)
+   call init_flash(0)
+   wait_duration(1000)
+endif
+
+'Defaulteinstellungen in die Parameter laden
+call load_default
+stop_cond = 0
+RUN task em_exit
+  call laser_init(0)
+STOP task em_exit
+lock = 0
+if stop_cond = 0 then
+  RUN task lasermove
+else
+  print #LCD,"<1Bh>A<0><0><0F0h>   !!! CAUTION !!!  ";    'Display löschen
+  print #LCD,"<1Bh>A<0><1><0F0h>  Controller is not ";    'Display löschen
+  print #LCD,"<1Bh>A<0><2><0F0h> correct initialized";    'Display löschen
+  print #LCD,"<1Bh>A<0><3><0F0h> correct + restart! ";    'Display löschen
+  wait_duration(10000)
+endif
+for j = 0 to 2
+   print #LCD,"<1Bh>A<0>";chr$(j);"<0F0h>                    ";    'Display löschen
+next
+
+lauf = 20
+while 1 = 1 		                'Endlosschleife
+    IN 8, x                             ' Einlesen Port 8
+    x1 = x BITAND tast_con(1)             ' Tasten auswerten
+    x2 = x BITAND tast_con(2)
+'Menu-Taste
+    if x1 = 0 then
+          wait_duration(300)            'Entprellen der Taste
+        lock = 1
+	call ebene1_anzeige
+	lock = 0
+    endif
+
+    call empfangen                       'Schauen ob eine neue Temp_Set eingetroffen ist
+
+    if x1+x2 = tast_con(1)+tast_con(2) then
+     lauf = lauf + 1
+    endif
+
+    if lauf >= 20 then
+     lauf = 0
+     using "UD<4><2>   0.0.0.3,1"
+     print_using #LCD, "<1Bh>A<0><0><0F0h> 470nm ";las_power(1);"% ";las_power(2);"% "
+     print_using #LCD, "<1Bh>A<0><1><0F0h> 532nm ";las_power(3);"% ";las_power(4);"% "
+     print_using #LCD, "<1Bh>A<0><2><0F0h> 637nm ";las_power(5);"% ";las_power(6);"% "
+     print #LCD,"<1Bh>A<0><3><0F0h>[Menu]              ";
+     call senden			'und auchmal den Status auf den CAN-Bus senden
+    endif
+
+  wait_duration(100)                    'Warten um nicht zuviel Rechenzeit durch die Abfrage der  Tasten zu verschwenden
+endwhile
+
+END
+
+
+
+'--------------------------------------------------------------------
+'
+'CAN-Kommunikation
+'
+'   -empfangen: fragt die Adresse 400h ab für T_set
+'   -senden:    sendet auf Adresse 500h die akt. Temp
+'--------------------------------------------------------------------
+
+'--------------------------------------------------------------------
+'SUB: empfangen auf ID: 720h (1824+1825)
+'--------------------------------------------------------------------
+SUB empfangen
+
+  STRING trash$(8), data$(8)
+  BYTE frameformat, msg_len, can_stat, ever, i
+  WORD ibu_fill, temp_set_old
+  LONG r_id,byte1,byte2,wert5 ',msg_id
+  real wert1, wert2, wert3, wert4
+'msg_id = 1032                                                   'lege die Basisadresse fest
+
+ get #CAN, #0, #UFCI_IBU_FILL, 0, ibu_fill                      'Abfragen ob CAN was im Speicher hat
+ if ibu_fill > 2 then
+  while ibu_fill > 2
+      get #CAN, #0, 1, frameformat 				' hole Frame-Info-Byte
+      msg_len = frameformat bitand 1111b 			' Laenge
+      if frameformat bitand 80h = 0 then 			' wenn Standard-Frame
+        get #CAN, #0, CAN_ID11_LEN, r_id 			' hole ID-Bytes
+        r_id = byte_mirr ( r_id, 2 )     			' Bytefolge f. Tiger WORD
+        r_id = r_id shr 5                			' rechtsbuendig schieben
+      else                               			' sonst ist es extended frame
+        get #CAN, #0, CAN_ID29_LEN, r_id 			' hole ID-Bytes
+        r_id = byte_mirr ( r_id, 4 )     			' low byte 1st in LONG
+        r_id = r_id shr 3                			' rechtsbuendig schieben
+      endif
+
+
+    if r_id = 1824 then
+      if msg_len > 0 then                			' wenn Daten
+        get #CAN, #0, msg_len, data$     			' hole sie und schreibe sie in runparam
+	  las_power(1) = nfroms(data$,0,1) + nfroms(data$,1,1)*256
+	  las_power(2) = nfroms(data$,2,1) + nfroms(data$,3,1)*256
+	  las_power(3) = nfroms(data$,4,1) + nfroms(data$,5,1)*256
+	  las_power(4) = nfroms(data$,6,1) + nfroms(data$,7,1)*256
+          for i = 1 to 4
+		wert1 = ltr(las_power(i))
+		wert2 = wert1 / 1000
+		wert3 = ltr(max_pos(i)-min_pos(i))
+		wert4 = wert2 * wert3
+		wert5 = rtl(wert4)+min_pos(i)
+	    las_pos_set(i) = wert5
+	  next
+      endif	
+    endif
+    if r_id = 1825 then
+      if msg_len > 0 then                			' wenn Daten
+        get #CAN, #0, msg_len, data$     			' hole sie und schreibe sie in runparam
+	  las_power(5) = nfroms(data$,0,1) + nfroms(data$,1,1)*256
+	  las_power(6) = nfroms(data$,2,1) + nfroms(data$,3,1)*256
+	  las_power(7) = nfroms(data$,4,1) + nfroms(data$,5,1)*256
+	  las_power(8) = nfroms(data$,6,1) + nfroms(data$,7,1)*256
+          for i = 5 to 8
+		wert1 = ltr(las_power(i))
+		wert2 = wert1 / 1000
+		wert3 = ltr(max_pos(i)-min_pos(i))
+		wert4 = wert2 * wert3
+		wert5 = rtl(wert4)+min_pos(i)
+	    las_pos_set(i) = wert5
+	  next
+      endif	
+    endif
+
+    if r_id < 1824 OR r_id > 1825 then
+      if msg_len > 0 then                			' wenn Daten
+        get #CAN, #0, msg_len, trash$     			' hole sie und schmeiß weg
+      endif
+    endif
+
+   get #CAN, #0, #UFCI_CAN_STAT, 0, can_stat 			' CAN-Status
+   get #CAN, #0, #UFCI_IBU_FILL, 0, ibu_fill
+  endwhile
+ endif
+end
+
+
+'--------------------------------------------------------------------
+'SUB: senden auf ID: 700h (1792) und 701h, 702h
+'--------------------------------------------------------------------
+SUB Senden
+
+byte sendet, i
+WORD obu_free
+string msg$, data$(8)
+long byte0,byte1,byte2,byte3,byte4,byte5,byte6,byte7
+long num_in1, num_in2, num_in3, num_in4
+ for i=0 to 1
+    num_in1 = act_pos((4*i)+1)
+    num_in2 = act_pos((4*i)+2)
+    num_in3 = act_pos((4*i)+3)
+    num_in4 = act_pos((4*i)+4)
+                                                    	        'Vorbereiten der zu sendenden Daten
+    call num_to_byte(num_in1, byte1, byte0)                    'aufteilen in high- und lowbyte
+    call num_to_byte(num_in2, byte3, byte2)                    'aufteilen in high- und lowbyte
+    call num_to_byte(num_in3, byte5, byte4)                    'aufteilen in high- und lowbyte
+    call num_to_byte(num_in4, byte7, byte6)                    'aufteilen in high- und lowbyte
+
+    data$ = CHR$(byte0) + CHR$(byte1) + CHR$(byte2) + CHR$(byte3) + CHR$(byte4) + CHR$(byte5) + CHR$(byte6) + CHR$(byte7)
+    sendet = 1
+
+  while sendet = 1                                              'erst wenn die Nachricht auch wirklich abgesetzt ist weitermachen
+    get #CAN, #0, #UFCI_OBU_FREE, 0, obu_free                   'Schauen ob der Bus gerade frei ist
+
+     if obu_free > 11 then
+      SWITCH i
+	case 0:
+	msg$ = "<0><224><0>"+data$
+        case 1:
+ 	msg$ = "<0><224><32>"+data$
+      ENDSWITCH
+
+      print #CAN, #0, msg$;                               	'sende Message im Standard-Frame
+      sendet = 0
+    endif
+  endwhile
+ next
+end
+
+
+'--------------------------------------------------------------------
+'Hilfs-tasks
+'	- lasermove, Abschwächer auf las_pos_set setzen
+'	- em_exit, Notabbruch, bei falschen Init-Werten
+'
+'--------------------------------------------------------------------
+
+'--------------------------------------------------------------------
+'TASK Lasermove, Abschwächer auf las_pos_set setzen
+'--------------------------------------------------------------------
+TASK lasermove
+byte las_num
+long steps, step_sum
+array las_mov_ctl(8) of word
+
+for las_num = 1 to 8
+las_pos_set(las_num) = 0
+las_power(las_num) = 0
+las_mov_ctl(las_num) = 0
+next
+
+while 1 = 1
+
+ for las_num = 1 to 8
+ if las_best(las_num) = 1 then
+  if las_mov_ctl(las_num) > 10 then
+    call laser_init(las_num)
+    las_mov_ctl(las_num) = 0
+  endif
+
+  if act_pos(las_num) <> las_pos_set(las_num) then
+    out 10h,255,las_led(las_num)
+
+    if las_pos_set(las_num) > act_pos(las_num) then
+      while las_pos_set(las_num) > act_pos(las_num)
+  	out 12h,255,las_move(las_num)
+	wait_duration(1)
+	out 12h,255,0
+	wait_duration(1)
+        act_pos(las_num) = act_pos(las_num) +1
+
+      endwhile
+	if lock = 0 then
+      	  las_mov_ctl(las_num) = las_mov_ctl(las_num) +1
+	endif
+    endif
+
+    if las_pos_set(las_num) < act_pos(las_num) then
+
+      while las_pos_set(las_num) < act_pos(las_num)
+  	out 12h,255,las_move(las_num) + 2
+	wait_duration(1)
+	out 12h,255,2
+	wait_duration(1)
+        act_pos(las_num) = act_pos(las_num) -1
+      endwhile
+	if lock = 0 then
+	  las_mov_ctl(las_num) = las_mov_ctl(las_num) +1
+	endif
+    endif
+    out 10h,255,0
+  endif
+ endif
+ next
+
+wait_duration(100)
+
+endwhile
+end
+
+
+'--------------------------------------------------------------------
+'TASK em_exit, Notabbruch, bei falschen Init-Werten
+'--------------------------------------------------------------------
+TASK em_exit
+BYTE x,x2
+
+while 1=1
+
+ IN 8, x                             ' Einlesen Port 8
+   x2 = x BITAND tast_con(2)             ' Tasten auswerten
+
+   'Run / Stop Taste
+   if x2 = 0 then
+    stop_cond = 1
+    wait_duration(100)             'Entprellen der Taste
+   endif
+ wait_duration(100)             'Entprellen der Taste
+endwhile
+
+end
+
+
+
+
+'--------------------------------------------------------------------
+'Hilfsroutinen
+'	- num_to_byte: Aufteilen von 16bit-UI in zweimal 8bit UI
+'	- laser_init, Abschwächer auf Nullpunkt positionieren
+'	- laser_position, Entlagenschalter abfragen.
+'--------------------------------------------------------------------
+
+'--------------------------------------------------------------------
+'SUB num_to_byte: aufteilen von 16-bit in low- u. high-byte
+'--------------------------------------------------------------------
+SUB num_to_byte (LONG num_in; VAR long out_hb, out_lb)
+
+ LONG data_var
+ BYTE i
+ out_lb = 0
+ out_hb = 0
+ data_var = num_in
+
+if data_var <> 0 then
+ for i = 1 to 8                                         		'Berechnet das high-byte
+  if data_var >= EXP(2,16-i) then
+   out_hb = out_hb + EXP(2,8-i)
+   data_var = data_var - EXP(2,16-i)
+  endif
+ next
+
+ for i = 1 to 8                                                         'Berechnet das low-byte
+  if data_var >= EXP(2,8-i) then                                        'eigentlich steckt hier in data_var nur noch
+   out_lb = out_lb + EXP(2,8-i)                                         'das low-byte, aber weils so schön ist...
+   data_var = data_var - EXP(2,8-i)
+  endif
+ next
+else
+ out_lb = 0
+ out_hb = 0
+endif
+end
+
+
+
+'--------------------------------------------------------------------
+'SUB laser_init, Abschwächer auf Nullpunkt positionieren.
+'    las_num = 0 => alle
+'    las_num = 1..8 => Auswahl
+'--------------------------------------------------------------------
+SUB laser_init(byte lasnum)
+byte las_num
+las_num = lasnum
+call laser_position
+if las_num <> 0 then
+ if las_best(las_num) = 1 then
+  out 10h,255,las_led(las_num)
+  while las_pos(las_num) = 0
+	out 12h,255,las_move(las_num)  + 2
+	wait_duration(1)
+	out 12h,255,2
+	wait_duration(1)
+	call laser_position
+   if stop_cond = 1 then
+     las_pos(las_num) = 1
+   endif
+  endwhile
+  while las_pos(las_num) = 1
+	out 12h,255,las_move(las_num)
+	wait_duration(1)
+	out 12h,255,0
+	wait_duration(1)
+	call laser_position
+    if stop_cond = 1 then
+     las_pos(las_num) = 0
+    endif
+  endwhile
+  while las_pos(las_num) = 0
+	out 12h,255,las_move(las_num) + 2
+	wait_duration(1)
+	out 12h,255,2
+	wait_duration(1)
+	call laser_position
+    if stop_cond = 1 then
+     las_pos(las_num) = 1
+    endif
+  endwhile
+  out 10h,255,0
+ endif
+ act_pos(las_num) = zero_pos(las_num)
+else
+print #LCD, "<1Bh>A<5><1><0F0h>Laser Init"
+print #LCD,"<1Bh>A<0><3><0F0h>              [EXIT]";
+ for las_num = 1 to 8
+  if las_best(las_num) = 1 then
+    out 10h,255,las_led(las_num)
+     while las_pos(las_num) = 0
+	out 12h,255,las_move(las_num) + 2
+	wait_duration(1)
+	out 12h,255,2
+	wait_duration(1)
+	call laser_position
+      if stop_cond = 1 then
+       las_pos(las_num) = 1
+      endif
+     endwhile
+     while las_pos(las_num) = 1
+  	out 12h,255,las_move(las_num)
+	wait_duration(1)
+	out 12h,255,0
+	wait_duration(1)
+	call laser_position
+       if stop_cond = 1 then
+        las_pos(las_num) = 0
+       endif
+     endwhile
+     while las_pos(las_num) = 0
+	out 12h,255,las_move(las_num) + 2
+	wait_duration(1)
+	out 12h,255,2
+	wait_duration(1)
+	call laser_position
+       if stop_cond = 1 then
+        las_pos(las_num) = 1
+       endif
+     endwhile
+    out 10h,255,0
+  act_pos(las_num) = zero_pos(las_num)
+  endif
+  act_pos(las_num) = zero_pos(las_num)
+ next
+endif
+end
+
+'--------------------------------------------------------------------
+'SUB laser_position, Entlagenschalter abfragen.
+'--------------------------------------------------------------------
+SUB laser_position
+byte l1,l2,l3,l4,l5,l6,l7,l8
+word port3
+string test1$, test2$
+ 	in 16h,port3
+	l8 = port3 BITAND 00000001b
+	las_pos(3) = l8
+	l7 = port3 BITAND 00000010b
+	las_pos(1) = l7/2
+	l6 = port3 BITAND 00000100b
+	las_pos(7) = l6/4
+	l5 = port3 BITAND 00001000b
+	las_pos(5) = l5/8
+	l4 = port3 BITAND 00010000b
+	las_pos(4) = l4/16
+	l3 = port3 BITAND 00100000b
+	las_pos(2) = l3/32
+	l2 = port3 BITAND 01000000b
+	las_pos(8) = l2/64
+	l1 = port3 BITAND 10000000b
+	las_pos(6) = l1/128
+end
+
+
+
+'--------------------------------------------------------------------
+'GUI
+'  - write_anzeige:   Für Untermenüs, mit Pfeil auf der linken Seite
+'
+'--------------------------------------------------------------------
+'--------------------------------------------------------------------
+'SUB Anzeigetext, Anzeige für Untermenüs schreiben
+'--------------------------------------------------------------------
+sub write_anzeige(string zeile1$, zeile2$, zeile3$, zeile4$)
+byte i
+
+for i=0 to 2
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>                    "; 'Löschen, Status bleibt
+next
+print #LCD,"<1Bh>A";CHR$(3);CHR$(0);"<0F0h>";zeile1$                   'Beachte: erst ab dem 3. zeichen, wegen Pfeil
+print #LCD,"<1Bh>A";CHR$(3);CHR$(1);"<0F0h>";zeile2$
+print #LCD,"<1Bh>A";CHR$(3);CHR$(2);"<0F0h>";zeile3$
+print #LCD,"<1Bh>A";CHR$(0);CHR$(3);"<0F0h>";zeile4$                   'Status geht über die gesamte Breite
+
+end
+
+
+'--------------------------------------------------------------------
+'EBENE 1
+'
+' - 1.1 Menu-Anzeige
+'--------------------------------------------------------------------
+
+'--------------------------------------------------------------------
+'SUB Ebene 1: Menu-Anzeige
+'--------------------------------------------------------------------
+SUB ebene1_anzeige
+array anzeige_text(3) OF Strings
+string anzeige_status$
+byte x, x1, x2, x3, x4, i, j, k                                        	'Erstelle Array mit Texten für die Anzeige
+
+PUT #ENC, #0, #UFCO_ENC_START, 1                                        'Encoder starten
+
+anzeige_text(0) = "Man. pos."
+anzeige_text(1) = "Man. pos. init."
+anzeige_text(2) = "Setup"
+anzeige_status$ = "[Set]  Menu   [Back]"                                'Status-Leiste
+
+call write_anzeige(anzeige_text(0),anzeige_text(1),anzeige_text(2),anzeige_status$)
+print #LCD,"<1Bh>A";CHR$(0);CHR$(0);"<0F0h>->";
+x2 = tast_con(2)                                                              	'Pfeil setzen
+x=0
+wait_duration(200)
+ while x2 = tast_con(2)
+    wait_duration(100)
+    IN 8, x                  					        ' Einlesen Port 8
+    x1 = x BITAND tast_con(1)
+    x2 = x BITAND tast_con(2)
+    x3 = x BITAND tast_con(3)
+    x4 = x BITAND tast_con(4)
+
+    if x1 = 0 then
+        SWITCH j
+          case 0:
+		call ebene21
+	  case 1:
+		call write_anzeige("","","","                    ")
+		RUN task em_exit
+		 for k = 1 to 8
+		    if las_best(k) = 1 then
+		    	call laser_init(k)
+		    endif
+		 next
+		STOP task em_exit
+		wait_duration(10)
+		stop_cond = 0
+	  case 2:
+                call ebene23
+	ENDSWITCH
+	x2 = tast_con(2)
+ 	call write_anzeige(anzeige_text(0),anzeige_text(1),anzeige_text(2),anzeige_status$)
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>->";
+        wait_duration(300)                                              'Tasten entprellen
+    endif
+
+    if x3 = 0 then                                                     	'Pfeil aufwärts
+        if j = 0 then
+		j = 2
+	else
+		j = j-1
+	endif
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";        	'Platz für neuen Pfeil schaffen (alten Löschen)
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";              'neuen Pfeil schreiben
+        wait_duration(300)
+    endif
+    if x4 = 0 then                                                      'Pfeil abwärts
+        if j = 2 then
+		j = 0
+	else
+		j = j+1
+	endif
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";         'Platz für neuen Pfeil schaffen (alten Löschen)
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";              'neuen Pfeil schreiben
+        wait_duration(300)
+    endif
+ endwhile
+PUT #ENC, #0, #UFCO_ENC_STOP, 1               ' Encoder anhalten um unnötige Rechenzeit zu reduzieren
+end
+
+'--------------------------------------------------------------------
+'SUB Ebene 2.1 -> Man. pos.
+'--------------------------------------------------------------------
+SUB ebene21
+array anzeige_text(11) OF Strings
+
+byte x, x1, x2, x3, x4, i, j, pos, last_num
+anzeige_text(0) = "470 nm L1 "
+anzeige_text(1) = "470 nm L2 "                                        	'Anzeige für Setup zusammenstellen
+anzeige_text(2) = "532 nm L3 "
+anzeige_text(3) = "532 nm L4 "
+anzeige_text(4) = "637 nm L5 "
+anzeige_text(5) = "637 nm L6 "
+anzeige_text(6) = "xxx nm L7 "
+anzeige_text(7) = "xxx nm L8 "
+last_num = 7                                                            'kleine Hilfe für das Eweitern, hier die
+									'letzte Nummer aus dem Array eintragen
+
+call write_anzeige(anzeige_text(0),anzeige_text(1),anzeige_text(2),"Man. pos.     [Back]")
+
+print #LCD,"<1Bh>A";CHR$(0);CHR$(0);"<0F0h>->";
+wait_duration(300)
+                                                                 	'Taste entprellen	
+x2 = tast_con(2)
+x1 = tast_con(1)
+x = 0
+j = 0
+pos = 0
+
+put #ENC,#2, las_pos_set(pos+1+j)
+ while x2 = tast_con(2)
+    IN 8, x
+    x1 = x BITAND tast_con(1)
+    x2 = x BITAND tast_con(2)
+    x3 = x BITAND tast_con(3)
+    x4 = x BITAND tast_con(4)
+
+    get #ENC, #2, 4, las_pos_set(pos+1+j)                                                'Encoder auswerten
+      	if las_pos_set(pos+1+j) > max_pos(pos+1+j) then
+          las_pos_set(pos+1+j) = max_pos(pos+1+j)                                                  'Auswahl auf den entsprechenden Bereich begrenzen
+          put #ENC,#2, las_pos_set(pos+1+j)
+	endif
+	if las_pos_set(pos+1+j) < min_pos(pos+1+j) then                                                'Kleiner als 0,00 K ist auch blöd...
+          las_pos_set(pos+1+j) = min_pos(pos+1+j)
+          put #ENC,#2, las_pos_set(pos+1+j)
+	endif
+  for i = 0 to 2
+     using "UD<4><1>   0.0.0.0.4"
+     print_using #LCD,"<1Bh>A<15>";CHR$(i);"<0F0h>";las_pos_set(i+pos+1)
+  next
+
+    if x3 = 0 then  		   					'Pfeil hoch, eventuell scrollen
+        if j = 0 then
+           if pos > 0 then
+		pos = pos - 1
+	   else
+		j = 2
+		pos = last_num - 2
+	   endif
+	else
+		j = j-1
+	endif
+        put #ENC,#2, las_pos_set(pos+1+j)
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+
+    if x4 = 0 then                					'Pfeil runter, eventuell scrollen
+        if j = 2 then
+          if pos < last_num - 2 then
+		pos = pos + 1
+	  else
+		j = 0
+		pos = 0
+	  endif
+          call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	else
+		j = j+1
+	endif
+        put #ENC,#2, las_pos_set(pos+1+j)
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+                                                                        'WICHTIG!!! für alle Parameter
+ endwhile                                                               'Nach Verlassen des Setup-Menus werden die
+end
+
+
+
+'--------------------------------------------------------------------
+'SUB Ebene 2.3 -> Setup
+'--------------------------------------------------------------------
+SUB ebene23
+array anzeige_text(11) OF Strings
+
+byte x, x1, x2, x3, x4, i, j, pos, last_num
+anzeige_text(0) = "Laser min. pos."
+anzeige_text(1) = "Laser max. pos."                                        	'Anzeige für Setup zusammenstellen
+anzeige_text(2) = "Laser zero pos."
+anzeige_text(3) = "Installed Laser"
+anzeige_text(4) = "System Info"
+anzeige_text(5) = "Reset"
+last_num = 5                                                            'kleine Hilfe für das Eweitern, hier die
+									'letzte Nummer aus dem Array eintragen
+
+call write_anzeige(anzeige_text(0),anzeige_text(1),anzeige_text(2),"[Set]  Setup  [Back]")
+print #LCD,"<1Bh>A";CHR$(0);CHR$(0);"<0F0h>->";
+wait_duration(300)
+                                                                 	'Taste entprellen	
+x2 = tast_con(2)
+x1 = tast_con(1)
+x = 0
+j = 0
+pos = 0
+
+ while x2 = tast_con(2)
+    IN 8, x
+    x1 = x BITAND tast_con(1)
+    x2 = x BITAND tast_con(2)
+    x3 = x BITAND tast_con(3)
+    x4 = x BITAND tast_con(4)
+
+    if x1 = 0 then                                                 	'Taste [Set], Auswahl der Einträge
+        SWITCH j+pos                                                    'Auswahl, jenachdem wo der Pfeil gerade steht
+          case 0:
+              call ebene_31
+	  case 1:
+              call ebene_32
+	  case 2:
+              call ebene_34
+	  case 3:
+              call ebene_33
+	  case 4:
+              call ebene_39
+	  case 5:
+              call ebene_40
+
+	ENDSWITCH
+        x1 = tast_con(1)
+	x2 = tast_con(2)
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"[Set]  Setup  [Back]")
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+     endif
+
+    if x3 = 0 then  		   					'Pfeil hoch, eventuell scrollen
+        if j = 0 then
+           if pos > 0 then
+		pos = pos - 1
+	   else
+		j = 2
+		pos = last_num - 2
+	   endif
+	else
+		j = j-1
+	endif
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+
+    if x4 = 0 then                					'Pfeil runter, eventuell scrollen
+        if j = 2 then
+          if pos < last_num - 2 then
+		pos = pos + 1
+	  else
+		j = 0
+		pos = 0
+	  endif
+          call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	else
+		j = j+1
+	endif
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+                                                                        'WICHTIG!!! für alle Parameter
+ endwhile                                                               'Nach Verlassen des Setup-Menus werden die
+call load_default                                                       'Default Werte aus dem Flash geladen
+end
+
+'--------------------------------------------------------------------
+'SUB Ebene 3.1 -> Laser minimal position
+'--------------------------------------------------------------------
+SUB ebene_31
+array anzeige_text(11) OF Strings
+
+byte x, x1, x2, x3, x4, i, j, pos, last_num
+anzeige_text(0) = "470 nm L1 "
+anzeige_text(1) = "470 nm L2 "                                        	'Anzeige für Setup zusammenstellen
+anzeige_text(2) = "532 nm L3 "
+anzeige_text(3) = "532 nm L4 "
+anzeige_text(4) = "637 nm L5 "
+anzeige_text(5) = "637 nm L6 "
+anzeige_text(6) = "xxx nm L7 "
+anzeige_text(7) = "xxx nm L8 "
+last_num = 7                                                            'kleine Hilfe für das Eweitern, hier die
+									'letzte Nummer aus dem Array eintragen
+
+call write_anzeige(anzeige_text(0),anzeige_text(1),anzeige_text(2),"[Save] min.pos[Back]")
+
+print #LCD,"<1Bh>A";CHR$(0);CHR$(0);"<0F0h>->";
+wait_duration(300)
+                                                                 	'Taste entprellen	
+x2 = tast_con(2)
+x1 = tast_con(1)
+x = 0
+j = 0
+pos = 0
+
+put #ENC,#2, min_pos(pos+1+j)
+ while x2 = tast_con(2)
+    IN 8, x
+    x1 = x BITAND tast_con(1)
+    x2 = x BITAND tast_con(2)
+    x3 = x BITAND tast_con(3)
+    x4 = x BITAND tast_con(4)
+
+    get #ENC, #2, 4, min_pos(pos+1+j)                                                'Encoder auswerten
+      	if min_pos(pos+1+j) >= max_pos(pos+1+j) then
+          min_pos(pos+1+j) = max_pos(pos+1+j) -1                                                 'Auswahl auf den entsprechenden Bereich begrenzen
+          put #ENC,#2, min_pos(pos+1+j)
+	endif
+	if min_pos(pos+1+j) < 0 then                                                'Kleiner als 0,00 K ist auch blöd...
+          min_pos(pos+1+j) = 0
+          put #ENC,#2, min_pos(pos+1+j)
+	endif
+  for i = 0 to 2
+     using "UD<4><1>   0.0.0.0.4"
+     print_using #LCD,"<1Bh>A<15>";CHR$(i);"<0F0h>";min_pos(i+pos+1)
+  next
+
+    if x1 = 0 then                                                 	'Taste [Set], Auswahl der Einträge
+        for i = 0 to 3
+           print #LCD,"<1Bh>A<0>";chr$(i);"<0F0h>                    ";    'Display löschen
+	next
+        print #LCD, "<1Bh>A<3><1><0F0h>Save parameter"
+        print #LCD, "<1Bh>A<4><2><0F0h>please wait!"
+	   wait_duration(500)
+   		call init_flash(1)
+   	   wait_duration(1000)
+        x1 = tast_con(1)
+	x2 = tast_con(2)
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"[Save] min.pos[Back]")
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+     endif
+
+
+    if x3 = 0 then  		   					'Pfeil hoch, eventuell scrollen
+        if j = 0 then
+           if pos > 0 then
+		pos = pos - 1
+	   else
+		j = 2
+		pos = last_num - 2
+	   endif
+	else
+		j = j-1
+	endif
+        put #ENC,#2, min_pos(pos+1+j)
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+
+    if x4 = 0 then                					'Pfeil runter, eventuell scrollen
+        if j = 2 then
+          if pos < last_num - 2 then
+		pos = pos + 1
+	  else
+		j = 0
+		pos = 0
+	  endif
+          call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	else
+		j = j+1
+	endif
+        put #ENC,#2, min_pos(pos+1+j)
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+                                                                        'WICHTIG!!! für alle Parameter
+ endwhile                                                               'Nach Verlassen des Setup-Menus werden die
+end
+
+'--------------------------------------------------------------------
+'SUB Ebene 3.2 -> Laser maximal position
+'--------------------------------------------------------------------
+SUB ebene_32
+array anzeige_text(11) OF Strings
+
+byte x, x1, x2, x3, x4, i, j, pos, last_num
+anzeige_text(0) = "470 nm L1 "
+anzeige_text(1) = "470 nm L2 "                                        	'Anzeige für Setup zusammenstellen
+anzeige_text(2) = "532 nm L3 "
+anzeige_text(3) = "532 nm L4 "
+anzeige_text(4) = "637 nm L5 "
+anzeige_text(5) = "637 nm L6 "
+anzeige_text(6) = "xxx nm L7 "
+anzeige_text(7) = "xxx nm L8 "
+last_num = 7                                                            'kleine Hilfe für das Eweitern, hier die
+									'letzte Nummer aus dem Array eintragen
+
+call write_anzeige(anzeige_text(0),anzeige_text(1),anzeige_text(2),"[Save] max.pos[Back]")
+
+print #LCD,"<1Bh>A";CHR$(0);CHR$(0);"<0F0h>->";
+wait_duration(300)
+                                                                 	'Taste entprellen	
+x2 = tast_con(2)
+x1 = tast_con(1)
+x = 0
+j = 0
+pos = 0
+
+put #ENC,#2, max_pos(pos+1+j)
+ while x2 = tast_con(2)
+    IN 8, x
+    x1 = x BITAND tast_con(1)
+    x2 = x BITAND tast_con(2)
+    x3 = x BITAND tast_con(3)
+    x4 = x BITAND tast_con(4)
+
+    get #ENC, #2, 4, max_pos(pos+1+j)                                                'Encoder auswerten
+      	if max_pos(pos+1+j) > 2000 then
+          max_pos(pos+1+j) = 2000                                                  'Auswahl auf den entsprechenden Bereich begrenzen
+          put #ENC,#2, max_pos(pos+1+j)
+	endif
+	if max_pos(pos+1+j) <= min_pos(pos+1+j) then                                                'Kleiner als 0,00 K ist auch blöd...
+          max_pos(pos+1+j) = min_pos(pos+1+j) + 1
+          put #ENC,#2, max_pos(pos+1+j)
+	endif
+  for i = 0 to 2
+     using "UD<4><1>   0.0.0.0.4"
+     print_using #LCD,"<1Bh>A<15>";CHR$(i);"<0F0h>";max_pos(i+pos+1)
+  next
+
+    if x1 = 0 then                                                 	'Taste [Set], Auswahl der Einträge
+        for i = 0 to 3
+           print #LCD,"<1Bh>A<0>";chr$(i);"<0F0h>                    ";    'Display löschen
+	next
+        print #LCD, "<1Bh>A<3><1><0F0h>Save parameter"
+        print #LCD, "<1Bh>A<4><2><0F0h>please wait!"
+	   wait_duration(500)
+   		call init_flash(1)
+   	   wait_duration(1000)
+        x1 = tast_con(1)
+	x2 = tast_con(2)
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"[Save] max.pos[Back]")
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+     endif
+
+
+    if x3 = 0 then  		   					'Pfeil hoch, eventuell scrollen
+        if j = 0 then
+           if pos > 0 then
+		pos = pos - 1
+	   else
+		j = 2
+		pos = last_num - 2
+	   endif
+	else
+		j = j-1
+	endif
+        put #ENC,#2, max_pos(pos+1+j)
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+
+    if x4 = 0 then                					'Pfeil runter, eventuell scrollen
+        if j = 2 then
+          if pos < last_num - 2 then
+		pos = pos + 1
+	  else
+		j = 0
+		pos = 0
+	  endif
+          call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	else
+		j = j+1
+	endif
+        put #ENC,#2, max_pos(pos+1+j)
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+                                                                        'WICHTIG!!! für alle Parameter
+ endwhile                                                               'Nach Verlassen des Setup-Menus werden die
+end
+
+'--------------------------------------------------------------------
+'SUB Ebene 3.3 -> Laser Abschwächer Bestückung
+'--------------------------------------------------------------------
+SUB ebene_33
+array anzeige_text(11) OF Strings
+
+byte x, x1, x2, x3, x4, i, j, pos, last_num
+anzeige_text(0) = "470 nm L1 "
+anzeige_text(1) = "470 nm L2 "                                        	'Anzeige für Setup zusammenstellen
+anzeige_text(2) = "532 nm L3 "
+anzeige_text(3) = "532 nm L4 "
+anzeige_text(4) = "637 nm L5 "
+anzeige_text(5) = "637 nm L6 "
+anzeige_text(6) = "xxx nm L7 "
+anzeige_text(7) = "xxx nm L8 "
+last_num = 7                                                            'kleine Hilfe für das Eweitern, hier die
+									'letzte Nummer aus dem Array eintragen
+
+call write_anzeige(anzeige_text(0),anzeige_text(1),anzeige_text(2),"[Save]assembly[Back]")
+
+print #LCD,"<1Bh>A";CHR$(0);CHR$(0);"<0F0h>->";
+wait_duration(300)
+                                                                 	'Taste entprellen	
+x2 = tast_con(2)
+x1 = tast_con(1)
+x = 0
+j = 0
+pos = 0
+
+put #ENC,#2, las_best(pos+1+j)
+ while x2 = tast_con(2)
+    IN 8, x
+    x1 = x BITAND tast_con(1)
+    x2 = x BITAND tast_con(2)
+    x3 = x BITAND tast_con(3)
+    x4 = x BITAND tast_con(4)
+
+    get #ENC, #2, 4, las_best(pos+1+j)                                                'Encoder auswerten
+      	if las_best(pos+1+j) > 1 then
+          las_best(pos+1+j) = 1                                                 'Auswahl auf den entsprechenden Bereich begrenzen
+          put #ENC,#2, las_best(pos+1+j)
+	endif
+	if las_best(pos+1+j) < 0 then                                                'Kleiner als 0,00 K ist auch blöd...
+          las_best(pos+1+j) = 0
+          put #ENC,#2, las_best(pos+1+j)
+	endif
+  for i = 0 to 2
+     using "UD<4><1>   0.0.0.0.4"
+     print_using #LCD,"<1Bh>A<15>";CHR$(i);"<0F0h>";las_best(i+pos+1)
+  next
+
+    if x1 = 0 then                                                 	'Taste [Set], Auswahl der Einträge
+        for i = 0 to 3
+           print #LCD,"<1Bh>A<0>";chr$(i);"<0F0h>                    ";    'Display löschen
+	next
+        print #LCD, "<1Bh>A<3><1><0F0h>Save parameter"
+        print #LCD, "<1Bh>A<4><2><0F0h>please wait!"
+	   wait_duration(500)
+   		call init_flash(1)
+   	   wait_duration(1000)
+        x1 = tast_con(1)
+	x2 = tast_con(2)
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"[Save]assembly[Back]")
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+     endif
+
+
+    if x3 = 0 then  		   					'Pfeil hoch, eventuell scrollen
+        if j = 0 then
+           if pos > 0 then
+		pos = pos - 1
+	   else
+		j = 2
+		pos = last_num - 2
+	   endif
+	else
+		j = j-1
+	endif
+        put #ENC,#2, las_best(pos+1+j)
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+
+    if x4 = 0 then                					'Pfeil runter, eventuell scrollen
+        if j = 2 then
+          if pos < last_num - 2 then
+		pos = pos + 1
+	  else
+		j = 0
+		pos = 0
+	  endif
+          call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	else
+		j = j+1
+	endif
+        put #ENC,#2, las_best(pos+1+j)
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+                                                                        'WICHTIG!!! für alle Parameter
+ endwhile                                                               'Nach Verlassen des Setup-Menus werden die
+end
+
+'--------------------------------------------------------------------
+'SUB Ebene 3.4 -> Laser Null-position
+'--------------------------------------------------------------------
+SUB ebene_34
+array anzeige_text(11) OF Strings
+
+byte x, x1, x2, x3, x4, i, j, pos, last_num
+anzeige_text(0) = "470 nm L1 "
+anzeige_text(1) = "470 nm L2 "                                        	'Anzeige für Setup zusammenstellen
+anzeige_text(2) = "532 nm L3 "
+anzeige_text(3) = "532 nm L4 "
+anzeige_text(4) = "637 nm L5 "
+anzeige_text(5) = "637 nm L6 "
+anzeige_text(6) = "xxx nm L7 "
+anzeige_text(7) = "xxx nm L8 "
+last_num = 7                                                            'kleine Hilfe für das Eweitern, hier die
+									'letzte Nummer aus dem Array eintragen
+
+call write_anzeige(anzeige_text(0),anzeige_text(1),anzeige_text(2),"[Save]zero pos[Back]")
+
+print #LCD,"<1Bh>A";CHR$(0);CHR$(0);"<0F0h>->";
+wait_duration(300)
+                                                                 	'Taste entprellen	
+x2 = tast_con(2)
+x1 = tast_con(1)
+x = 0
+j = 0
+pos = 0
+
+put #ENC,#2, zero_pos(pos+1+j)
+ while x2 = tast_con(2)
+    IN 8, x
+    x1 = x BITAND tast_con(1)
+    x2 = x BITAND tast_con(2)
+    x3 = x BITAND tast_con(3)
+    x4 = x BITAND tast_con(4)
+
+    get #ENC, #2, 4, zero_pos(pos+1+j)                                                'Encoder auswerten
+      	if zero_pos(pos+1+j) >= 1000 then
+          zero_pos(pos+1+j) = 1000                                                 'Auswahl auf den entsprechenden Bereich begrenzen
+          put #ENC,#2, zero_pos(pos+1+j)
+	endif
+	if zero_pos(pos+1+j) < 0 then                                                'Kleiner als 0,00 K ist auch blöd...
+          zero_pos(pos+1+j) = 0
+          put #ENC,#2, zero_pos(pos+1+j)
+	endif
+  for i = 0 to 2
+     using "UD<4><1>   0.0.0.0.4"
+     print_using #LCD,"<1Bh>A<15>";CHR$(i);"<0F0h>";zero_pos(i+pos+1)
+  next
+
+    if x1 = 0 then                                                 	'Taste [Set], Auswahl der Einträge
+        for i = 0 to 3
+           print #LCD,"<1Bh>A<0>";chr$(i);"<0F0h>                    ";    'Display löschen
+	next
+        print #LCD, "<1Bh>A<3><1><0F0h>Save parameter"
+        print #LCD, "<1Bh>A<4><2><0F0h>please wait!"
+	   wait_duration(500)
+   		call init_flash(1)
+   	   wait_duration(1000)
+        x1 = tast_con(1)
+	x2 = tast_con(2)
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"[Save]zero pos[Back]")
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+     endif
+
+
+    if x3 = 0 then  		   					'Pfeil hoch, eventuell scrollen
+        if j = 0 then
+           if pos > 0 then
+		pos = pos - 1
+	   else
+		j = 2
+		pos = last_num - 2
+	   endif
+	else
+		j = j-1
+	endif
+        put #ENC,#2, zero_pos(pos+1+j)
+	call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+
+    if x4 = 0 then                					'Pfeil runter, eventuell scrollen
+        if j = 2 then
+          if pos < last_num - 2 then
+		pos = pos + 1
+	  else
+		j = 0
+		pos = 0
+	  endif
+          call write_anzeige(anzeige_text(0+pos),anzeige_text(1+pos),anzeige_text(2+pos),"")
+	else
+		j = j+1
+	endif
+        put #ENC,#2, zero_pos(pos+1+j)
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>  ";
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(j);"<0F0h>";"->";
+        wait_duration(300)
+    endif
+                                                                        'WICHTIG!!! für alle Parameter
+ endwhile                                                               'Nach Verlassen des Setup-Menus werden die
+end
+
+
+
+
+'--------------------------------------------------------------------
+'SUB ebene39, System Info
+'--------------------------------------------------------------------
+sub ebene_39
+byte i, j, wert, x, x1, x2, x3, x4, lastnum
+array anzeige_text$(20) of Strings
+'string serial1$
+'serial1$ = serial_no$(0,4)                                                        'Systeminfos in Array einlesen
+anzeige_text$(0)="Tiger Version:"+str$(sysvarn(68,0))
+anzeige_text$(1)=serial_no$(0,4)
+anzeige_text$(1)="Serial-No.     "+anzeige_text$(1)
+anzeige_text$(2)=""
+anzeige_text$(3)="Flash"
+anzeige_text$(4)=" -Chips   "+str$(sysvarn(32,0))
+anzeige_text$(5)=" --Size   "+str$(sysvarn(33,0))+" b"
+anzeige_text$(6)=" --Sectors"+str$(sysvarn(34,0))
+anzeige_text$(7)=" ---Size  "+str$(sysvarn(35,0))+" b"
+anzeige_text$(8)=""
+anzeige_text$(9)="Useable User Flash"
+anzeige_text$(10)=" -Sectors "+str$(sysvarn(38,0))
+anzeige_text$(11)=" --Size   "+str$(sysvarn(39,0))+" b"
+anzeige_text$(12)=""
+anzeige_text$(13)="RAM"
+anzeige_text$(14)=" -DRAM    "+str$(sysvarn(30,0))+" b"
+anzeige_text$(15)=" -SRAM    "+str$(sysvarn(31,0))+" b"
+lastnum = 15
+                                                                                  'letzte Zahl x von text_anzeige(x)
+x2 = tast_con(2)
+j = 0
+for i=0 to 3
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>                    ";         'Display löschen
+next
+print #LCD,"<1Bh>A";CHR$(0);CHR$(0);"<0F0h>";anzeige_text$(j)                     'write_anzeige geht nicht wegen den
+print #LCD,"<1Bh>A";CHR$(0);CHR$(1);"<0F0h>";anzeige_text$(j+1)                   'ersten drei Leerstellen
+print #LCD,"<1Bh>A";CHR$(0);CHR$(2);"<0F0h>";anzeige_text$(j+2)                   'Pfeil wird hier nicht benötigt
+print #LCD,"<1Bh>A";CHR$(0);CHR$(3);"<0F0h>System Info   [Back]"
+wait_duration(300)
+
+while x2 = tast_con(2)
+    IN 8, x                             ' Einlesen Port 8
+    x2 = x BITAND tast_con(2)              ' Taste auswerten
+    x3 = x BITAND tast_con(3)
+    x4 = x BITAND tast_con(4)
+
+    if x3 = 0 then                                                                'Pfeil aufwärts
+        if j = 0 then
+		j = lastnum-2
+	else
+		j = j-1
+	endif
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>                    "; 'Display löschen
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(0);"<0F0h>";anzeige_text$(j)             'entsprechenden Array-Bereich anzeigen	  	
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(1);"<0F0h>";anzeige_text$(j+1)
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(2);"<0F0h>";anzeige_text$(j+2)
+        wait_duration(300)                                                        'Tasten entprellen
+        x2 = tast_con(2)
+    endif
+
+    if x4 = 0 then
+        if j = lastnum-2 then                                                     'Pfeil abwärts
+		j = 0
+	else
+		j = j+1
+	endif
+
+	for i=0 to 2
+		print #LCD,"<1Bh>A";CHR$(0);CHR$(i);"<0F0h>                    "; 'Display löschen
+	next
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(0);"<0F0h>";anzeige_text$(j)             'entsprechenden Array-Bereich anzeigen
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(1);"<0F0h>";anzeige_text$(j+1)
+	print #LCD,"<1Bh>A";CHR$(0);CHR$(2);"<0F0h>";anzeige_text$(j+2)
+        wait_duration(300)                                                        'Tasten entprellen
+        x2 = tast_con(2)
+    endif
+
+endwhile
+end
+
+
+'--------------------------------------------------------------------
+'SUB ebene40, Reset
+'--------------------------------------------------------------------
+sub ebene_40
+byte x, x1, x2, x3, x4
+string anzeige_status$
+anzeige_status$ = "[Yes]           [NO]"
+call write_anzeige("Reset to Factory","  defaults???"," ",anzeige_status$)
+wait_duration(300)
+x2 = tast_con(2)
+
+ while x2 = tast_con(2)                                                                      	'Systemwiederherstellung
+    IN 8, x                             ' Einlesen Port 8
+    x1 = x BITAND tast_con(1)              ' Taste auswerten
+    x2 = x BITAND tast_con(2)
+    x3 = x BITAND tast_con(3)
+    x4 = x BITAND tast_con(4)
+    if x1 = 0 then
+       call write_anzeige(" ","    Reset,"," please wait","                    ")
+       wait_duration(500)
+       call Init_flash(0)
+       x2 = 0
+    endif
+ endwhile
+
+end
+
+
+'--------------------------------------------------------------------
+'Werkseinstellungen, Parameter initialisation
+'--------------------------------------------------------------------
+'--------------------------------------------------------------------
+'SUB param_init:
+'--------------------------------------------------------------------
+SUB param_init
+las_led(1) = 2
+las_led(2) = 1
+las_led(3) = 8
+las_led(4) = 4
+las_led(5) = 32
+las_led(6) = 16
+las_led(7) = 128
+las_led(8) = 64
+
+las_move(8) = 4 SHL 2
+las_move(6) = 2 SHL 2
+las_move(4) = 6 SHL 2
+las_move(2) = 1 SHL 2
+las_move(7) = 4 SHL 5
+las_move(5) = 2 SHL 5
+las_move(3) = 6 SHL 5
+las_move(1) = 1 SHL 5
+
+tast_con(1) = 00000100b
+tast_con(2) = 00001000b
+tast_con(3) = 00010000b
+tast_con(4) = 01000000b
+
+end
+
+
+
+'--------------------------------------------------------------------
+'Flash-Bearbeitung
+'--------------------------------------------------------------------
+'--------------------------------------------------------------------
+'SUB Init-Flash, Werkseinstellung
+'--------------------------------------------------------------------
+SUB Init_flash(byte first_init)
+byte i,j, wert
+
+if first_init = 0 then
+ '-----------------------
+ 'Default-Werte
+ '-----------------------
+ las_best(1) = 0
+ las_best(2) = 0
+ las_best(3) = 0
+ las_best(4) = 0
+ las_best(5) = 0
+ las_best(6) = 0
+ las_best(7) = 0
+ las_best(8) = 0
+
+ min_pos(1) = 0
+ min_pos(2) = 0
+ min_pos(3) = 0
+ min_pos(4) = 0
+ min_pos(5) = 0
+ min_pos(6) = 0
+ min_pos(7) = 0
+ min_pos(8) = 0
+
+ max_pos(1) = 1000
+ max_pos(2) = 1000
+ max_pos(3) = 1000
+ max_pos(4) = 1000
+ max_pos(5) = 1000
+ max_pos(6) = 1000
+ max_pos(7) = 1000
+ max_pos(8) = 1000
+
+ zero_pos(1) = 400
+ zero_pos(2) = 400
+ zero_pos(3) = 400
+ zero_pos(4) = 400
+ zero_pos(5) = 400
+ zero_pos(6) = 400
+ zero_pos(7) = 400
+ zero_pos(8) = 400
+
+ '----------------------
+ 'Default-Werte
+ '----------------------
+endif
+
+
+'Flash komplett löschen
+Erase_Flash 0,flash_gr*3       	     		'alle benutzten 3 Sektoren löschen
+
+Poke_flash 1,1,0
+
+'default-Flash in Sektor 2 erstellen
+for i = 1 to 8
+ Poke_flash (flash_gr)+i,las_best(i),0
+next
+
+for i = 1 to 8
+ Poke_flash (flash_gr)+(8*i)+1,min_pos(i),0
+ Poke_flash (flash_gr)+(8*i)+2,min_pos(i),1
+ Poke_flash (flash_gr)+(8*i)+3,max_pos(i),0
+ Poke_flash (flash_gr)+(8*i)+4,max_pos(i),1
+ Poke_flash (flash_gr)+(8*i)+5,zero_pos(i),0
+ Poke_flash (flash_gr)+(8*i)+6,zero_pos(i),1
+next
+
+
+end
+
+'--------------------------------------------------------------------
+'SUB Load_default, Parameter laden
+'--------------------------------------------------------------------
+Sub load_default
+byte wert1, wert2, i
+
+for i = 1 to 8
+  peek_flash (flash_gr)+i,las_best(i),1
+next
+
+for i = 1 to 8
+  peek_flash (flash_gr)+(8*i)+1,wert1,1
+  peek_flash (flash_gr)+(8*i)+2,wert2,1
+  min_pos(i) = wert1+(wert2*256)
+next
+for i = 1 to 8
+  peek_flash (flash_gr)+(8*i)+3,wert1,1
+  peek_flash (flash_gr)+(8*i)+4,wert2,1
+  max_pos(i) = wert1+(wert2*256)
+next
+for i = 1 to 8
+  peek_flash (flash_gr)+(8*i)+5,wert1,1
+  peek_flash (flash_gr)+(8*i)+6,wert2,1
+  zero_pos(i) = wert1+(wert2*256)
+next
+
+end
+
+

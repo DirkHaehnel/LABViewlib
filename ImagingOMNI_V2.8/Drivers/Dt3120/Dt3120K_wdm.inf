@@ -1,0 +1,92 @@
+;; Dt3120K_wdm.inf
+
+;--------- Version Section ---------------------------------------------------
+
+[Version]
+Signature="$Chicago$"
+Provider="Data Translation, Inc."
+
+; If device fits one of the standard classes, use the name and GUID here,
+; otherwise create your own device class and GUID as this example shows.
+Class=DTImageDevice
+ClassGUID={ff646f80-8def-11d2-9449-00105a075f6b}
+
+;--------- Manufacturer and Models Sections ----------------------------------
+[Manufacturer]
+"Data Translation, Inc."=Mfg0
+
+[Mfg0]
+; PCI hardware IDs use the form
+;   PCI\VEN_aaaa&DEV_bbbb&SUBSYS_cccccccc&REV_dd
+"DT3120 FrameGrabber"=Dt3120K_DDI, PCI\VEN_109E&DEV_036E&SUBSYS_00801116&REV_11
+"DT3120 Secondary Device"=BT878_Audio, PCI\VEN_109E&DEV_0878&SUBSYS_00801116&REV_11
+
+;--------- ClassInstall/ClassInstall32 Section -------------------------------
+; Not necessary if using a standard class
+
+; 9X Style
+[ClassInstall]
+Addreg=Class_AddReg
+
+; NT Style
+[ClassInstall32]
+Addreg=Class_AddReg
+
+[Class_AddReg]
+HKR,,,,DTImageDevice
+HKR,,Icon,,"-5"
+
+
+;---------- DDInstall Sections -----------------------------------------------
+; --------- Windows 9X -----------------
+
+; Experimentation has shown that DDInstall root names greater than 19 characters
+; cause problems in Windows 98
+
+[BT878_Audio]
+
+[Dt3120K_DDI]
+AddReg=Dt3120K_9X_AddReg
+
+[Dt3120K_9X_AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,Dt3120K.sys
+HKR,,"OLIMG", 0x00000000, "DT3120K"
+HKLM, "System\CurrentControlSet\Services\Dt3120K"
+HKLM, "System\CurrentControlSet\Services\Dt3120K","OLIMG", 0x00000000, "DT3120K"
+
+
+; --------- Windows NT -----------------
+[BT878_Audio.NT]
+
+[BT878_Audio.NT.Services]
+AddService = DTSecondary, 0x00000002, Aud878_AddService
+
+[Aud878_AddService]
+DisplayName    = DT Secondary Device Driver
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\Aud878.sys
+
+[Dt3120K_DDI.NT]
+AddReg=Dt3120K_NT_AddReg
+
+[Dt3120K_DDI.NT.Services]
+Addservice = DT3120K, 0x00000002, Dt3120K_AddService
+
+[Dt3120K_AddService]
+DisplayName    = DT3120 FrameGrabber Service/Driver
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\Dt3120K.sys
+
+[Dt3120K_NT_AddReg]
+HKLM, "System\CurrentControlSet\Services\Dt3120K",\
+	"OLIMG", 0x00000000, "DT3120K"
+
+
+;--------- Strings Section ---------------------------------------------------
+[Strings]
+DeviceClassName="DTImageDevice"

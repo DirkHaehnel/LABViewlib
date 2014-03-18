@@ -1,0 +1,45 @@
+
+Copyright 1999-2003 by Data Translation, Inc.
+
+
+All rights reserved. Information furnished by Data
+Translation, Inc. is believed to be accurate and 
+reliable; however, no responsibility is assumed by 
+Data Translation, Inc. for its use, or for any 
+infringements of patents or other rights of third 
+parties which may result from its use. No license is 
+granted by implication or otherwise under any patent 
+rights of Data Translation, Inc.
+
+Data Translation, Inc. provides this program and 
+licenses its use. This license agreement stipulates 
+that you may use this program on a single machine. 
+You may copy the program onto any machine for 
+backup or modification purposes in support of your 
+use of the program on the single machine.
+
+This license is effective until terminated. You may 
+terminate the license at any time by destroying the 
+program together with all copies, modifications, and 
+merged portions of the program in all forms. 
+
+This program is provided "AS IS" without warranty of 
+any kind, either expressed or implied, including, but 
+not limited to, the implied warranties of merchantability 
+and fitness for a particular purpose. 
+
+Data Translation, Inc. does not warrant that the 
+functions contained in the program will meet your 
+requirements or that the operation of the program will 
+be uninterrupted or error free.
+
+Use, duplication, or disclosure by the United States 
+Government is subject to restrictions as set forth in 
+subparagraph (c)(1)(ii) of the Rights in Technical Data 
+and Computer software clause at 48 C.F.R., 
+252.227-7013, or in subparagraph (c)(2) of the 
+commercial computer Software - Registered Rights 
+clause at 48 C.F.R., 52-227-19 as applicable.
+
+Data Translation, Inc., 100 Locke Drive, 
+Marlboro, MA 01752

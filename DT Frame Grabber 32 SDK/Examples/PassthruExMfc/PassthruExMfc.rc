@@ -1,0 +1,251 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\PassthruExMfc.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\PassthruExMfc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PASSTHRUEXMFC_DIALOG DIALOGEX 0, 0, 231, 334
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PassthruExMfc Example"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "This example program uses the default parameters of the selected device to display continuous images in a separate window. ",
+                    IDC_STATIC,7,7,217,19
+    PUSHBUTTON      "Select Device",IDC_SELECTDEVICE,7,77,71,18
+    PUSHBUTTON      "Close Device",IDC_CLOSEDEVICE,7,104,71,18
+    PUSHBUTTON      "Start PassthruEx",IDC_PASSTHRUEX,153,77,71,18
+    PUSHBUTTON      "Stop PassthruEx",IDC_STOPPASSTHRUEX,153,104,71,18
+    GROUPBOX        "",IDC_STATIC,7,133,217,65
+    CONTROL         "External Trigger",IDC_TRIG_EXTERNAL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,133,65,10
+    GROUPBOX        "Trigger Mode",IDC_STATIC,16,147,55,42
+    CONTROL         "Start",IDC_TRIG_START,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,25,161,31,8
+    CONTROL         "Each",IDC_TRIG_EACH,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,25,174,33,8
+    GROUPBOX        "Trigger Transition",IDC_TRIG_TRANS,80,147,72,42,
+                    WS_GROUP
+    CONTROL         "High-To-Low",IDC_TRIG_HITOLO,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,89,161,57,10
+    CONTROL         "Low-To-High",IDC_TRIG_LOTOHI,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,89,174,57,10
+    GROUPBOX        "Timeout",IDC_STATIC,161,147,53,32,WS_GROUP
+    EDITTEXT        IDC_TIMEOUT,172,158,32,12,ES_AUTOHSCROLL | ES_NUMBER
+    GROUPBOX        "Frame Management",IDC_STATIC,7,202,217,97
+    GROUPBOX        "Frame Count",IDC_STATIC,16,211,54,32
+    EDITTEXT        IDC_NUM_FRAMES,25,223,32,12,ES_AUTOHSCROLL | ES_NUMBER
+    GROUPBOX        "lpDone Type",IDC_STATIC,133,211,82,42
+    CONTROL         "Single Index",IDC_SINGLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,142,225,55,10
+    CONTROL         "Array of Indices",IDC_ARRAY,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,142,238,65,10
+    CONTROL         "Don't Overwrite",IDC_DO_NOT_OVERWRITE,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,270,65,10
+    GROUPBOX        "Current Frame Index",IDC_STATIC,133,258,82,32
+    EDITTEXT        IDC_FRAME_INDEX,142,270,32,12,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "Done",IDOK,88,309,50,18,WS_GROUP
+    LTEXT           "This example includes new functionality which is not yet documented in the Frame Grabber SDK and is only available in selected drivers provided by Data Translation, Inc.",
+                    IDC_STATIC,7,26,205,25
+    LTEXT           "WARNING:  Using the new functionality in drivers which do not support these features may result in unpredictable behavior.",
+                    IDC_STATIC,7,50,217,18
+END
+
+IDD_DISPLAY DIALOGEX 0, 0, 187, 94
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_THICKFRAME
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "Display Window"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+END
+
+IDD_DEVICELIST DIALOGEX 0, 0, 187, 51
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "Select Device"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+    COMBOBOX        IDC_CB_ALIAS,7,20,111,50,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Alias:",IDC_STATIC,7,7,49,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,7
+ PRODUCTVERSION 1,0,0,7
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "PassthruExMfc MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 7\0"
+            VALUE "InternalName", "PassthruExMfc\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PassthruExMfc.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "PassthruExMfc Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 7\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PASSTHRUEXMFC_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 327
+    END
+
+    IDD_DISPLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DEVICELIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\PassthruExMfc.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,87 @@
+; INF file for Data Translation DT3154 MACH Series device driver.
+; Copyright 1997, Data Translation Inc.
+
+; Version 1.00 May 07, 1997
+
+[Version]
+Signature=$CHICAGO$
+Class=MEDIA
+Provider=%String0%
+
+[Default File Settings]
+"STF_OVERWRITE"  = "OLDER"
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[DestinationDirs]
+DefaultDestDir=11
+DT3154.CopyList=11
+Config.CopyList=10
+
+[Manufacturer]
+%String1%=Generic
+
+[Generic]
+%String2%=DT3154.Install,PCI\VEN_8086&DEV_1223
+
+[DT3154.Install]
+CopyFiles=DT3154.CopyList,Config.CopyList
+DelFiles=DT3154.DelList
+AddReg=DT3154.VxD.AddReg,DT3154.Drv.AddReg
+LogConfig=DT3154.LogConfig
+UpdateInis=DT3154.UpdateInis
+Reboot
+
+[DT3154.CopyList]
+DT3154.DRV
+DT315495.VXD
+
+[Config.CopyList]
+DT3154AC.exe
+
+[DT3154.DelList]
+DT315495.VXD
+DT3154.DRV
+
+[DT3154.VxD.AddReg]
+HKLM,System\CurrentControlSet\Services\VxD\DT3154,StaticVxD,0,DT315495.vxd
+HKLM,System\CurrentControlSet\Services\VxD\DT3154,Start,1,00
+
+[DT3154.Drv.AddReg]
+HKLM,System\CurrentControlSet\Services\DT3154,OLIMG,0,OLIMG
+HKLM,System\CurrentControlSet\Services\DT3154,DisplayName,0,%DT3154.DeviceDesc%
+HKLM,System\CurrentControlSet\Services\DT3154,IsConfigured,0,FALSE
+HKLM,System\CurrentControlSet\Services\DT3154,IsAutoConfigDeleted,0,FALSE
+HKLM,System\CurrentControlSet\Services\DT3154,NumBoards,1,00
+HKLM,System\CurrentControlSet\Control\MediaResources\mci\DT3154,Description,0,%DT3154.DeviceDesc%
+HKLM,System\CurrentControlSet\Control\MediaResources\mci\DT3154,Driver,,DT3154.DRV
+
+[Class.AddReg]
+HKR,,,0,%MediaClassName%
+HKR,,Icon,0,-1
+HKR,,Installer,0,mmci.dll
+
+[DT3154.LogConfig]
+ConfigPriority=DESIRED
+
+[DT3154.UpdateInis]
+system.ini,drivers,,"DT3154=DT3154.DRV",0
+system.ini,mci,,"DT3154=DT3154.DRV",0
+
+[ControlFlags]
+
+[SourceDisksNames]
+1=%Disk_1_Desc%,,
+
+[SourceDisksFiles]
+DT3154.DRV=1
+DT315495.VXD=1
+
+[Strings]
+String0="Data Translation, Inc."
+String1="Data Translation, Inc."
+String2="DT3154 MACH Series Frame Grabber"
+DT3154.DeviceDesc="DT3154 MACH Series Frame Grabber"
+MediaClassName="Sound, video and game controllers"
+Disk_1_Desc="DT3154 Driver Installation Disk"

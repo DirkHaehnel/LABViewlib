@@ -1,0 +1,226 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include <COMMCTRL.H>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ABOUTBOX DIALOG DISCARDABLE  22, 17, 144, 75
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About Passthru"
+FONT 8, "System"
+BEGIN
+    CTEXT           "DT-Open Layers Imaging",-1,0,5,144,8
+    CTEXT           "PassThru Application",-1,0,14,144,8
+    CTEXT           "Version 2.0",-1,0,34,144,8
+    DEFPUSHBUTTON   "OK",IDOK,56,55,32,14,WS_GROUP
+END
+
+IDD_DEVICE_LIST DIALOG DISCARDABLE  0, 0, 155, 92
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Device"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Alias:",IDC_STATIC,7,6,19,8
+    COMBOBOX        IDC_CB_ALIAS,6,17,71,71,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,99,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,23,50,14
+END
+
+IDD_INPUT_SOURCE DIALOG DISCARDABLE  0, 0, 161, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Input Source"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Input &Source:",IDC_STATIC,5,11,46,8
+    COMBOBOX        IDC_CB_SOURCE,55,10,35,50,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,105,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,105,23,50,14
+END
+
+IDD_OVERLAY_CONTROL DIALOGEX 0, 0, 110, 177
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Overlay Control"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Close",IDC_CLOSE,35,156,40,14
+    CONTROL         "Donut Animation",IDC_DONUT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,22,18,64,9
+    CONTROL         "Earth Animation",IDC_EARTH,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,22,32,64,9
+    CONTROL         "Drawing",IDC_DRAWING,"Button",BS_AUTORADIOBUTTON,22,46,
+                    64,9
+    CONTROL         "Black Color Key",IDC_BLUE_LOGO,"Button",
+                    BS_AUTORADIOBUTTON,22,60,64,9
+    CONTROL         "Blue Color Key",IDC_CLEAR_LOGO,"Button",
+                    BS_AUTORADIOBUTTON,22,74,64,9
+    CONTROL         "No Overlays",IDC_NO_OVERLAYS,"Button",
+                    BS_AUTORADIOBUTTON,22,88,64,9
+    CONTROL         "Translucent",IDC_TRANSLUCENT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,29,123,51,9
+    GROUPBOX        "Overlay Mode",IDC_STATIC,7,0,96,109,BS_CENTER
+END
+
+IDD_SNAPSHOT DIALOGEX 0, 0, 110, 41
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Passthru SnapShot"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Snap",IDC_SNAP,7,13,35,14
+    CONTROL         "Add Overlay",IDC_OVERLAY,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,52,7,51,9
+    CONTROL         "Translucent",IDC_TRANSLUCENT,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,52,25,51,9
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include <COMMCTRL.H>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+PASSTHRUMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_FILE_EXIT
+    END
+    POPUP "&Setup"
+    BEGIN
+        MENUITEM "Select &Device...",           IDM_SETUP_SELECT_DEVICE
+        MENUITEM SEPARATOR
+        MENUITEM "&Close Device",               IDM_SETUP_CLOSE_DEVICE
+        , GRAYED
+        MENUITEM "S&elect Input Source...",     IDM_SETUP_SOURCE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Synchronous",                IDM_SETUP_SYNCHRONOUS
+        , GRAYED
+        MENUITEM "&Asynchronous",               IDM_SETUP_ASYNCHRONOUS
+        , GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&External CSync Line",        IDM_SETUP_EXTERNALCSYNCLINE
+        , GRAYED
+    END
+    POPUP "&Run", GRAYED
+    BEGIN
+        MENUITEM "Start  &PassThru!",           IDM_RUN_START_PASSTHRU
+        MENUITEM "&Stop PassThru!",             IDM_RUN_STOP_PASSTHRU
+        , GRAYED
+        MENUITEM "Single Frame &Acquire!",      IDM_RUN_SINGLE_FRAME
+    END
+    MENUITEM "Overlay Control",             IDM_OVERLAY_CONTROL, GRAYED
+    POPUP "&Help", HELP
+    BEGIN
+        MENUITEM "&About Passthru..",           IDM_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_OVERLAY_CONTROL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 103
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+
+    IDD_SNAPSHOT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 103
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 34
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DONUT               BITMAP  DISCARDABLE     "DONUT.BMP"
+IDB_DT_LOGO             BITMAP  DISCARDABLE     "DT_LOGO.BMP"
+IDB_BLACK               BITMAP  DISCARDABLE     "Black.BMP"
+IDB_EARTH               BITMAP  DISCARDABLE     "EARTH.BMP"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

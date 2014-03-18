@@ -1,0 +1,153 @@
+[Workspace Header]
+Version = 700
+Pathname = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/pio_test.cws"
+CVI Dir = "/c/programme/national instruments/cvi70"
+IVI Standard Root Dir = "/C/Programme/IVI"
+VXIplug&play Framework Dir = "/C/VXIpnp/winnt"
+Number of Projects = 1
+Active Project = 1
+Project 0001 = "pio_test.prj"
+Drag Bar Left = 223
+Window Top = 30
+Window Left = 22
+Window Bottom = 532
+Window Right = 812
+Maximized = True
+Maximized Children = True
+Max Number Of Errors = 20
+Track Include File Dependencies = True
+Prompt For Missing Includes = True
+Stop On First Error File = False
+Bring Up Err Win For Warnings = True
+Show Build Dialog = False
+Save Changes Before Running = "Always"
+Hide Windows = False
+Global Hot Key = False
+Break At First Statement = False
+Sort Type = "File Name"
+Number of Opened Files = 2
+MainColumnWidth = 200
+FileDateColumnWidth = 70
+FileSizeColumnWidth = 70
+StatusColumnWidth = 70
+
+[Project Header 0001]
+Version = 700
+Platform Code = 4
+Build Configuration = "Debug"
+Warn User If Debugging Release = 1
+Batch Build Release = False
+Batch Build Debug = False
+
+[File 0001]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/dataacq.h"
+File Type = "Include"
+Disk Date = 3020080344
+In Projects = "1,"
+
+[File 0002]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/sequences.c"
+File Type = "CSource"
+Disk Date = 3115704888
+In Projects = "1,"
+Window Top = -16281
+Window Height = -16281
+Source Window State = "1,71,71,71,56,62,63,0,0,105,0,1,0,1,0,47,33,0,79,60,"
+
+[File 0003]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/sequences.h"
+File Type = "Include"
+Disk Date = 3100761980
+In Projects = "1,"
+
+[File 0004]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/dio96.c"
+File Type = "CSource"
+Disk Date = 3095736324
+In Projects = "1,"
+Window Top = -16281
+Window Height = -16281
+Source Window State = "1,52,52,52,6,13,14,0,0,110,0,0,0,0,0,39,0,0,19,16,"
+
+[File 0005]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/dio96.h"
+File Type = "Include"
+Disk Date = 3095736269
+In Projects = "1,"
+
+[File 0006]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/PIO_test.c"
+File Type = "CSource"
+Disk Date = 3115702919
+In Projects = "1,"
+Window Top = -16281
+Window Height = -16281
+Window Docked = True
+Window Z-Order = 1
+Source Window State = "1,0,0,0,0,0,0,0,0,128,0,0,0,0,0,68,0,0,0,0,"
+
+[File 0007]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/simulation.c"
+File Type = "CSource"
+Disk Date = 3100763966
+In Projects = "1,"
+Window Top = -16281
+Window Height = -16281
+Source Window State = "1,120,122,120,0,-1,0,0,0,73,0,0,0,0,0,42,78,0,78,0,"
+
+[File 0008]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/constant.h"
+File Type = "Include"
+Disk Date = 3095736384
+In Projects = "1,"
+
+[File 0009]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/simulation.h"
+File Type = "Include"
+Disk Date = 3100762710
+In Projects = "1,"
+
+[File 0010]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/test01.h"
+File Type = "Include"
+Disk Date = 3115704725
+In Projects = "1,"
+
+[File 0011]
+Path = "/t/Entwicklung/HostSoftware/Setup/E-710/Demo PIO/test01.uir"
+File Type = "User Interface Resource"
+Disk Date = 3115704725
+In Projects = "1,"
+Window Top = 32
+Window Left = 6
+Window Height = 349
+Window Width = 676
+Window Docked = True
+Window Z-Order = 2
+
+[Build Options 0001]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Debugging Level = "Standard"
+Break On Library Errors = True
+Break On First Chance Exceptions = False
+
+[SCC Options 0001]
+Use global settings = True
+SCC Provider = ""
+SCC Project = ""
+Local Path = ""
+Auxiliary Path = ""
+Perform Same Action For .h File As For .uir File = "Ask"
+Username = ""
+Comment = ""
+Use Default Username = False
+Use Default Comment = True
+Suppress CVI Error Messages = False
+
+[DLL Debugging Support 0001]
+External Process Path = ""
+
+[Command Line Args 0001]
+Command Line Args = ""
+

@@ -1,0 +1,22 @@
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectX
+Version
+4.08.00.0400 (DirectX 7.0)
+4.07.00.0700 (DirectX 8.0) 
+4.09.00.0900 (DirectX 9.0)
+
+The DirectX 9.0b runtime cannot be uninstalled. We recommend Windows Me and Windows XP users 
+create a "System Restore" point before installing. For information on creating a restore point,
+please refer to the following Microsoft Knowledge Base articles: 
+Windows Millennium Edition: Microsoft Knowledge Base article 267951.
+Windows XP: Microsoft Knowledge Base article 310405. 
+
+The DirectX 9.0b Redist is recommended for those user that do not have internet connection during installation. 
+DirectX 9.0b has a silent install (no UI, and no reboot) which is available to Microsoft Volume License 
+Customers (VLC) on the following Microsoft Volume License Site (MVLS). 
+This is a Multi-lingual package which does not require an internet connection during installation. 
+
+The only version supported on Windows NT 4.0 is DirectX 3.0a. 
+You must also install Windows NT 4.0 Service Pack 6.
+
+To determine the DirectX version on your system, Run -> "DXDIAG.exe"
+from the Windows Start Menu.

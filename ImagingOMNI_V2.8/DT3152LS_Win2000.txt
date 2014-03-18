@@ -1,0 +1,39 @@
+To install a DT3152LS device in Windows 2000, you need to disable the device, then install 
+and configure the device driver as described in the following sections.
+
+Disabling the device:
+You need to disable the device so that Windows 2000 does not reidentify the board every time 
+the system is restarted. To disable the device, perform the following steps:
+
+1. Install the board and start Windows 2000.
+   The Found New Hardware Wizard dialog box is displayed.
+2. Click Next.
+3. Click the Search for a suitable driver radio button, then click Next.
+4. Uncheck all Optional search locations boxes, then click Next.
+5. Verify that the Disable the device radio button is selected, then click Finish.
+
+Installing/Configuring the Device Driver:
+Once you have disabled the device, install/configure the device driver by 
+performing the following steps:
+
+ 1. From the Control Panel, select Add/Remove Hardware.
+ 2. Click Next.
+ 3. Select the Add/Troubleshoot a device radio button, then click Next.
+ 4. Select Add a new device, then click Next.
+ 5. Select No, I want to select the hardware from a list radio button, then click Next.
+ 6. Select Sound, Video and game controllers, then click Next.
+ 7. Click Have Disk.  Browse to the directory "Drivers\DT3152LS\Win2K" on the Imaging OMNI CD. 
+ 8. Click OK in Install from Disk dialog box.
+    A Digital Signature Not Found dialog box appears.
+ 9. Click Yes to continue.
+10. Select the appropriate frame grabber board to install, then click Next.
+11. Click Next.
+    Another Digital Signature Not Found dialog box appears.
+12. Click Yes to continue.
+    The DT-Open Layers configuration dialog box appears.
+13. Click Add New.
+14. Enter a name for the device, then click Add.
+15. Specify the settings for the board, then click Done.
+16. Click Close.
+17. To complete the installation, click Finish.
+18. Restart the system.  
