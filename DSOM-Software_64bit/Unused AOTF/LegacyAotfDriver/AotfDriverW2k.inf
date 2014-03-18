@@ -1,0 +1,78 @@
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+provider=%Crystal%
+LayoutFile=layout.inf
+
+[Manufacturer]
+%Crystal%=Crystal
+
+[Crystal]
+;
+; The folowing PIDs are for all of the devices in the EZ-USB family.
+; These are the hardcoded PIDs that will be reported by an EZ-USB
+; device with no external EEPROM. Bound to the general purpose driver.
+;
+; AOTF Controller
+%USB\VID_1234&PID_0001&Rev_0100.DeviceDesc%=AOTF.Dev, USB\VID_1234&PID_0001&Rev_0100
+%USB\VID_1234&PID_0001&Rev_0200.DeviceDesc%=AOTF.Dev, USB\VID_1234&PID_0001&Rev_0200
+%USB\VID_1234&PID_0001&Rev_0300.DeviceDesc%=AOTF.Dev, USB\VID_1234&PID_0001&Rev_0300
+%USB\VID_16C7&PID_0001&Rev_0400.DeviceDesc%=AOTF.Dev, USB\VID_16C7&PID_0001&Rev_0400
+%USB\VID_16C7&PID_0001&Rev_0500.DeviceDesc%=AOTF.Dev, USB\VID_16C7&PID_0001&Rev_0500
+%USB\VID_16C7&PID_0001&Rev_0600.DeviceDesc%=AOTF.Dev, USB\VID_16C7&PID_0001&Rev_0600
+
+%USB\VID_16C7&PID_0002&Rev_0100.DeviceDesc%=AOTF.Dev, USB\VID_16C7&PID_0002&Rev_0100
+%USB\VID_16C7&PID_0002&Rev_0200.DeviceDesc%=AOTF.Dev, USB\VID_16C7&PID_0002&Rev_0200
+
+%USB\VID_16C7&PID_0003&Rev_0100.DeviceDesc%=AOTF.Dev, USB\VID_16C7&PID_0003&Rev_0100
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+AOTF.Files.Ext = 10,System32\Drivers
+AOTF.Files.Inf = 10,INF
+
+[AOTF.Dev]
+CopyFiles=AOTF.Files.Ext, AOTF.Files.Inf
+AddReg=AOTF.AddReg
+
+[AOTF.Dev.NT]
+CopyFiles=AOTF.Files.Ext, AOTF.Files.Inf
+AddReg=AOTF.AddReg
+
+[AOTF.Dev.NT.Services]
+Addservice = AOTF, 0x00000002, AOTF.AddService
+
+[AOTF.AddService]
+DisplayName    = %AOTF.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 2                  ; SERVICE_AUTO_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\AotfDriver.sys
+LoadOrderGroup = Base
+
+[AOTF.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,AotfDriver.sys
+
+[AOTF.Files.Ext]
+AotfDriver.sys
+
+[AOTF.Files.Inf]
+AotfDriverW2k.Inf
+
+;---------------------------------------------------------------;
+
+[Strings]
+Crystal="Crystal Technology"
+USB\VID_1234&PID_0001&Rev_0100.DeviceDesc="Crystal Technology Octal AOTF Controller (Rev 1)"
+USB\VID_1234&PID_0001&Rev_0200.DeviceDesc="Crystal Technology Octal AOTF Controller (Rev 2)"
+USB\VID_1234&PID_0001&Rev_0300.DeviceDesc="Crystal Technology Octal AOTF Controller (Rev 3)"
+USB\VID_16C7&PID_0001&Rev_0400.DeviceDesc="Crystal Technology Octal AOTF Controller (Rev 4)"
+USB\VID_16C7&PID_0001&Rev_0500.DeviceDesc="Crystal Technology Octal AOTF Controller (Rev 5)"
+USB\VID_16C7&PID_0001&Rev_0600.DeviceDesc="Crystal Technology Octal AOTF Controller (Rev 6)"
+USB\VID_16C7&PID_0002&Rev_0100.DeviceDesc="Crystal Technology Single AOTF Controller (Rev 1)"
+USB\VID_16C7&PID_0002&Rev_0200.DeviceDesc="Crystal Technology Single AOTF Controller (Rev 2)"
+USB\VID_16C7&PID_0003&Rev_0100.DeviceDesc="Crystal Technology Quad AOTF Controller (Rev 1)"
+AOTF.SvcDesc="Crystal Technology AOTF Controller Driver (AotfDriver.sys)"

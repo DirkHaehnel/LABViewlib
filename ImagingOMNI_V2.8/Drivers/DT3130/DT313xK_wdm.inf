@@ -1,0 +1,102 @@
+;; DT313xK_wdm.inf
+
+;--------- Version Section ---------------------------------------------------
+
+[Version]
+Signature="$Chicago$"
+Provider="Data Translation, Inc."
+
+; If device fits one of the standard classes, use the name and GUID here,
+; otherwise create your own device class and GUID as this example shows.
+Class=NewDeviceClass
+ClassGUID={ff646f80-8def-11d2-9449-00105a075f6b}
+
+;--------- Manufacturer and Models Sections ----------------------------------
+[Manufacturer]
+"Data Translation, Inc."=Mfg0
+
+[Mfg0]
+; PCI hardware IDs use the form
+;   PCI\VEN_aaaa&DEV_bbbb&SUBSYS_cccccccc&REV_dd
+"DT313x FrameGrabber"=DT313xK_DDI, PCI\VEN_109E&DEV_0350
+"DT313x FrameGrabber"=DT313xK_DDI, PCI\VEN_109E&DEV_036E&SUBSYS_00000000&REV_11
+
+;FPGA Control This device controls strobe, trigger, and identifies a 313x board
+"DT3133 Aux"=DT313xK_DDI, PCI\VEN_1116&DEV_0070
+"DT3132 Aux"=DT313xK_DDI, PCI\VEN_1116&DEV_0071
+"DT3131 Aux"=DT313xK_DDI, PCI\VEN_1116&DEV_0073
+"DT3133-ISO Aux"=DT313xK_DDI, PCI\VEN_1116&DEV_0074
+"DT3132-ISO Aux"=DT313xK_DDI, PCI\VEN_1116&DEV_0075
+"DT3131-ISO Aux"=DT313xK_DDI, PCI\VEN_1116&DEV_0077
+
+"DT313x Secondary Device"=BT878_Audio, PCI\VEN_109E&DEV_0878
+
+;--------- ClassInstall/ClassInstall32 Section -------------------------------
+; Not necessary if using a standard class
+
+; 9X Style
+[ClassInstall]
+Addreg=Class_AddReg
+
+; NT Style
+[ClassInstall32]
+Addreg=Class_AddReg
+
+[Class_AddReg]
+HKR,,,,DTImageDevice
+HKR,,Icon,,"-5"
+
+
+;---------- DDInstall Sections -----------------------------------------------
+; --------- Windows 9X -----------------
+
+; Experimentation has shown that DDInstall root names greater than 19 characters
+; cause problems in Windows 98
+
+[BT878_Audio]
+
+[DT313xK_DDI]
+AddReg=DT313xK_9X_AddReg
+
+[DT313xK_9X_AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,DT313xK.sys
+HKR,,"OLIMG", 0x00000000, "DT313xK"
+HKLM, "System\CurrentControlSet\Services\Dt313xK"
+HKLM, "System\CurrentControlSet\Services\Dt313xK","OLIMG", 0x00000000, "DT313xK"
+
+
+; --------- Windows NT -----------------
+[BT878_Audio.NT]
+
+[BT878_Audio.NT.Services]
+AddService = DTSecondary, 0x00000002, Aud878_AddService
+
+[Aud878_AddService]
+DisplayName    = DT Secondary Device Driver
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\Aud878.sys
+
+[DT313xK_DDI.NT]
+AddReg=Dt313xK_NT_AddReg
+
+[DT313xK_DDI.NT.Services]
+Addservice = DT313xK, 0x00000002, DT313xK_AddService
+
+[DT313xK_AddService]
+DisplayName    = DT313x FrameGrabber Service/Driver
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\DT313xK.sys
+
+[Dt313xK_NT_AddReg]
+HKLM, "System\CurrentControlSet\Services\Dt313xK",\
+	"OLIMG", 0x00000000, "DT313xK"
+
+
+;--------- Strings Section ---------------------------------------------------
+[Strings]
+DeviceClassName="DTImageDevice"

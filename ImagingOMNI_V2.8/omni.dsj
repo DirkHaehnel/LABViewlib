@@ -1,0 +1,9 @@
+[Demo]
+Path=D:\Omni cd 2.8beta\Omni.dbd
+Version=6.02 32-bit
+Type=DemoShield Project File
+[Language]
+Number=0
+[Import By Ref]
+Number=1
+Res0=Dt3152ls,D:\Imaging omni v2.2 rev. b\Dt3152ls.txt

@@ -1,0 +1,78 @@
+To install a DT3152LS device in Windows XP, you need to disable the device, then install 
+and configure the device driver as described in the following sections.
+
+NOTE: In some machines, the DT3152-LS may not be detected automatically when you start Windows XP.
+If this should occur, skip the section on disabling the device, and continue with the instructions 
+installing and configuring the device driver.
+
+
+Disabling the device:
+You need to disable the device so that Windows XP does not reidentify the board every time 
+the system is restarted. To disable the device, perform the following steps:
+
+1. Install the board and start Windows XP (with administrative rights).
+   The Found New Hardware Wizard dialog box is displayed.
+2. Select Install from a list of specific location (Advanced).
+3. Click Next.
+4. Click the Search for the best driver in these locations, and uncheck all other options.
+5. Click Next.
+6. Uncheck all Optional search locations boxes, then click Next.
+   If the Multimedia Video Controller dialog box appears, proceed to step 7.
+   Otherwise, the message Cannot Install this Hardware appears; proceed to step 8.
+7. Select the option No, do not connect to Internet now, then click Next. 
+8. Select Don’t prompt me again to install this software, then click Finish.
+   The Help and Support Center window appears.
+9. Click Cancel, then click Finish.
+
+Installing/Configuring the Device Driver:
+Once you have disabled the device, install/configure the device driver by 
+performing the following steps:
+
+ 1. From the Control Panel, select Add/Remove Hardware.
+    The Add Hardware Wizard appears.
+ 2. Click Next.
+    A message about hardware connection appears.
+ 3. Select Yes, I have already connected the hardware, then click Next.
+ 4. Scroll through the list and select Add a new hardware device, then click Next.
+ 5. Select Install the hardware that I manually select from a list (Advanced), then click Next.
+ 6. Click Sound, video and game controllers, then click Next.
+ 7. Click Have Disk.
+ 8. Insert the Imaging OMNI CD into your CD-ROM drive.
+ 9. Browse to the \Drivers\DT3152LS\Win2K directory on the Imaging OMNI CD. 
+10. Select the OEMSETUP.INF file, then click Open.
+11. Click OK.
+    A Software Installation window appears.
+12. Click Continue Anyway.
+    A Digital Signature Not Found dialog box appears.
+13. Click Next.
+14. Click Next.
+    A message about the compatibility with Windows XP appears.
+15. Click Continue Anyway.
+    The DT-Open Layers configuration dialog box appears.
+16. Click Add New.
+17. Enter a name for the device, then click Add.
+18. On the General tab of the DT3152LS Configuration dialog box, click Enable Board to activate the board.
+    If you want to retain the settings but disable the board, remove the checkmark next to Enable Board.
+19. To configure the board for area-scan (two-dimensional) operations, perform the following steps:
+    a. On the General tab of the DT3152LS Configuration dialog box, click Enable 2 Dimensional Mode.
+    b. Click the 2 Dimension tab of the DT3152LS Configuration dialog box. 
+    c. For Video Format, indicate the video format that you want for the default setting by clicking 
+       50 Hz or 60 Hz.
+    d. For Memory Size, select the amount of memory (in MB) that you want to allocate in your system to 
+       hold the acquired frames. A 60 Hz, 640-by-480 image requires 308 KB per frame; a 50 Hz, 768-by-576
+       image requires 443 KB per frame. The upper limit depends on your system’s resources. The 
+       recommended minimum is 1 MB.
+20. To configure the board for line-scan (one-dimensional) operations, perform the following steps: 
+    a. Click the General tab of the DT3152LS Configuration dialog box, then click Enable Line Scan Mode.
+    b. Click the Line Scan tab of the DT3152LS Configuration dialog box.
+    c. Enter the number of 500 KB FIFO buffers to use. A typical number of FIFO buffers is 9. The default
+       is 0. If, when running your program, you encounter overflow errors, increase the number of FIFO 
+       buffers. In the DT3152LS Configuration dialog box, you can enable the board for both 2 Dimensional
+       Mode and Line Scan mode at the same time. However, if you want to maximize system memory, enable 
+       only one mode at a time.
+21. Click OK.
+    The DT3152-LS Configuration dialog box reappears; you can see the name of the board you just added.
+22. Click Close to finish.
+    A dialog box appears, indicating that you need to restart Windows XP for the changes to take effect.
+23. Click Finish.
+24. Restart the system. 

@@ -1,0 +1,11 @@
+; Simple_DLL.def : Deklariert die Modulparameter für die DLL.
+
+LIBRARY      "Simple_DLL"
+
+EXPORTS
+    ; Explizite Exporte können hier eingefügt werden
+
+Initialise_DIO96PIO_Interface @1
+E710PIO_Write @2
+E710PIO_Update @3
+E710PIO_Read @4

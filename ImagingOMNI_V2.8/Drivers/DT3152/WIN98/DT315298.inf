@@ -1,0 +1,87 @@
+; INF file for Data Translation DT3152 MACH Series device driver.
+; Copyright 1997, Data Translation Inc.
+
+; Version 1.01 May 06, 1997
+
+[Version]
+Signature=$CHICAGO$
+Class=MEDIA
+Provider=%String0%
+
+[Default File Settings]
+"STF_OVERWRITE"  = "OLDER"
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[DestinationDirs]
+DefaultDestDir=11
+DT3152.CopyList=11
+Config.CopyList=10
+
+[Manufacturer]
+%String1%=Generic
+
+[Generic]
+%String2%=DT3152.Install,PCI\VEN_8086&DEV_1223
+
+[DT3152.Install]
+CopyFiles=DT3152.CopyList,Config.CopyList
+DelFiles=DT3152.DelList
+AddReg=DT3152.VxD.AddReg,DT3152.Drv.AddReg
+LogConfig=DT3152.LogConfig
+UpdateInis=DT3152.UpdateInis
+Reboot
+
+[DT3152.CopyList]
+DT3152.DRV
+DT315295.VXD
+
+[Config.CopyList]
+DT3152AC.exe
+
+[DT3152.DelList]
+DT315295.VXD
+DT3152.DRV
+
+[DT3152.VxD.AddReg]
+HKLM,System\CurrentControlSet\Services\VxD\DT3152,StaticVxD,0,DT315295.vxd
+HKLM,System\CurrentControlSet\Services\VxD\DT3152,Start,1,00
+
+[DT3152.Drv.AddReg]
+HKLM,System\CurrentControlSet\Services\DT3152,OLIMG,0,OLIMG
+HKLM,System\CurrentControlSet\Services\DT3152,DisplayName,0,%DT3152.DeviceDesc%
+HKLM,System\CurrentControlSet\Services\DT3152,IsConfigured,0,FALSE
+HKLM,System\CurrentControlSet\Services\DT3152,IsAutoConfigDeleted,0,FALSE
+HKLM,System\CurrentControlSet\Services\DT3152,NumBoards,1,00
+HKLM,System\CurrentControlSet\Control\MediaResources\mci\DT3152,Description,0,%DT3152.DeviceDesc%
+HKLM,System\CurrentControlSet\Control\MediaResources\mci\DT3152,Driver,,DT3152.DRV
+
+[Class.AddReg]
+HKR,,,0,%MediaClassName%
+HKR,,Icon,0,-1
+HKR,,Installer,0,mmci.dll
+
+[DT3152.LogConfig]
+ConfigPriority=DESIRED
+
+[DT3152.UpdateInis]
+system.ini,drivers,,"DT3152=DT3152.DRV",0
+system.ini,mci,,"DT3152=DT3152.DRV",0
+
+[ControlFlags]
+
+[SourceDisksNames]
+1=%Disk_1_Desc%,,
+
+[SourceDisksFiles]
+DT3152.DRV=1
+DT315295.VXD=1
+
+[Strings]
+String0="Data Translation, Inc."
+String1="Data Translation, Inc."
+String2="DT3152 MACH Series Frame Grabber"
+DT3152.DeviceDesc="DT3152 MACH Series Frame Grabber"
+MediaClassName="Sound, video and game controllers"
+Disk_1_Desc="DT3152 Driver Installation Disk"

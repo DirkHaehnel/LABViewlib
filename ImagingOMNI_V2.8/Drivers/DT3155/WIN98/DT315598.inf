@@ -1,0 +1,86 @@
+; INF file for Data Translation DT3155 MACH Series device driver.
+; Copyright 1997, Data Translation Inc.
+
+; Version 1.01 Mar 17, 1997
+
+[Version]
+Signature=$CHICAGO$
+Class=MEDIA
+Provider=%String0%
+
+[Default File Settings]
+"STF_OVERWRITE"  = "OLDER"
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[DestinationDirs]
+DefaultDestDir=11
+DT3155.CopyList=11
+Config.CopyList=10
+
+[Manufacturer]
+%String1%=Generic
+
+[Generic]
+%String2%=DT3155.Install,PCI\VEN_8086&DEV_1223
+
+[DT3155.Install]
+CopyFiles=DT3155.CopyList,Config.CopyList
+DelFiles=DT3155.DelList
+AddReg=DT3155.VxD.AddReg,DT3155.Drv.AddReg
+LogConfig=DT3155.LogConfig
+UpdateInis=DT3155.UpdateInis
+Reboot
+
+[DT3155.CopyList]
+DT3155.DRV
+DT315595.VXD
+
+[Config.CopyList]
+DT3155AC.exe
+
+[DT3155.DelList]
+DT315595.VXD
+DT3155.DRV
+
+[DT3155.VxD.AddReg]
+HKLM,System\CurrentControlSet\Services\VxD\DT3155,StaticVxD,0,DT315595.vxd
+HKLM,System\CurrentControlSet\Services\VxD\DT3155,Start,1,00
+
+[DT3155.Drv.AddReg]
+HKLM,System\CurrentControlSet\Services\DT3155,OLIMG,0,OLIMG
+HKLM,System\CurrentControlSet\Services\DT3155,DisplayName,0,%DT3155.DeviceDesc%
+HKLM,System\CurrentControlSet\Services\DT3155,IsConfigured,0,FALSE
+HKLM,System\CurrentControlSet\Services\DT3155,NumBoards,1,00
+HKLM,System\CurrentControlSet\Control\MediaResources\mci\DT3155,Description,0,%DT3155.DeviceDesc%
+HKLM,System\CurrentControlSet\Control\MediaResources\mci\DT3155,Driver,,DT3155.DRV
+
+[Class.AddReg]
+HKR,,,0,%MediaClassName%
+HKR,,Icon,0,-1
+HKR,,Installer,0,mmci.dll
+
+[DT3155.LogConfig]
+ConfigPriority=DESIRED
+
+[DT3155.UpdateInis]
+system.ini,drivers,,"DT3155=DT3155.DRV",0
+system.ini,mci,,"DT3155=DT3155.DRV",0
+
+[ControlFlags]
+
+[SourceDisksNames]
+1=%Disk_1_Desc%,,
+
+[SourceDisksFiles]
+DT3155.DRV=1
+DT315595.VXD=1
+
+[Strings]
+String0="Data Translation, Inc."
+String1="Data Translation, Inc."
+String2="DT3155 MACH Series Frame Grabber"
+DT3155.DeviceDesc="DT3155 MACH Series Frame Grabber"
+MediaClassName="Sound, video and game controllers"
+Disk_1_Desc="DT3155 Driver Installation Disk"

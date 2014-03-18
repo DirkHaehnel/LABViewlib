@@ -1,0 +1,14 @@
+;***********************************************************************
+; SOURCE MEDIA DESCRIPTION       
+; ------------------------
+;***********************************************************************
+
+[Source Media Descriptions]
+    1  = "DT3152LS Setup Disk #1"  , TAGFILE = disk1
+
+
+[Installable.Drivers]
+DT3152LS = 1:DT3152LS.DRV, "DT3152LS", "DT-Open Layers DT3152LS Mach Series Frame Grabber",,
+
+[DT3152LS]
+1:DT3152LS.SYS

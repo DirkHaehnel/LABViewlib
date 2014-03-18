@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Simple_DLL", "Simple_DLL.vcproj", "{26A3F409-098B-48AA-8300-8EBC4D9CFB4C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL_Test", "..\..\DLL_Test\DLL_Test.vcproj", "{8F472320-774C-43A7-8B2A-CB6EE3E5429B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug_NIDAQ = Debug_NIDAQ
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{26A3F409-098B-48AA-8300-8EBC4D9CFB4C}.Debug_NIDAQ.ActiveCfg = Debug_NIDAQ|Win32
+		{26A3F409-098B-48AA-8300-8EBC4D9CFB4C}.Debug_NIDAQ.Build.0 = Debug_NIDAQ|Win32
+		{26A3F409-098B-48AA-8300-8EBC4D9CFB4C}.Release.ActiveCfg = Release|Win32
+		{26A3F409-098B-48AA-8300-8EBC4D9CFB4C}.Release.Build.0 = Release|Win32
+		{8F472320-774C-43A7-8B2A-CB6EE3E5429B}.Debug_NIDAQ.ActiveCfg = Debug_NIDAQ|Win32
+		{8F472320-774C-43A7-8B2A-CB6EE3E5429B}.Debug_NIDAQ.Build.0 = Debug_NIDAQ|Win32
+		{8F472320-774C-43A7-8B2A-CB6EE3E5429B}.Release.ActiveCfg = Release|Win32
+		{8F472320-774C-43A7-8B2A-CB6EE3E5429B}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

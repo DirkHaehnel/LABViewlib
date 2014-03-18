@@ -1,0 +1,33 @@
+; module-definition file for Acq2Hst -- used by LINK.EXE
+
+NAME	     Acq2Hst		; application's module name
+
+DESCRIPTION  'Acquire to Host DT-Open Layers Example Imaging Application'
+
+
+;By default, CODE can be moved in memory and discarded/reloaded
+CODE  PRELOAD MOVEABLE DISCARDABLE
+
+;By default, DATA must be MULTIPLE if program can be invoked more than once
+DATA  PRELOAD MOVEABLE MULTIPLE
+
+
+
+; Starting heap size (it can grow)
+
+HEAPSIZE     1024
+
+
+
+
+; All functions that will be called by any Windows routine
+; MUST be exported.  If the function definitions include the
+; __export keyword and the application is compiled using the
+; /GA option, the EXPORTS may be omitted.  Providing ordinal
+; numbers for all functions marked with __export provides
+; slightly more efficient code.
+
+EXPORTS
+	MainWndProc   @1   ; name of window processing function
+	About	      @2   ; name of "About" processing function
+

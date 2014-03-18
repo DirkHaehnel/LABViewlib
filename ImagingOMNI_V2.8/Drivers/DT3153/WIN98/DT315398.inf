@@ -1,0 +1,86 @@
+; INF file for Data Translation DT3153 MACH Series device driver.
+; Copyright 1997, Data Translation Inc.
+
+; Version 1.01 Mar 17, 1997
+
+[Version]
+Signature=$CHICAGO$
+Class=MEDIA
+Provider=%String0%
+
+[Default File Settings]
+"STF_OVERWRITE"  = "OLDER"
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[DestinationDirs]
+DefaultDestDir=11
+DT3153.CopyList=11
+Config.CopyList=10
+
+[Manufacturer]
+%String1%=Generic
+
+[Generic]
+%String2%=DT3153.Install,PCI\VEN_8086&DEV_1223
+
+[DT3153.Install]
+CopyFiles=DT3153.CopyList,Config.CopyList
+DelFiles=DT3153.DelList
+AddReg=DT3153.VxD.AddReg,DT3153.Drv.AddReg
+LogConfig=DT3153.LogConfig
+UpdateInis=DT3153.UpdateInis
+Reboot
+
+[DT3153.CopyList]
+DT3153.DRV
+DT315395.VXD
+
+[Config.CopyList]
+DT3153AC.exe
+
+[DT3153.DelList]
+DT315395.VXD
+DT3153.DRV
+
+[DT3153.VxD.AddReg]
+HKLM,System\CurrentControlSet\Services\VxD\DT3153,StaticVxD,0,DT315395.vxd
+HKLM,System\CurrentControlSet\Services\VxD\DT3153,Start,1,00
+
+[DT3153.Drv.AddReg]
+HKLM,System\CurrentControlSet\Services\DT3153,OLIMG,0,OLIMG
+HKLM,System\CurrentControlSet\Services\DT3153,DisplayName,0,%DT3153.DeviceDesc%
+HKLM,System\CurrentControlSet\Services\DT3153,IsConfigured,0,FALSE
+HKLM,System\CurrentControlSet\Services\DT3153,NumBoards,1,00
+HKLM,System\CurrentControlSet\Control\MediaResources\mci\DT3153,Description,0,%DT3153.DeviceDesc%
+HKLM,System\CurrentControlSet\Control\MediaResources\mci\DT3153,Driver,,DT3153.DRV
+
+[Class.AddReg]
+HKR,,,0,%MediaClassName%
+HKR,,Icon,0,-1
+HKR,,Installer,0,mmci.dll
+
+[DT3153.LogConfig]
+ConfigPriority=DESIRED
+
+[DT3153.UpdateInis]
+system.ini,drivers,,"DT3153=DT3153.DRV",0
+system.ini,mci,,"DT3153=DT3153.DRV",0
+
+[ControlFlags]
+
+[SourceDisksNames]
+1=%Disk_1_Desc%,,
+
+[SourceDisksFiles]
+DT3153.DRV=1
+DT315395.VXD=1
+
+[Strings]
+String0="Data Translation, Inc."
+String1="Data Translation, Inc."
+String2="DT3153 MACH Series Frame Grabber"
+DT3153.DeviceDesc="DT3153 MACH Series Frame Grabber"
+MediaClassName="Sound, video and game controllers"
+Disk_1_Desc="DT3153 Driver Installation Disk"

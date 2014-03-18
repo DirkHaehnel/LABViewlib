@@ -1,0 +1,45 @@
+[version]
+Signature="$WINDOWS NT$"
+Class=MEDIA
+ClassGUID="{4d36e96c-e325-11ce-bfc1-08002be10318}"
+Provider="Data Translation, Inc."
+
+[Manufacturer]
+"Data Translation, Inc."=Mfg0
+
+[Mfg0]
+%DT3154%=DT3154,PCI\VEN_8086&DEV_1223
+
+[DT3154.NT]
+DriverVer = 1/1/1998, 4.0.0.0
+AddReg=DT3154.AddReg
+CopyFiles=DT3154.CopyFiles.User,DT3154.CopyFiles.Kern
+Reboot
+
+[DT3154.NT.Services]
+AddService=,0x2
+
+[DT3154.AddReg]
+HKR,Drivers,SubClasses,,"DT3154"
+HKR,"Drivers\DT3154\DT3154.DRV", Driver,,DT3154.DRV
+HKR,"Drivers\DT3154\DT3154.DRV", Description,,%DT3154%
+
+[DT3154.CopyFiles.User]
+DT3154.DRV
+
+[DT3154.CopyFiles.Kern]
+DT3154.SYS
+
+[DestinationDirs]
+DT3154.CopyFiles.User = 11
+DT3154.CopyFiles.Kern = 12
+
+[SourceDisksNames]
+1 = "DT3154 Setup Disk #1","",1
+
+[SourceDisksFiles]
+DT3154.SYS=1
+DT3154.DRV=1
+
+[Strings]
+DT3154="DT3154 MACH Series Frame Grabber"

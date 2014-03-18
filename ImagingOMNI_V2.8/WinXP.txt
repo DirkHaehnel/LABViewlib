@@ -1,0 +1,20 @@
+Installing a DT-Open Layers device in Windows XP.
+
+ 
+1. Install your DT-Open Layers device and power up your computer.
+2. Start Windows XP.  The Found New Hardware dialog box appears.
+3. Click Next.
+4. Click Install from a list or specific location (advanced), then click Next.
+5. Insert the Imaging OMNI CD into the CD-ROM drive.
+6. Click Search for the best driver in the these locations.
+7. Click Include this location in the search.
+8. Click Browse, browse to x:\DRIVERS\DT315x\WIN2K (where x is the letter of your CD-ROM drive  and n is the last number of your board name, such as 2 for the DT3152), and click Open.  A Hardware Installation dialog box appears.
+9. Click Continue Anyway.  The  board configuration dialog appears.
+10. Click Add New to add a board to the configuration.  The  installation dialog box appears for the new board.
+11. Enter any unique name (or alias) for the   board, then click Add. Only one alias per installed board is allowed.  The  configuration dialog box appears.
+12. Select Enable Board to activate the board. If you want to retain the settings but disable the board (and therefore not use the memory), remove the checkmark next to Enable Board.
+13. Configure the setting as described in the getting started manual for your board.  
+14. Click Done.  The  configuration dialog box is redisplayed; you can see the name of the board you just added.
+15. Click Close to end the  board  configuration.  The Changes Saved dialog box appears.
+16. Click Finish.
+17. Remove the Imaging OMNI CD from the CD-ROM, then click Yes to restart the system.
