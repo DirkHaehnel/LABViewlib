@@ -1,0 +1,3 @@
+Delay ON, ns = 7000
+Delta delay OFF-ON, ns = 2500
+

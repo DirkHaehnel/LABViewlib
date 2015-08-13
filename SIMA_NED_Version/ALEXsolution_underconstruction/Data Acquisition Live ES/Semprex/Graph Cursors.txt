@@ -1,0 +1,66 @@
+
+                         NI Web Support Main
+
+                         KnowledgeBase Main
+
+                         New KB Entrie s
+
+                         Drivers & Downloads
+
+                         Technical Documents
+
+                         NI Developer Zone
+
+                         Customer Education
+
+                         Contact Support
+
+                         Search: 
+                           KnowledgeBase
+                           Tech Resources
+                           Entire Site
+
+
+
+
+
+
+
+
+
+
+                                            KnowledgeBase 
+
+                                            Locking the X-axis and Y-axis on a Graph, So That Cursors Can't Scroll
+                                            beyond the Edge of the Graph Display 
+
+                                            Product Group: LabVIEW Software
+
+                                            Product Name: LV-ALL
+
+                                            (Ver / Rev.): 3.1
+
+                                            Problem: Is it possible to lock the x-axis and y-axis on a Graph, so that a user can't scroll the cursor
+                                            beyond the set range of the axes.
+
+                                            Solution: Yes. To enable this, add the following line to the LabVIEW.ini file: scrollGraphCursors=False
+
+                                            If you wish to do this in an application (this requires LabVIEW 5.0 or higher plus the Application Builder
+                                            add-on), then you will need to distribute an .ini file with your application that is a duplicate of the labview.ini
+                                            file from your LabVIEW directory, with a few changes: The .ini file should have the same name as the
+                                            top-level VI and you must change the first line from "[LabVIEW]" to the same name as your VI. 
+
+                                            For example, if your top-level VI is called "MyApp.vi", then your .ini file should be "MyApp.ini" and the first
+                                            line in the file should be "[MyApp]". This will ensure that your application has the same settings as your
+                                            original VI. For more information, see the LabVIEW Application Builder Troubleshooting Wizard.
+
+                                            Related Links:
+
+                                            Fixed Ver #: 
+
+                                            Report Date: 02/15/95 
+                                            Last Review: 08/09/2000 04:01:47 PM
+
+                                            Document ID: 06E8PJ2X
+
+                                            Attachments: 
