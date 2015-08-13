@@ -1,0 +1,219 @@
+<HTML>
+<!-- Lotus-Domino (Release 5.0.4a - July 24, 2000 on Solaris Sparc) -->
+<HEAD>
+<link rel=stylesheet type="text/css" href="http://www.ni.com/css/main.css">
+<meta name="ContentClass" content="Technical">
+<meta name="ContentType" content="KnowledgeBase">
+<meta name="ShortTitle" content="Locking the X-axis and Y-axis on a Graph, So That Cursors Can't Scroll beyond the Edge of the Graph Display">
+<meta name="Language" content="English">
+<meta name="description" content="Is it possible to lock the x-axis and y-axis on a Graph, so that a user can't scroll the cursor beyond the set range of the axes.">
+<meta name="date" content="2000-08-09">
+</head><body><form class="blackbg"></form></body><TITLE>KnowledgeBase - Locking the X-axis and Y-axis on a Graph, So That Cursors Can't Scroll beyond the Edge of the Graph Display - National Instruments</TITLE></HEAD>
+<BODY TEXT="000000" BGCOLOR="FFFFFF" bgcolor="#FFFFFF" text="#000000" link="#0000ff" alink="#FF0000" vlink="#660000">
+
+<FORM METHOD=post ACTION="/public.nsf/3efedde4322fef19862567740067f3cc/d36b6081662a25a0862561640057494d?SaveDocument" NAME="_DominoForm">
+<INPUT TYPE=hidden NAME="%%ModDate" VALUE="862569970072F36C"><script language="JavaScript1.2">document.writeln( '<script src="http://www.ni.com/js/up_jslib.js"><\/script>');</script>
+<font face="geneva,arial,helvetica" size="-1">
+<div align="center">
+<table border=0 cellpadding=0 cellspacing=0 bgcolor="#FFFFFF">
+ <tr>
+  <td>
+  <div align="left">
+  
+   <table border=0 cellpadding=0 cellspacing=0>
+    <tr>
+     <td width="740" bgcolor="#000000">
+      <table width=740 border=0 cellspacing=0 cellpadding=0 bgcolor="#000000">
+       <tr>
+        <td width=260 rowspan=3 align="center" valign="bottom"><a href="http://www.ni.com" class="black"><img src="http://www.ni.com/graphics/core/base_logo.gif" width=260 height=49 alt="National Instruments" border=0></a></td>
+        <td width=472 colspan=4><img src="http://www.ni.com/images/black.gif" width=472 height=7></td>
+        <td rowspan=4><img src="http://www.ni.com/images/black.gif" width=8 height=1 border=0></td>
+       </tr>  
+       <tr>    
+        <td width=16 height=45><img src="http://www.ni.com/images/black.gif" width=16 height=45 border=0></td><td><a href="https://digital.ni.com/cesched.nsf/Registration+Form?OpenForm"><img src="http://www.ni.com/graphics/banners/custed/banner_ce_preregister.gif" width=225 height=45 alt="" border=0 class="black"></a></td><td><img src="http://www.ni.com/graphics/core/m_vert_bar.gif" width="7" height="45" border="0"></td><td><a href="http://www.ni.com/custed/demo.htm"><img src="http://www.ni.com/graphics/banners/custed/banner_ce_lv_training_cd.gif" width=225 height=45 alt="" border=0></a></td>
+      </tr>
+       <tr>
+        <td colspan=4><img src="http://www.ni.com/images/invis.gif" width=472 height=4></td>
+       </tr>
+       <tr>
+        <td colspan=5 valign="top"><a href="http://www.ni.com/imagemap/base_navbar.map"><img src="http://www.ni.com/graphics/core/base_navbar.gif" width=732 height=30 ISMAP border=0></td>
+       </tr>
+      </table>
+     </td>
+     <td bgcolor="#FFFFFF"><img src="http://www.ni.com/images/invis.gif"></td>
+    </tr>
+   </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <table border=0 cellpadding=0 cellspacing=0>
+    <tr>
+    <div align="left">
+    
+     <td valign="top" width=150>
+      <table border=0 cellpadding=0 cellspacing=0 width=150 nowrap>
+       <tr>
+        <td width=7 bgcolor="#000000" valign="bottom"><img src="http://www.ni.com/images/black.gif" width=7 height=1></td>
+        <td bgcolor="#000000" width=136 valign="top">
+        <font face="geneva,arial,helvetica" size="-1" color="#ffffff"> <p><a href="http://www.ni.com/support/"><font color="#ffffff" class="news">NI Web Support Main</font></a></p><p><a href="http://digital.ni.com/public.nsf/$$Search"><font color="#ffffff" class="news">KnowledgeBase Main</font></a></p><p><a href="http://digital.ni.com/public.nsf/web/lastweek?OpenView&ExpandView"><font color="#ffffff" class="news">New KB Entries</font></a></p><p><a href="http://www.ni.com/support/dnldgtwy.htm"><font color="#ffffff" class="news">Drivers & Downloads</font></a></p><p><a href="http://www.ni.com/support/techdocs.htm"><font color="#ffffff" class="news">Technical Documents</font></a></p><p><a href="http://www.ni.com/zone/"><font color="#ffffff" class="news">NI Developer Zone</font></a></p><p><a href="http://www.ni.com/custed/"><font color="#ffffff" class="news">Customer Education</font></a></p><p><a href="http://www.ni.com/support/contact.htm"><font color="#ffffff" class="news">Contact Support</font></a></p>
+</form>
+<form name="search" action="http://www.ni.com/cgi-bin/search/search.cgi" class="blackbg" onsubmit="return(FormatAndSend());">
+<font color="#ffffff" class="news">
+<b>Search: </b><br>
+<input type=radio name="scope"  value="knowledgebase">KnowledgeBase<br> <input type=radio name="scope"  value="techResources">Tech Resources<br><input type=radio name="scope"  value="site" CHECKED>Entire Site<br>
+<br>
+<div class="sidesearch"><INPUT type=text name="query" size=15 ><br>
+<input type=image src="http://www.ni.com/graphics/blue_seek.gif" align=right alt="Seek" width=44 height=19 border=0 >
+</div>
+</font>
+</form>
+   <br>
+        </font>
+        </td>
+        <td width=7 bgcolor="#000000">
+        <img src="http://www.ni.com/images/black.gif" width=7 height=1>
+<script language="JavaScript">
+         document.write('<form method=post name = "DominoForm1" action="' + document.forms[1].action + '">');           
+</script>
+<script language="JavaScript">
+function FormatAndSend(){
+	var frm = document.search;
+                frm.query.value = replaceChars(frm.query.value);
+		
+	if (frm.query.value=="")
+		return false;
+		
+	return true;
+}
+function replaceChars (textstring) {
+// function replaces ampersands with "AND"
+ 	tempstring = "";
+ 		for (i=0; i < textstring.length; i++) {
+  			tempchar = textstring.charAt(i);
+  			 if (tempchar == "&") {
+   				tempstring += "AND";
+  			}
+  			else {
+   				tempstring += tempchar;
+  			}
+ 		}
+ 	return tempstring;
+}
+</script>   
+        </td>
+      </tr>     
+ <tr>
+        <td colspan=3 rowspan=2>
+        <img src="http://www.ni.com/graphics/core/curve.gif" width=150 height=21 align="bottom" border=0 alt=""></td>
+       </div>
+        
+       </tr>
+      </table>
+     </td>
+     <td bgcolor="#FFFFFF" valign="top">
+      <table border=0 cellpadding=0 cellspacing=0>
+       <tr>
+        <td rowspan=2><img src="http://www.ni.com/images/invis.gif" width=15 height=1 border=0></td>
+        <td width=575>
+          <font face="geneva,arial,helvetica" size="-1">         <BR><font size="+1" class="h2">KnowledgeBase</font>
+    <p>
+    <font size="+1" class="h3">Locking the X-axis and Y-axis on a Graph, So That Cursors Can't Scroll beyond the Edge of the Graph Display</font>
+</p>
+<font face="geneva,arial,helvetica" size="-1">
+<p><b>Product Group:</b>  LabVIEW Software</p>
+<p><b>Product Name:</b>  LV-ALL</p>
+<p><b>(Ver / Rev.):</b>  3.1</p>
+<p><b>Problem:</b>  Is it possible to lock the x-axis and y-axis on a Graph, so that a user can't scroll the cursor beyond the set range of the axes.</p>
+<p><b>Solution:</b>  Yes.  To enable this, add the following line to the LabVIEW.ini file:  scrollGraphCursors=False<br><br>If you wish to do this in an application (this requires LabVIEW 5.0 or higher plus the Application Builder add-on), then you will need to distribute an .ini file with your application that is a duplicate of the labview.ini file from your LabVIEW directory, with a few changes:  The .ini file should have the same name as the top-level VI and you must change the first line from "[LabVIEW]" to the same name as your VI.  <br><br>For example, if your top-level VI is called "MyApp.vi", then your .ini file should be "MyApp.ini" and the first line in the file should be "[MyApp]".  This will ensure that your application has the same settings as your original VI.  For more information, see the <a href="http://www.ni.com/support/labview/toolkits/appbuild/"><b>LabVIEW Application Builder Troubleshooting Wizard</b></a>.</p>
+<p><b>Related Links:</b><br>
+</p>
+<p><b>Fixed Ver #:</b>  </p>
+<p><b>Report Date:</b>  02/15/95
+<br><b>Last Review:</b>  08/09/2000 04:01:47 PM</p>
+<p><b>Document ID:</b>  06E8PJ2X</p>
+<p><b>Attachments:</b>  	</p>
+</form>
+<form name=suppfeed method = post action ="/public.nsf/websearch/D36B6081662A25A0862561640057494D?SaveDocument">
+<script language="javascript">
+function validate(){
+	document.suppfeed.submit();
+	return;
+}
+</script>
+<TABLE bgcolor="#000000" cellspacing=0 cellpadding=1 border=0 width=450>
+<TR>
+<TD valign=top>
+        <TABLE bgcolor="#ffffff" cellspacing=0 cellpadding=2 border=0 width="100%">
+		<TR>
+		<TD bgcolor="#0066cc" colspan=2>
+		<FONT face="geneva,arial,helvetica" size="-1" color="#ffffff"><B>Help Us! This Document... </B>
+		</FONT>
+		</TD>
+		</TR>
+		<TR>
+		<TD nowrap>
+		<FONT face="geneva,arial,helvetica" size="-1">
+		<INPUT TYPE=radio NAME="ValueAnalysis" VALUE="IncNumberProbSolved">Answered my question or solved my problem<BR>
+		<INPUT TYPE=radio NAME="ValueAnalysis" VALUE="IncNumberGood">Is good but didn't resolve my issue<BR>
+		<INPUT TYPE=radio NAME="ValueAnalysis" VALUE="IncNumberNeedsWork">Needs some work
+		</FONT><BR><!--
+<INPUT NAME="ValueAnalysis" VALUE="">-->
+		</TD>  
+		<!--</TD>-->
+   	     	<TD valign=top>   E-mail Address (Optional):<BR><INPUT NAME=EmailAdd size=25><!--
+<INPUT NAME="EmailAdd" VALUE="">-->
+		</TD>
+		</TR>
+	        	<TR>
+		<TD colspan=2>
+		        <TABLE bgcolor="#ffffff" border=0 WIDTH="100%">
+			<TR>
+		        	<TD>
+			<TEXTAREA cols=40 rows=3 name=Comments wrap="physical">Enter additional comments here.</TEXTAREA><!--
+<INPUT NAME="Comments" VALUE="">-->       
+			</TD>
+			<td valign=baseline>
+			<a href = "javascript:validate()"><img src="http://www.ni.com/graphics/buttons/submit.gif" border ="0" align="right"></a>
+			</td>        			
+			</TR>
+		        </TABLE>        
+		</TD>
+		</TR>
+	</TABLE>
+</TD>
+</TR>
+</TABLE>
+<script>document.write('<INPUT TYPE=hidden name="FeedURL" VALUE="' + document.location.href + '">')</script>
+</form>
+<!--
+<INPUT TYPE=submit VALUE="">-->       </td>
+       </tr>
+       <tr>
+        <td width=575>
+        <p>
+        <hr size=1 noshade width="575" align ="left">
+         <table width=575 align="left">
+          <tr>
+           <td>
+    	   <div align="center" class="small">&copy; 2000 National Instruments Corporation.  All rights reserved.
+           <br>
+           <a href="http://www.ni.com/legal/termsofuse.htm" class="small">Terms of Use</a>&nbsp; | &nbsp;<a href="http://www.ni.com/legal/privacy.htm" class="small">Privacy Statement</a>&nbsp; | &nbsp;<a href="http://www.ni.com/legal/" class="small">Terms of Sale</a>
+           </div>
+           </td>
+          </tr> 
+        </table>
+    	</p>
+        </td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>  
+</table>
+</div></FORM>
+</BODY>
+</HTML>

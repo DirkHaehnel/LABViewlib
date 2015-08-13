@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding = "Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.00"
+	Name="Get ACA Element U32"
+	ProjectGUID="{09CCBD3B-37BD-4073-B475-AAB17A771AD6}"
+	SccProjectName=""
+	SccLocalPath="">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory=".\Release"
+			IntermediateDirectory=".\Release"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="C:\Program Files\National Instruments\LabVIEW 6\cintools"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;GETACAELEMENTU32_EXPORTS"
+				StringPooling="TRUE"
+				RuntimeLibrary="2"
+				StructMemberAlignment="1"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderFile=".\Release/Get ACA Element Double.pch"
+				AssemblerListingLocation=".\Release/"
+				ObjectFile=".\Release/"
+				ProgramDataBaseFileName=".\Release/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				CommandLine="&quot;C:\Program Files\National Instruments\LabVIEW 6\cintools\lvsbutil&quot; &quot;$(TargetName)&quot; -d &quot;$(SolutionDir)$(OutDir)&quot;
+"
+				Outputs="$(OutDir)$(TargetName).lsb"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib"
+				OutputFile=".\Release/Get ACA Element Double.dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				ModuleDefinitionFile="..\..\..\..\..\Program Files\National Instruments\LabVIEW 6\cintools\lvsbmain.def"
+				ProgramDatabaseFile=".\Release/Get ACA Element Double.pdb"
+				ImportLibrary=".\Release/Get ACA Element Double.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Release/Get ACA Element Double.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1033"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory=".\Debug"
+			IntermediateDirectory=".\Debug"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="C:\Program Files\National Instruments\LabVIEW 6\cintools"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;GETACAELEMENTU32_EXPORTS"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="2"
+				StructMemberAlignment="1"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderFile=".\Debug/Get ACA Element Double.pch"
+				AssemblerListingLocation=".\Debug/"
+				ObjectFile=".\Debug/"
+				ProgramDataBaseFileName=".\Debug/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				CommandLine="&quot;C:\Program Files\National Instruments\LabVIEW 6\cintools\lvsbutil&quot; &quot;$(TargetName)&quot; -d &quot;$(SolutionDir)$(OutDir)&quot;
+"
+				Outputs="$(OutDir)$(TargetName).lsb"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib"
+				OutputFile=".\Debug/Get ACA Element Double.dll"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				ModuleDefinitionFile="..\..\..\..\..\Program Files\National Instruments\LabVIEW 6\cintools\lvsbmain.def"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\Debug/Get ACA Element Double.pdb"
+				ImportLibrary=".\Debug/Get ACA Element Double.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Debug/Get ACA Element Double.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1033"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File
+				RelativePath=".\Get ACA Element Double.c">
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\Program Files\National Instruments\LabVIEW 6\cintools\lvsbmain.def">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+		</Filter>
+		<File
+			RelativePath="..\..\..\..\..\Program Files\National Instruments\LabVIEW 6\cintools\cin.obj">
+		</File>
+		<File
+			RelativePath="..\..\..\..\..\Program Files\National Instruments\LabVIEW 6\cintools\labview.lib">
+		</File>
+		<File
+			RelativePath="..\..\..\..\..\Program Files\National Instruments\LabVIEW 6\cintools\lvsb.lib">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

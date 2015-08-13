@@ -1,0 +1,101 @@
+library Samc___;
+
+
+type
+  TFilter = array[1..6] of uint16;  {P, I, D or V, ILm, Vff, MaxErr}
+  TMotion = array[1..2] of int32;   {MaxVel, MaxAcl}
+
+
+int32 SAMC_SetAddr (uint16 Addr);
+  //sets address for controller card
+  //valid values: 300h, 310h, 320h...3F0h, default=340h
+  //returns controller chipset version number
+
+void SAMC_Reset ();
+  //resets controller to power-on defaults
+  //sets to zero on all axes:  filter & motion parms, travel range
+
+void SAMC_Init (uint8 Axis, uint8 MMode);
+  //initializes and enables specified axis for operation
+  //Axis= 1 for X, 2 for Y or Theta
+  //MMode= Motor Mode, ASCII 'P' for PWM (default), 'D' for DAC
+
+void SAMC_DefParms (uint8 Axis, uint8 FMode,
+            TFilter Filter, TMotion Motion);
+  //defines filter and motion parameters for specified axis
+  //STAGE WILL NOT RUN PROPERLY WITHOUT DEFINING APPROPRIATE PARAMETERS
+  //FMode= filter mode, ASCII 'V' for PIV (default), or 'D' for PID
+  //***WARNING!*** TO AVOID POSSIBLE SERIOUS DAMAGE TO EQUIPMENT,
+  //               CONSULT SEMPREX FOR APPROPRIATE VALUES!!!
+
+int32 SAMC_Pos (uint8 Axis);
+  //returns the current position in encoder counts for specified axis
+
+uint8 SAMC_MotionErr (uint8 Axis);
+  //returns true(1) if motion error was encountered on specified axis
+  //a motion error could be caused by an obstruction, motor failure, 
+  //  unconnected cable, etc., and will result in the controller
+  //  disabling the motor on that axis
+
+single SAMC_GetVel (uint8 Axis);
+  //returns the current velocity setting for specified axis
+  //  as a fraction of max velocity, a value from 0 to 1
+
+single SAMC_GetAcl (uint8 Axis);
+  //returns the current acceleration setting for specified axis
+  //  as a fraction of max acceleration, a value from 0 to 1
+
+int32 SAMC_Dest (uint8 Axis);
+  //returns the destination position for the specified axis
+
+void SAMC_ClrMotionErr (uint8 Axis);
+  //attempts to clear a motion error, thereby re-enabling the motor,
+  //  for the specified axis
+  //exercise caution when using this command, physical intervention by
+  //  an operator may be required prior to issuing this command
+
+int32 SAMC_Range (uint8 Axis);
+  //returns the stage's travel range out from center position
+  //  in encoder counts for the specified axis
+
+void SAMC_SetVel (uint8 Axis, single Vel);
+  //sets velocity for the specified axis
+  //Vel= fraction of max velocity, a value from 0 to 1
+
+uint8 SAMC_SetAcl (uint8 Axis, single Acl);
+  //sets acceleration for the specified axis
+  //Acl= fraction of max acceleration, a value from 0 to 1
+  //returns true(1) if successful -- axis cannot be in motion when
+  //  this command is issued
+
+uint8 SAMC_MoveTo (uint8 Axis, int32 Pos);
+  //sets destination position in encoder counts for specified axis
+  //returns false(0) if position is out of range or there was a motion
+  //  error
+
+uint8 SAMC_FindRange (uint8 Axis);
+  //automatically finds safe travel range for specified axis
+  //this function must be called repeatedly until returning true(1)
+  //  which indicates the process has completed
+  //moves axis slowly to minimum position, returns quickly to start position,
+  //  moves axis slowly to maximum position, moves quickly to center position
+  //after completing, call SAMC_Range function to verify if successful
+
+void SAMC_DefRange (uint8 Axis, int32 Rnge);
+  //defines stage's travel range out from current position
+  //  in encoder counts for the specified axis
+  //***WARNING!*** IMPROPER SETTING OF TRAVEL RANGE AND THEN RUNNING
+  //  STAGE AT HIGH SPEED CAN RESULT IN SERIOUS DAMAGE TO THE EQUIPMENT!!!
+
+
+{*** Proper startup sequence of commands ***
+optional:  SAMC_SetAddr (required if using address other than 340h)
+                        (can be used to detect existance of controller)
+optional:  SAMC_Reset
+required:  SAMC_Init
+required:  SAMC_DefParms
+required:  SAMC_FindRange (recommended) or SAMC_DefRange
+optional:  SAMC_Range (to check actual travel range)
+
+*** Proper shutdown ***
+required:  SAMC_Reset  }
