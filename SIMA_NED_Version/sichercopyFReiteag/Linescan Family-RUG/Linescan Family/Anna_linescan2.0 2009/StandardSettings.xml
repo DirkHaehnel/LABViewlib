@@ -1,0 +1,166 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>9.0</Version>
+<Cluster>
+<Name>StandardSettings</Name>
+<NumElts>15</NumElts>
+<Cluster>
+<Name>threshold</Name>
+<NumElts>2</NumElts>
+<U32>
+<Name>max</Name>
+<Val>100</Val>
+</U32>
+<U32>
+<Name>min</Name>
+<Val>20</Val>
+</U32>
+</Cluster>
+<Boolean>
+<Name>RGB or false color</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>16bit</Name>
+<Val>0</Val>
+</Boolean>
+<U16>
+<Name>log/lin axis</Name>
+<Val>0</Val>
+</U16>
+<Boolean>
+<Name>spotsize button</Name>
+<Val>0</Val>
+</Boolean>
+<U16>
+<Name>Pixelsize</Name>
+<Val>0</Val>
+</U16>
+<Boolean>
+<Name>autoscale x</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>autoscale y</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>correlation</Name>
+<Val>0</Val>
+</Boolean>
+<I32>
+<Name>ADC-Resolution</Name>
+<Val>0</Val>
+</I32>
+<Cluster>
+<Name>F2-lifetime</Name>
+<NumElts>8</NumElts>
+<Boolean>
+<Name>display tau</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>display F2</Name>
+<Val>0</Val>
+</Boolean>
+<EL>
+<Name>Palette Number lifetime</Name>
+<Choice>Gray</Choice>
+<Choice>Binary</Choice>
+<Choice>Gradient</Choice>
+<Choice>Rainbow</Choice>
+<Choice>Temperature</Choice>
+<Val>0</Val>
+</EL>
+<EL>
+<Name>Palette Number F2</Name>
+<Choice>Gray</Choice>
+<Choice>Binary</Choice>
+<Choice>Gradient</Choice>
+<Choice>Rainbow</Choice>
+<Choice>Temperature</Choice>
+<Val>0</Val>
+</EL>
+<DBL>
+<Name>max tau-Value</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>min tau-Value</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>max F2-Value</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>min F2-Value</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+<U16>
+<Name>TAC-Window 1</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>TAC-Window 2</Name>
+<Val>0</Val>
+</U16>
+<Cluster>
+<Name>false color palette</Name>
+<NumElts>12</NumElts>
+<U32>
+<Name>1</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>2</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>3</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>4</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>5</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>6</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>7</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>8</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>8 2</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>8 3</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>8 4</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>8 5</Name>
+<Val>0</Val>
+</U32>
+</Cluster>
+<DBL>
+<Name>rebinning</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+</Cluster>
+</LVData>

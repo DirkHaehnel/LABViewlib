@@ -1,0 +1,92 @@
+from enaml.widgets.api import *
+from enaml.layout.api import vertical
+from enaml.stdlib.fields import FloatField, IntField
+from alex.gui.fields.fields import MyFloatField
+from alex.models import FretCorrections
+
+enamldef BkgCorrOptionsPanel(Container): bkg_options_container:
+    attr gui_option : FretCorrections
+    constraints = [bkg.width == accurate.width,
+                   vertical(top, threshold_form, famous_apply, bottom),]
+    Form: threshold_form:
+        GroupBox: bkg:
+            title << 'Background (Counts /ms)'
+            flat = True
+            GroupBox: accurate:
+                title << 'Step 1'
+                Label:
+                    text = 'DD'
+                MyFloatField: bkg_DD:
+                    value << gui_option.bkg_DD
+                    # submit_triggers = ['lost_focus', 'return_pressed']
+                Label:
+                    text = 'DA'
+                MyFloatField: bkg_DA:
+                    value << gui_option.bkg_DA
+                Label:
+                    text = 'AA'
+                MyFloatField: bkg_AA:
+                    value << gui_option.bkg_AA
+                    # submit_triggers = ['lost_focus', 'return_pressed']
+
+            GroupBox: accurate:
+                title << 'Automagic Background'
+                # Thorben Hack Field
+                Label:
+                    text = 'Cutoff (Counts /ms)'
+                MyFloatField: cutoff:
+                    value = 10.0
+
+                PushButton: thorben_hack_button:
+                    text = 'Calculate!'
+                    clicked ::
+                        gui_option.thorben_hack = cutoff.value    # Fire the event!
+                
+            
+        GroupBox: accurate:
+            title << 'Accurate FRET Corrections'
+            flat = True
+            GroupBox: accurate:
+                title << 'Step 2'
+                Label:
+                    text = 'Ebkg position of D-only'
+                MyFloatField: E_donly:
+                    value << gui_option.E_donly
+                    # submit_triggers = ['lost_focus', 'return_pressed']
+                Label:
+                    text = 'Sbkg position of A-only'
+                MyFloatField: S_aonly:
+                    value << gui_option.S_aonly
+            GroupBox: accurate:
+                title << 'Step 3'
+                Label:
+                    text = u'\u03B3'
+                MyFloatField: gamma:
+                    value << gui_option.gamma
+                Label:
+                    text = u'\u03B2'
+                MyFloatField: beta:
+                    value << gui_option.beta
+
+                CheckBox: S_ref:
+                    text = u'PIFE correction'
+                    checked := gui_option.PIFE_correct
+                Label:
+                    text = u'Sref'#\u1D63\u2091
+                MyFloatField: S_ref:
+                    value << gui_option.S_ref
+                
+        
+    PushButton: famous_apply:
+        text << 'Apply'
+        clicked ::
+            print 'clicked!'
+            bkg_options_container.gui_option.bkg_DD = bkg_DD.value
+            bkg_options_container.gui_option.bkg_DA = bkg_DA.value
+            bkg_options_container.gui_option.bkg_AA = bkg_AA.value
+            bkg_options_container.gui_option.E_donly = E_donly.value
+            bkg_options_container.gui_option.S_aonly = S_aonly.value
+            bkg_options_container.gui_option.gamma = gamma.value
+            bkg_options_container.gui_option.beta = beta.value
+            bkg_options_container.gui_option.S_ref = S_ref.value
+            bkg_options_container.gui_option.updated = True

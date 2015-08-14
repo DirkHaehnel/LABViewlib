@@ -1,0 +1,136 @@
+#------------------------------------------------------------------------------
+#  Copyright (c) 2012, Enthought, Inc.
+#  All rights reserved.
+#------------------------------------------------------------------------------
+""" An example of the `DockPane` widget.
+
+This example demonstrates the use of the `DockPane` widget. A `DockPane`
+can have at most one child, which must be a 'Container` widget. The 
+sizing of the `DockPane` is largely determined by the size constraints
+of the child `Container`. A `DockPane` must be used as the child of 
+a `MainWindow`. There are several attribute on a `DockPane` which allow
+the developer to control the behavior of the `DockPane`.
+
+Implementation Notes:
+    
+    The docking facilities in Wx are very weak. Due to various technical 
+    limitations, the sizing of `DockPane` widgets in Wx is not nearly as
+    good as it is on Qt. The cost of using a `DockPane` in Wx is also 
+    *much* higher than in Qt due to Wx's horribly inefficient docking 
+    implementation. If docking is required for a particular application, 
+    strongly prefer the Qt backend over Wx (this is generally a good 
+    life-rule).
+
+"""
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import *
+# from enaml.stdlib.fields import FloatField
+from ..fields.fields import MyFloatField
+
+
+enamldef Sm2burstParamsWindow(Window): sm2burst_window:
+    attr params
+    Container:
+        Sm2burstSettings:
+            params := sm2burst_window.params
+        Container:
+            PushButton:
+                text = 'OK'
+                clicked ::
+                    sm2burst_window.close()
+            PushButton:
+                text = 'Cancel'
+                clicked ::
+                    sm2burst_window.close()
+
+enamldef Sm2burstSettings(Container): sm2burst:
+    """ Create a page for all the sm2burst options """
+    attr params # ReducParams object, needed to initiate the object
+    padding = None
+    constraints << [vertical(top, alex_box, mode_box, binned_box, threshold_box.when(threshold_box.visible), spacer, bottom),
+                   horizontal(left, spacer.flex(), alex_box, spacer.flex(), right),
+                   horizontal(left, spacer.flex(), mode_box, spacer.flex(), right),
+                   horizontal(left, spacer.flex(), binned_box, spacer.flex(), right),
+                   horizontal(left, spacer.flex(), threshold_box, spacer.flex(), right),
+                   align('midline', parameters, mode, binned, threshold),
+                   ]
+    GroupBox: alex_box:
+        title = 'ALEX Parameters'
+        share_layout = True
+        Form: parameters:
+            share_layout = True
+            Label:
+                text = 'Time Resolution'
+            MyFloatField:
+                value := sm2burst.params.time_resolution
+            Label:
+                text = 'Alex Period'
+            MyFloatField:
+                value := sm2burst.params.alex_period
+            Label:
+                text = 'First Half'
+            MyFloatField:
+                value := sm2burst.params.first_half
+            Label:
+                text = 'Green Laser On'
+            MyFloatField:
+                value := sm2burst.params.green_laser_on
+            Label:
+                text = 'Green Laser Off'
+            MyFloatField:
+                value := sm2burst.params.green_laser_off
+            Label:
+                text = 'Red Laser On'
+            MyFloatField:
+                value := sm2burst.params.red_laser_on
+            Label:
+                text = 'Red Laser Off'
+            MyFloatField:
+                value := sm2burst.params.red_laser_off
+    GroupBox: mode_box:
+        share_layout = True
+        title = 'Mode'
+        Form: mode:
+            share_layout = True
+            Label:
+                text = 'Burst Search Mode'
+            ComboBox: mode_combo_box:
+                index := sm2burst.params.reduction_mode
+                items = ['APBS', 'DCBS', 'RedCy5', 'Gexc', 'Binned']
+    GroupBox: binned_box:
+        title = 'Binned Search Parameters'
+        share_layout = True
+        Form: binned:
+            share_layout = True
+            Label:
+                text = 'Binning Time'
+            MyFloatField:
+                read_only << mode_combo_box.index != 4
+                value := sm2burst.params.binning_time
+    GroupBox: threshold_box:
+        title = 'Burst Search Parameters'
+        share_layout = True
+        Form: threshold:
+            share_layout = True
+            Label:
+                text = 'Arrival Threshold'
+            MyFloatField:
+                read_only << mode_combo_box.index == 4
+                value := sm2burst.params.arrival_threshold
+            Label:
+                text = 'Minimal Neighbors'
+            SpinBox:
+                id: sbox
+                read_only << mode_combo_box.index == 4
+                maximum = 10**6
+                minimum = 0
+                value := sm2burst.params.min_neighbors
+            Label:
+                text = 'Minimal number of photons per burst'
+            SpinBox:
+                id: sbox 
+                read_only << mode_combo_box.index == 4
+                maximum = 10**6
+                minimum = 0
+                value := sm2burst.params.min_photons_per_burst

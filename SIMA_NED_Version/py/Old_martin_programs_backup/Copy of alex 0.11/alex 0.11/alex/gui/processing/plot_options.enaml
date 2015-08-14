@@ -1,0 +1,76 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import FloatField, IntField
+from alex.gui.fields.fields import MyFloatField
+
+enamldef PlotOptionsPanel(Container): plot_options_container:
+    attr plot_options
+
+    # constraints = [threshold_form.width == contents_width]
+
+    GroupBox: weighted_box:
+        flat = True
+        title << 'Weigh bursts by their statistical significance'
+        CheckBox: weighted:
+            checked = plot_options_container.plot_options.weighted
+        # Label: weighted_label:
+        #     text = 'Weigh bursts by their statistical significance'
+            # share_layout = True
+    Form: threshold_form:
+        # share_layout = True
+        constraints = [ #hbox(weighted, weighted_label, spacer),
+                        bin_box.left == contents_left,
+                        s_box.width == e_box.width,
+                        s_box.width == bin_box.width,
+                        s_box.width == famous_button.width,
+                        ]
+        # Container: ranges:
+        #     # padding = None
+        #     constraints = [s_box.width == e_box.width,]
+        GroupBox: s_box:
+            title << 'S range'
+            Label:
+                text = 'Minimum'
+            MyFloatField: S_min:
+                value << plot_options_container.plot_options.S_min
+
+            Label:
+                text = 'Maximum'
+            MyFloatField: S_max:
+                value << plot_options_container.plot_options.S_max
+
+        GroupBox: e_box:
+            title << 'E range'
+            Label:
+                text = 'Minimum'
+            MyFloatField: E_min:
+                value << plot_options_container.plot_options.E_min
+
+            Label:
+                text = 'Maximum'
+            MyFloatField: E_max:
+                value << plot_options_container.plot_options.E_max
+
+        GroupBox: bin_box:
+            title << 'Bins'
+            Label:
+                text = 'E'
+            IntField: E_bins:
+                value = plot_options_container.plot_options.bins[1]
+
+            Label:
+                text = 'S'
+            IntField: S_bins:
+                value = plot_options_container.plot_options.bins[0]
+
+        PushButton: famous_button:
+            text << 'Apply'
+            clicked ::
+                plot_options_container.plot_options.weighted = weighted.checked
+                plot_options_container.plot_options.S_min = S_min.value
+                plot_options_container.plot_options.S_max = S_max.value
+                plot_options_container.plot_options.E_min = E_min.value
+                plot_options_container.plot_options.E_max = E_max.value
+                plot_options_container.plot_options.bins[0] = S_bins.value
+                plot_options_container.plot_options.bins[1] = E_bins.value
+                plot_options_container.plot_options.update = True

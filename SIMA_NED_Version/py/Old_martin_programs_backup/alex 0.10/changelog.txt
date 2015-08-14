@@ -1,0 +1,18 @@
+Important changes from 0.9 to 0.10:
+- Export to pdf function introduced! This means it is now possible to print all the relevant data about a plot to a single A4 that you can bring to (sub)group meetings. Discussions with your boss have never been easier.
+- Dataset Viewer: Plot any two properties of a (merged) dataset against each other in a simple plot. This can be used to look at burst size distribution or similar properties. The keyword Count is used to indicate the number of occurrences of every number in a list is counted, e.g. how often does the number 4 occur in [1,4,4,3,2,4]? 3 times. The keyword Unique is used to reduce the previous list to [1,2,3,4] because it gives the unique elements of a list and sorts them. Therefore to view the burstsize distribution in the AA channel, one would plot Unique(AA) vs Count(AA).
+This view also has a fully functional fitting panel in a style similar to the Histograms.
+- Minor changes to the Accurate FRET panel in the GUI to remind the users that the accurate FRET is a three step process.
+- [bugfix] After background correction, negative values for the counts in a burst were possible. Since this is physically impossible, negative values are forced to zero instead.
+- [bugfix] Error in the binning algorithm in the C++ core. This was only noticed when running a big dataset. An unsigned long turned out to be two small to store the timing information. This was therefore changed to a unsigned long long.
+- [bugfix] 'Select peak' rectangles can now be drawn in any direction.
+- [bugfix] Selecting an S or E range in the 'Plot Options' panel, and then going back to a larger range did not work: data that was thrown away could not be retrieved. This was solved by first reapplying thresholds, which automatically starts of with the entire dataset again, and then re-cropping it to the desired size.
+- [bugfix] Selecting Guesses works right away without the need to update the plot first. (By silently forcing an update)
+
+Important changes from 0.7 to 0.9:
+- Weighing algorithm reclassified as a plot option, not a threshold.
+- Addition of S-range as threshold for the 1D E* histogram. This is now fully functional and also coupled to the hotbutton 'Select S range' in the toolbar.
+- Distinct default setting for every Burst Search Algorithm.
+- Cosmetic touchup on the axis labels: axis tickers are now in scientific notation and the order of magnitude is shown in the axis label.
+- Weighing is off by default. 
+- [bugfix] Apply button in Plot Options panel fixed for bins. It turns out there was no listener for the update event of the bins.

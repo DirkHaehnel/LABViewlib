@@ -1,0 +1,2433 @@
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x03C6E6F0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] False False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x03C6E6F0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] False False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x03C6E6F0>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.3 inf 0.0 inf 250.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x03C6E6F0>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x03C6E6F0>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x03F894E0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x03FB4E40>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x03F894E0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x03FB4E40>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x03F894E0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_WL:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_WL:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0B1E5C90>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0B1E5C90>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0B1E5C90>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.3 inf 0.0 inf 250.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0B1E5C90>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0B1E5C90>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0AAA6B40>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x0BC83180>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0AAA6B40>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x0BC83180>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0AAA6B40>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0A9FC570>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0A9FC570>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0A9FC570>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.3 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0A9FC570>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0A9FC570>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0BEE4E70>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x0BEE4450>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0BEE4E70>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x0BEE4450>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0BEE4E70>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_si:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_si:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0BC83930>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0BC83930>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0BC83930>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0BC83930>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0BC83930>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x109E53C0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x109E5030>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x109E53C0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x109E5030>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x109E53C0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_8Z:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_8Z:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0C58F1B0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0C58F1B0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0C58F1B0>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0C58F1B0>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0C58F1B0>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0B9BCB10>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x117819F0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0B9BCB10>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x117819F0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:__main__:Uncaught exception: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+None
+WARNING:enaml.session:Invalid object id sent to Session: o_83:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_83:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0AB447B0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0AB447B0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0AB447B0>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0AB447B0>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0AB447B0>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x11A8E3F0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x0B135540>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x11A8E3F0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x0B135540>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x11A8E3F0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_L6:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_L6:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x10BEC240>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x10BEC240>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x10BEC240>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x10BEC240>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x10BEC240>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0B571510>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x11808570>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0B571510>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x11808570>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0B571510>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_oE:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_oE:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0A8CF5A0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0A8CF5A0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0A8CF5A0>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0A8CF5A0>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x0A8CF5A0>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0AAC1DB0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x0AE5CA50>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0AAC1DB0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x0AE5CA50>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x0AAC1DB0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+WARNING:enaml.session:Invalid object id sent to Session: o_dq:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_dq:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x11DBAE40>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x11DBAE40>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x11DBAE40>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x11DBAE40>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x11DBAE40>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x124B1420>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x12492FC0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x124B1420>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x12492FC0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x124B1420>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+WARNING:enaml.session:Invalid object id sent to Session: o_c4:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_c4:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x11DBC8D0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x11DBC8D0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x11DBC8D0>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x11DBC8D0>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x11DBC8D0>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x11D50840>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x12140600>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x11D50840>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x12140600>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x11D50840>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+WARNING:enaml.session:Invalid object id sent to Session: o_kB:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_kB:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x12A42960>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x12A42960>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x12A42960>, trait: thresholds, old value: None, new value: inf 0.0 inf 40.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x12A42960>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x12A42960>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x12492B70>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x12492960>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x12492B70>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x12492960>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x12492B70>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x12492B70>, trait: rectangle, old value: <undefined>, new value: ((0.99397403839225995, 0.27153305365799679), (0.99397403839225995, 0.27153305365799679))
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 439, in add_guess_rect
+    A_E = np.max(self.data_container.H_Epr[indmin_E:indmax_E + 1])
+  File "C:\Python27\lib\site-packages\numpy\core\fromnumeric.py", line 2130, in amax
+    out=out, keepdims=keepdims)
+  File "C:\Python27\lib\site-packages\numpy\core\_methods.py", line 17, in _amax
+    out=out, keepdims=keepdims)
+ValueError: zero-size array to reduction operation maximum which has no identity
+WARNING:enaml.session:Invalid object id sent to Session: o_iQ:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_iQ:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x118CB660>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x118CB660>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x118CB660>, trait: thresholds, old value: None, new value: inf 0.0 inf 40.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x118CB660>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x118CB660>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1374C360>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1374CED0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1374C360>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1374CED0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1374C360>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_MD:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_MD:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x137E6F90>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x137E6F90>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x137E6F90>, trait: thresholds, old value: None, new value: inf 0.0 inf 40.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x137E6F90>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x137E6F90>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x12EA0780>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1401D6F0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x12EA0780>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1401D6F0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x12EA0780>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_O1:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_O1:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x118CBCC0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x118CBCC0>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x118CBCC0>, trait: thresholds, old value: None, new value: inf 0.0 inf 40.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x118CBCC0>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x118CBCC0>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x14445FC0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x14445AE0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x14445FC0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x14445AE0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x14445FC0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+WARNING:enaml.session:Invalid object id sent to Session: o_xG:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_xG:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_xG:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_xG:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_Yd:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_Yd:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_Yd:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_Yd:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x14454420>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x14454420>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x14454420>, trait: thresholds, old value: None, new value: inf 0.0 inf 40.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 250.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x14454420>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x14454420>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1253FB70>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1E2FBBA0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1253FB70>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1E2FBBA0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1253FB70>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+WARNING:enaml.session:Invalid object id sent to Session: o_8S:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_8S:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x14445E70>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x14445E70>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x14445E70>, trait: thresholds, old value: None, new value: inf 0.0 inf 40.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x14445E70>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x14445E70>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1F037FC0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1F037B10>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1F037FC0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1F037B10>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1F037FC0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_sK:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_sK:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1FC43F00>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1FC43F00>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1FC43F00>, trait: thresholds, old value: None, new value: inf 0.0 inf 40.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1FC43F00>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1FC43F00>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1EC6D720>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1F9EDED0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1EC6D720>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1F9EDED0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x1EC6D720>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_oX:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_oX:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1FF50C30>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1FF50C30>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1FF50C30>, trait: thresholds, old value: None, new value: inf 0.0 inf 40.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1FF50C30>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1FF50C30>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x20568B40>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x20568D20>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x20568B40>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x20568D20>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x20568B40>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+WARNING:enaml.session:Invalid object id sent to Session: o_5j:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_5j:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_4g:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_4g:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x20496120>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x20496120>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x20496120>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x20496120>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x20496120>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x13E3DB70>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1E3BA9C0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x13E3DB70>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x1E3BA9C0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x13E3DB70>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+WARNING:enaml.session:Invalid object id sent to Session: o_Cw:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_Cw:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x20384180>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x20384180>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x20384180>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x20384180>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x20384180>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x20F54B70>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x20785F90>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x20F54B70>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x20785F90>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x20F54B70>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+WARNING:enaml.session:Invalid object id sent to Session: o_PlL:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_PlL:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_PlL:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_PlL:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_2aL:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_2aL:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_2aL:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_2aL:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+WARNING:enaml.session:Invalid object id sent to Session: o_sWL:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_sWL:index_changed
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1368C780>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1368C780>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1368C780>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1368C780>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x1368C780>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x2001DB10>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x2001DBA0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x2001DB10>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x2001DBA0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x2001DB10>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x117819F0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 349, in update
+    self.plot()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 379, in plot
+    self.add_colorbar()
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 416, in add_colorbar
+    clrbar = self.fig.colorbar(self.mappable, cax=cax)
+  File "C:\Python27\lib\site-packages\matplotlib\figure.py", line 1451, in colorbar
+    cb = cbar.colorbar_factory(cax, mappable, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 1274, in colorbar_factory
+    cb = Colorbar(cax, mappable, **kwargs)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 877, in __init__
+    ColorbarBase.__init__(self, ax, **kw)
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 317, in __init__
+    self.draw_all()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 338, in draw_all
+    self._process_values()
+  File "C:\Python27\lib\site-packages\matplotlib\colorbar.py", line 652, in _process_values
+    b = self.norm.inverse(self._uniform_y(self.cmap.N + 1))
+  File "C:\Python27\lib\site-packages\matplotlib\colors.py", line 1003, in inverse
+    return vmin * ma.power((vmax / vmin), val)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 3707, in __mul__
+    return multiply(self, other)
+  File "C:\Python27\lib\site-packages\numpy\ma\core.py", line 938, in __call__
+    if m:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x142FD600>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 64, in update_binning
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x142FD600>, trait: plot_options, old value: None, new value: 1.0 0.0 1.0 0.0 [101, 101] True False
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 58, in update_range
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x142FD600>, trait: thresholds, old value: None, new value: inf 0.0 inf 0.0 1.0 1.0 0.0 0.0 1.0 0.8 0.0 0.2 inf 0.0 inf 150.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 74, in apply_thresholds
+    self.data_container._apply_thresholds()
+AttributeError: 'NoneType' object has no attribute '_apply_thresholds'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x142FD600>, trait: evss_layers, old value: None, new value: True False True True True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 114, in redraw_plot
+    self.plot.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.EvsSViewController object at 0x142FD600>, trait: corr, old value: None, new value: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 152, in apply_corrections
+    self.data_container.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: 0.0 False 0.0 0.0 1.0 0.0 0.0 0.0 1.0, trait: thorben_hack, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\mixins.py", line 127, in script_bg
+    photons = self.data_manager.datasets[0].get_photons()
+AttributeError: 'NoneType' object has no attribute 'datasets'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x20C7EEA0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x20C7EC90>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 602, in set_show_S_range
+    self.evss_layers.show_S_range = not (self.data_container.thresholds.S_max_1D == self.data_container.plot_options.S_max and self.data_container.thresholds.S_min_1D == self.data_container.plot_options.S_min)
+AttributeError: 'NoneType' object has no attribute 'show_S_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x20C7EEA0>, trait: data_container, old value: None, new value: <alex.models.EvsS object at 0x20C7EC90>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\views.py", line 609, in set_show_E_range
+    self.evss_layers.show_E_range = not (self.data_container.thresholds.E_max_1D == self.data_container.plot_options.E_max and self.data_container.thresholds.E_min_1D == self.data_container.plot_options.E_min)
+AttributeError: 'NoneType' object has no attribute 'show_E_range'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSPlot object at 0x20C7EEA0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "C:\Documents and Settings\confocal\Desktop\ALEX-Suite-1.2.0\alex\controller.py", line 427, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_4ZL:index_changed
+WARNING:enaml.session:Invalid object id sent to Session: o_4ZL:index_changed

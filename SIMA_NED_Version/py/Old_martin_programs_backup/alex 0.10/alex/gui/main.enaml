@@ -1,0 +1,77 @@
+# enaml widgets
+from enaml.widgets.api import *
+from enaml.layout.api import *
+# Custom Views
+from files.files import FileTab
+from files.sm2burst import Sm2burstParamsWindow
+from about import AboutWindow
+# Be very strict about attr, we specify their type
+from alex.models import (
+    ReducParams, Thresholds,
+    )
+from alex.merge_bursts import DataManager
+from alex.sessions import SessionManager
+import os
+
+def load_session_callback(manager):
+    def load_session(dlg):
+        file_name, file_ext = os.path.splitext(dlg.path)
+        manager.load = file_name + '.zip'
+    return load_session
+
+enamldef Main(MainWindow): main:
+    # sm2burst settings
+    attr params : ReducParams
+    # Mass-converter object
+    attr data_manager : DataManager
+    #attr manager : SessionManager
+    
+    # initial_size = (1280, 800)
+    MenuBar:
+        Menu:
+            title = 'ALEX Suite'
+            Action:
+                text = 'Burst Search Settings'
+                triggered :: 
+                    Sm2burstParamsWindow(main, params = main.params)
+            Action:
+                text = u'Info'
+                triggered :: 
+                    AboutWindow(main)
+            # Action:
+            #     text = 'Open File\tCtrl+O'
+            #     triggered :: print 'Open File triggered'
+            # Action:
+            #     text = 'Abou'
+            #     triggered :: print 'Open Folder triggered'
+            # title = '&ALEX Suite'
+            # Action:
+            #     text = 'Settings'
+            #     triggered :: 
+            #         Sm2burstParamsWindow(main, params = main.params)
+            # Action:
+            #     text = 'About'
+            #     triggered :: print 'About trigerred'
+    Container:
+        # ScrollArea:
+        FileTab: file_tab:
+            # params := main.params
+            data_manager := main.data_manager
+    ToolBar: toolbar:
+        ActionGroup:
+            # Action:
+            #     checkable = False
+            #     text = 'Load'
+#                 triggered :: 
+#                     dlg = FileDialog(
+#                         toolbar,
+#                         title='Load session',
+#                         mode='open_file',
+#                         callback=load_session_callback(main.manager),
+# #                         selected_filter = '.zip',
+#                     ).open()
+            Action:
+                checkable = False
+                text << 'Settings'
+                triggered ::
+                    Sm2burstParamsWindow(main, params = main.params)

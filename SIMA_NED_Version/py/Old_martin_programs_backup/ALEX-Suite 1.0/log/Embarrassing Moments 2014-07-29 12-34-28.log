@@ -1,0 +1,2201 @@
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x072406F0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x072406F0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x072406F0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x072406F0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x072406F0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x07160780>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x0B0760F0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x0B076A20>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0B17A150>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0B17A150>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0B17A150>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0B17A150>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0B17A150>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x0BA3A2A0>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x0B7FFBD0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x0B6BB900>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_ko:clicked
+WARNING:enaml.session:Invalid object id sent to Session: o_2o:clicked
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0BE8ECC0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0BE8ECC0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0BE8ECC0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0BE8ECC0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0BE8ECC0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x0BF0D720>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x0B5E7C00>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x0B0CEA50>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0C2F8F90>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0C2F8F90>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0C2F8F90>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0C2F8F90>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0C2F8F90>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x0BF0DC60>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x0B96CDE0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x0B72C8D0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_hH:clicked
+WARNING:enaml.session:Invalid object id sent to Session: o_kH:clicked
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x10A456C0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x10A456C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x10A456C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x10A456C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x10A456C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x109A78A0>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x10A6B990>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x10A6B030>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x111814E0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x111814E0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x111814E0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x111814E0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x111814E0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x109A7360>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x11087600>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x11087B40>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0C07F690>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0C07F690>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0C07F690>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0C07F690>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x0C07F690>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x11A89420>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x10E03DE0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x10E03480>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_mk:clicked
+WARNING:enaml.session:Invalid object id sent to Session: o_mk:clicked
+WARNING:enaml.session:Invalid object id sent to Session: o_Ak:clicked
+WARNING:enaml.session:Invalid object id sent to Session: o_wk:clicked
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11B5C060>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11B5C060>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11B5C060>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11B5C060>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11B5C060>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x110AA9F0>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x1292FFC0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x1292F3C0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x116E2210>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x116E2210>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x116E2210>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x116E2210>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x116E2210>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x11E66990>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x11FCE480>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x11EC9390>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11EA14E0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11EA14E0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11EA14E0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11EA14E0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11EA14E0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x11BB6F00>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x121C68A0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x121C2ED0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x110AAF30>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x110AAF30>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x110AAF30>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x110AAF30>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x110AAF30>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x11BB63F0>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x12B774E0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x121D5C30>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x110AAF30>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\views.py", line 201, in update
+    self.fig.canvas.draw()
+  File "C:\Python27\lib\site-packages\matplotlib\backends\backend_qt4agg.py", line 155, in draw
+    self.update()
+RuntimeError: wrapped C/C++ object of type FigureCanvasQTAgg has been deleted
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13777A50>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13777A50>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13777A50>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13777A50>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13777A50>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x12030810>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x130DCDB0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x13817030>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11301570>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11301570>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11301570>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11301570>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x11301570>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x13ADB420>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x139E5510>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x139E5360>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13801900>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13801900>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13801900>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13801900>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13801900>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x1428E3C0>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x13B31C00>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x1398D510>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13801900>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\views.py", line 201, in update
+    self.fig.canvas.draw()
+  File "C:\Python27\lib\site-packages\matplotlib\backends\backend_qt4agg.py", line 155, in draw
+    self.update()
+RuntimeError: wrapped C/C++ object of type FigureCanvasQTAgg has been deleted
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13BEC990>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13BEC990>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13BEC990>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13BEC990>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x13BEC990>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x13841480>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x116E5960>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x1E2B5D20>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1E5C3AB0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1E5C3AB0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1E5C3AB0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1E5C3AB0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1E5C3AB0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x1EAF8900>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x1E942A80>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x1EB82960>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1E5C3AB0>, trait: updated, old value: <undefined>, new value: True
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\views.py", line 201, in update
+    self.fig.canvas.draw()
+  File "C:\Python27\lib\site-packages\matplotlib\backends\backend_qt4agg.py", line 155, in draw
+    self.update()
+RuntimeError: wrapped C/C++ object of type FigureCanvasQTAgg has been deleted
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F75D3C0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F75D3C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F75D3C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F75D3C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F75D3C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x1F743900>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x1F3419C0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x1F341BA0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FD4EFC0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FD4EFC0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FD4EFC0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FD4EFC0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FD4EFC0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x1FF55A20>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x1FBA7960>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x1FBA72A0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F552C60>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F552C60>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F552C60>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F552C60>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F552C60>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x1E965B40>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x1F87C390>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x1F87C3C0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x20873BD0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x20873BD0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x20873BD0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x20873BD0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x20873BD0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x1F8E0030>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x1FB02120>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x2077DC60>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FCF29C0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FCF29C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FCF29C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FCF29C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FCF29C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x11095F90>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x1EF6EDB0>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x1FCCA330>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FE3CE40>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FE3CE40>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FE3CE40>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FE3CE40>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FE3CE40>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x1EAD4930>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x204D9D80>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x204D91B0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F8633C0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F8633C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F8633C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F8633C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1F8633C0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x1F7D5EA0>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x21130E70>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x20E6E4E0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FCB0DB0>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FCB0DB0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FCB0DB0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FCB0DB0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x1FCB0DB0>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x1F7D5BD0>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x20F1F420>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x20F1FCF0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+WARNING:enaml.session:Invalid object id sent to Session: o_7T:clicked
+WARNING:enaml.session:Invalid object id sent to Session: o_kT:clicked
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x21045990>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x21045990>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x21045990>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x21045990>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x21045990>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x2322D360>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x22DB4420>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x22C9AAB0>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x231C8840>, trait: thresholds, old value: None, new value: 0.0 inf 0.0 inf 0.0 inf 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 350, in apply_thresholds
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x231C8840>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 372, in update_binning
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x231C8840>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 368, in discard_data_on_E
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x231C8840>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 359, in discard_data_on_S
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.models.EvsS object at 0x231C8840>, trait: options, old value: None, new value: False 101 101 0.0 1.0 0.0 1.0
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 376, in update_weighting
+    self.update()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 448, in update
+    self._accurate_E()
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\models.py", line 476, in _accurate_E
+    DA_bkg_corr = self.data['F_Dexc_Aem'] - self.corr.bkg_DA*self.data['Tau']*1000
+AttributeError: 'NoneType' object has no attribute 'bkg_DA'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.controller.PRHController object at 0x20E1AE40>, trait: fitting, old value: None, new value: <alex.functions.GuessesToFit object at 0x1F801F60>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 210, in redraw_plot
+    self.evss_view.update()
+AttributeError: 'NoneType' object has no attribute 'update'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.views.EvsSView object at 0x22963660>, trait: rectangle, old value: None, new value: <undefined>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\controller.py", line 221, in add_guess_rect
+    x1 = rect[0][0]
+TypeError: '_Undefined' object does not support indexing

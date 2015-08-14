@@ -1,0 +1,38 @@
+from enaml.widgets.api import *
+from enaml.stdlib.fields import FloatField, IntField
+import os
+# from thresholds import Thresholds
+# from plot_options import PlotOptions
+
+def export_session_callback(manager):
+    def export_session(dlg):
+        file_name, file_ext = os.path.splitext(dlg.path)
+        if dlg.result == 'accepted':
+            manager.export = file_name
+    return export_session
+
+enamldef TitrationToolBar(ToolBar): toolbar:
+    # attr fitting
+    attr manager
+
+    ActionGroup:
+        Action:
+            checkable = False
+            text << 'Export Titration Curve Data'
+            triggered :: 
+                dlg = FileDialog(
+                    toolbar,
+                    path=manager.export_path,
+                    title='Export Ratio\'s to .csv',
+                    mode='save_file',
+                    callback=export_session_callback(toolbar.manager),
+                    filters=['.csv'],
+                    selected_filter = '.csv',
+                ).open()
+        # Action: fit:
+        #     checkable = False
+        #     enabled << True if [item for item in toolbar.fitting.fittings] else False 
+        #     text = 'Run Fitting'
+        #     triggered :: fitting.run_fitting = True
+        Action:
+            separator = True

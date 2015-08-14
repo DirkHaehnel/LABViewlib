@@ -1,0 +1,67 @@
+# enaml widgets
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.core.api import Looper, Conditional
+
+enamldef GenericView(MainWindow): view:
+    """ GenericView which creates a standardized view for any dataset. """
+    attr plot
+    attr option_panels : list # List of dicts, containing title and object
+    attr fitting_panels : list # List of dicts, containing title and object
+    attr toolbar = None    # Toolbar instance
+
+    Conditional:
+        condition = toolbar is not None
+        Include:
+            objects << [toolbar]
+
+    Container:
+        padding = None
+
+        Container: plot_container:
+            padding = None
+            MPLCanvas: plot:
+                figure << view.plot.fig
+                toolbar_visible = True
+
+    DockPane: dock_panel:
+        title << 'Options'
+        dock_area = 'right'
+        closable = False
+        movable = False
+        floatable = False
+        Container:
+            padding = None
+            Notebook:
+                tab_style = 'document'
+                tab_position = 'bottom'
+                Looper:
+                    iterable << option_panels
+                    Page:
+                        title << loop_item['title']
+                        closable = False
+                        Container:
+                            Include:
+                                objects << [loop_item['options_panel']]
+
+    Conditional:
+        condition = fitting_panels != []
+        DockPane: fit_dock:
+            title << 'Fitting'
+            dock_area = 'right'
+            closable = False
+            movable = False
+            floatable = False
+            Container:
+                padding = None
+                Notebook:
+                    tab_style = 'document'
+                    tab_position = 'bottom'
+                    Looper:
+                        iterable << fitting_panels
+                        Page:
+                            title << loop_item['title']
+                            closable = False
+                            Container:
+                                Include:
+                                    objects << [loop_item['fitting_panel']]

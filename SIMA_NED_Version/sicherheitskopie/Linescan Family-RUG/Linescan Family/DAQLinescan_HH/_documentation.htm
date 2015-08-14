@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AnnaLinescan</title>
+</head>
+
+<body>
+<h1>DAQ Linescan Documentation</h1>
+
+<h2><a name="content">Content</a></h2>
+<h3><a href="#DAQLinescan">Main Application</a></h3>
+<h4><a href="#PickDestroy">Pick and destroy</a></h4>
+<h5><a href="#AFMMode">&nbsp;&nbsp;&nbsp; AFM Mode</a></h5>
+<h4><a href="#SPCSetup">SPC Setup</a></h4>
+<h4><a href="#StageSetup">Stage Setup</a></h4>
+
+<h2><a name="DAQLinescan">Main Application</a></h2>
+<h3><a name="PickDestroy">Pick and Destroy</a></h3>
+<h4><a name="AFMMode">AFM Mode</a></h4>
+<p>
+    The AFM mode is used to record data without moving the piezo. Before the measurement, the objective must be aligned with the AFM in the main application. All stage movement should be disabled in the source code of Pick and Destroy.<br />
+</p>
+<h3><a name="SPCSetup">SPC Setup</a></h3>
+<h3><a name="StageSetup">Stage Setup</a></h3>
+<p>When selecting the PI TCP/IP connection, the host address of the stage controller must be entered. The default can be changed by editing <b>setupStage.vi</b>, changing the numbers in the <b>Host address</b> control followed by a <b>right click-->data operations-->make current value default</b>.</p>
+</body>
+</html>

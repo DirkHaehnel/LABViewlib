@@ -1,0 +1,84 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import IntField
+from alex.gui.fields.fields import MyFloatField
+
+enamldef ThresholdsPopUp(Window): popup:
+    attr thresholds
+    Thresholds:
+        thresholds := popup.thresholds
+    
+enamldef ThresholdsPanel(Container): thresholds_container:
+    attr thresholds
+
+    Form: threshold_form:
+#             share_layout = True
+        constraints = [ total_range.width == S_range.width,
+                        total_range.width == AA_range.width,
+                        total_range.width == DD_DA_range.width,
+                        total_range.width == famous_apply.width,]
+        GroupBox: total_range:
+            title << 'DD + DA + AA'
+            Label:
+                text = 'Minimum'
+            MyFloatField: total_min:
+                value = thresholds_container.thresholds.total_min
+
+            Label:
+                text = 'Maximum'
+            MyFloatField: total_max:
+                value = thresholds_container.thresholds.total_max
+
+        
+        GroupBox: S_range:
+            title << 'S-range for 1D E*'
+            Label:
+                text = 'Minimum'
+            MyFloatField: S_min:
+                value := thresholds_container.thresholds.S_min
+
+            Label:
+                text = 'Maximum'
+            MyFloatField: S_max:
+                value := thresholds_container.thresholds.S_max
+
+
+        GroupBox: AA_range:
+            title << 'AA'
+            Label: 
+                text = 'Minimum'
+            MyFloatField: AexAem_min:
+                value = thresholds_container.thresholds.AexAem_min
+
+            Label:
+                text = 'Maximum'
+            MyFloatField: AexAem_max:
+                value = thresholds_container.thresholds.AexAem_max
+
+        GroupBox: DD_DA_range:
+            title << 'DD + DA'
+            Label:
+                text = 'Minimum'
+            MyFloatField: Dex_min:
+                value = thresholds_container.thresholds.Dex_min
+
+            Label:
+                text = 'Maximum'
+            MyFloatField: Dex_max:
+                value = thresholds_container.thresholds.Dex_max
+
+
+        PushButton: famous_apply:
+            text << 'Apply'
+            clicked ::
+                # thresholds_container.thresholds.weighted = weighted.checked
+                thresholds_container.thresholds.AexAem_min = AexAem_min.value
+                thresholds_container.thresholds.AexAem_max = AexAem_max.value
+                thresholds_container.thresholds.Dex_min = Dex_min.value
+                thresholds_container.thresholds.Dex_max = Dex_max.value
+                thresholds_container.thresholds.total_min = total_min.value
+                thresholds_container.thresholds.total_max = total_max.value
+                thresholds_container.thresholds.S_min = S_min.value
+                thresholds_container.thresholds.S_max = S_max.value
+                thresholds_container.thresholds.update = True
+#                 print 'succes: {}'.format(thresholds_container.thresholds.AllPhotons)

@@ -1,0 +1,30 @@
+# enaml widgets
+from enaml.widgets.api import *
+from enaml.layout.api import *
+# Custom Views
+from files.files import FileTab
+from files.sm2burst import Sm2burstParamsWindow
+# Be very strict about attr, we specify their type
+from alex.models import (
+    ReducParams, Thresholds,
+    )
+from alex.merge_bursts import DataManager
+from alex.sessions import SessionManager
+import os
+
+enamldef AboutWindow(Window):
+    # Label:
+    #     text = 'Author: Martin Roelfs'
+    # Label:
+    #     text = 'Build for and in coorporation with the T. Cordes group'
+    # Label:
+    #     text = ''
+    Container:
+        Html:
+            source = '''
+                Author: Martin Roelfs<br>
+                <br>
+                Build for and in coorporation with the T. Cordes group.<br>
+                <br>
+                <a href="http://www.molecular-microscopy.nl/">Molecular Microscopy Group</a>
+                '''

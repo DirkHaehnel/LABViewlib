@@ -1,0 +1,70 @@
+
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from alex.gui.fields.fields import MyFloatField
+from ..processing.thresholds import (
+    ThresholdsPanel
+)
+from ..processing.plot_options import PlotOptionsPanel
+from .axis import AxisPanel
+from alex.models import AxisManager
+from alex.functions import GuessesToFit1D
+from .lists import (
+    GuessListing, FitListing
+)
+
+enamldef DatasetViewer(MainWindow): dataset_viewer:
+    attr dataset_view
+    attr thresholds
+    attr plot_options
+    attr axis_manager
+    # Fitting object contains Guesses, Fits
+    attr fitting : GuessesToFit1D
+
+    Container:
+	    MPLCanvas:
+    	    figure << dataset_view.fig
+    	    toolbar_visible = True
+
+   	DockPane:
+        title << 'Options'
+        dock_area = 'right'
+        closable = False
+        Container:
+            padding = None
+            Notebook:
+                tab_style = 'document'
+                tab_position = 'bottom'
+                Page:
+                    title << 'Axis'
+                    closable = False
+                    # Container:
+                    AxisPanel:
+                        axis_manager := dataset_viewer.dataset_view.dataset.axis_manager
+                            # axis_manager := dataset_viewer.axis_manager
+                Page:
+                    title << 'Thresholds'
+                    closable = False
+                    # Container:
+                    ThresholdsPanel:
+                        thresholds := dataset_viewer.thresholds
+                
+    DockPane:
+        title << 'Fitting'
+        dock_area = 'right'
+        closable = False
+        Container:
+            padding = None
+            Notebook:
+                tab_style = 'document'
+                tab_position = 'bottom'
+                Page:
+                    title << 'Guessed Parameters'
+                    closable = False
+                    GuessListing:
+                        guesses := dataset_viewer.fitting.guesses
+                Page:
+                    title << 'Fitted Parameters'
+                    closable = False
+                    FitListing:
+                        fitting := dataset_viewer.fitting

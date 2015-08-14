@@ -1,0 +1,18 @@
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.merge_bursts.DataManager object at 0x06E4F240>, trait: sm_path, old value: V:/, new value: V:\
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\merge_bursts.py", line 366, in set_files
+    self.files = [os.path.join(self.sm_path, item) for item in os.listdir(self.sm_path) if self.valid_file(item)] if self.sm_path else []
+WindowsError: [Error 3] The system cannot find the path specified: u'V:\\*.*'
+ERROR:traits:Exception occurred in traits notification handler for object: <alex.merge_bursts.DataManager object at 0x06E4F240>, trait: sm_path, old value: , new value: V:/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 520, in _dispatch_change_event
+    self.dispatch( handler, *args )
+  File "C:\Python27\lib\site-packages\traits\trait_notifiers.py", line 483, in dispatch
+    handler( *args )
+  File "X:\Data\Desktop\ALEX-Suite 1.0\alex\merge_bursts.py", line 366, in set_files
+    self.files = [os.path.join(self.sm_path, item) for item in os.listdir(self.sm_path) if self.valid_file(item)] if self.sm_path else []
+WindowsError: [Error 3] The system cannot find the path specified: u'V:\\*.*'

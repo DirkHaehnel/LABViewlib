@@ -1,0 +1,3 @@
+C:\Documents and Settings\confocal2\Desktop\DAQLinescan_RUG_under_construction_final\DAQLinescan.vi
+default
+default

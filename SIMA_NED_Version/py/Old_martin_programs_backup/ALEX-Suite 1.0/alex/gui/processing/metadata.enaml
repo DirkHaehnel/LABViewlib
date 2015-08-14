@@ -1,0 +1,37 @@
+from enaml.widgets.api import *
+from enaml.stdlib.fields import FloatField, IntField
+from alex.gui.fields.fields import MyFloatField
+
+enamldef MetadataPanel(Container): metadata_container:
+    attr metadata
+    Form: threshold_form:
+        Label:
+            text = 'Sample Name'
+        Field:
+            text := metadata_container.metadata.sample_name
+
+        Label:
+            text = 'Date'
+        DateSelector:
+            date := metadata_container.metadata.date
+            calendar_popup = True
+
+        Label:
+            text = 'Buffer'
+        Field:
+            text := metadata_container.metadata.buffer_used
+
+        Label:
+            text = 'Green Laser Power'
+        Field:
+            text := metadata_container.metadata.exc_green
+
+        Label:
+            text = 'Red Laser Power'
+        Field:
+            text := metadata_container.metadata.exc_red
+
+        Label:
+            text = 'Description'
+        Field:
+            text := metadata_container.metadata.description

@@ -1,0 +1,52 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import IntField
+# from alex.gui.fields.fields import MyFloatField
+    
+enamldef AxisPanel(Container): axis_container:
+    attr axis_manager
+
+    Form: axis_form:
+        # constraints = [,]
+        Label:
+            text << 'x axis'
+        ComboBox: xaxis:
+            items << list(axis_manager.trait('xaxis').trait_type.values[1:]) # This assumes the first item to be the default value.
+            index = xaxis.items.index(axis_manager.trait('xaxis').trait_type.values[0]) # Display the default choice
+        Label:
+            text << 'y axis'
+        ComboBox: yaxis:
+            items << list(axis_manager.trait('yaxis').trait_type.values[1:])
+            index = yaxis.items.index(axis_manager.trait('yaxis').trait_type.values[0]) # Display the default choice
+        Label:
+            text << 'x label'
+        Field: xlabel:
+            text << xaxis.selected_item
+        Label:
+            text << 'y label'
+        Field: ylabel:
+            text << yaxis.selected_item
+
+        PushButton: famous_apply:
+            text << 'Apply'
+            clicked ::
+                axis_container.axis_manager.xaxis = xaxis.selected_item
+                axis_container.axis_manager.yaxis = yaxis.selected_item
+                axis_container.axis_manager.xlabel = xlabel.text
+                axis_container.axis_manager.ylabel = ylabel.text
+                axis_container.axis_manager.updated = True
+                # print 'succes, axis_manager was updated to x: {}, y: {}'.format(axis_container.axis_manager.xaxis, axis_container.axis_manager.yaxis)
+    GroupBox:
+        title << 'The length of both vectors must be equal for plotting to be succesful'
+        flat = True
+        Form:
+            Label:
+                text = 'Length x'
+            IntField:
+                read_only = True
+                value << axis_container.axis_manager.xlen
+            Label:
+                text = 'Length y'
+            IntField:
+                read_only = True
+                value << axis_container.axis_manager.ylen

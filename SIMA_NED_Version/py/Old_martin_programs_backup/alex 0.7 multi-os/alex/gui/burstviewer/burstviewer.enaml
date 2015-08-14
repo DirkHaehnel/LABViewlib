@@ -1,0 +1,68 @@
+
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.core.api import Looper
+from alex.gui.fields.fields import MyFloatField
+# from alex.photons.photon import BurstViewer
+
+from enaml.qt.qt_application import QtApplication
+
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+import numpy as np
+
+x = np.linspace(0, 2*np.pi)
+y = np.sin(x)
+fig = Figure()
+ax = fig.add_subplot(111)
+ax.plot(x,y)
+
+class BurstViewer:
+    start = 0.00
+    end = 0.01
+    burst = [0, 1]
+    figure = fig
+
+enamldef BurstViewerWindow(Window):
+# enamldef Main(MainWindow):
+    # Manager object to control all burst shit.
+    attr burst_viewer = BurstViewer()
+    Container:
+        constraints = [hbox(left_container, right_container),
+                        align('v_center', left_container, right_container),
+                       ]
+        Container: left_container:
+        #     padding = None
+        #     # GroupBox:
+        #     #     title << 'Trace'
+        #     #     Container:
+            Form:
+                Label:
+                    text << 'Start'
+                MyFloatField:
+                    value := burst_viewer.start
+                Label:
+                    text << 'End'
+                MyFloatField:
+                    value := burst_viewer.end
+                    
+            ListControl: burst_list:
+                # ListItem: item:
+                #     text = 'I\'m a burst'
+                #     tool_tip << text
+                #     selectable = True
+                #     clicked ::
+                #         print 'selected!'
+                Looper:
+                    iterable = burst_viewer.burst
+                    ListItem:
+                        text = 'Foo Bar ' + unicode(loop_index)
+                        selectable = True
+                        checkable = False
+                        selected ::
+                            burst_viewer.start << loop_item['BurstStart']
+                            burst_viewer.end << loop_item['BurstEnd']
+        Container: right_container:
+            padding = None
+            MPLCanvas: burst_plot:
+                figure << burst_viewer.figure

@@ -1,0 +1,162 @@
+#------------------------------------------------------------------------------
+#  Copyright (c) 2012, Enthought, Inc.
+#  All rights reserved.
+#------------------------------------------------------------------------------
+""" An example of the `DockPane` widget.
+
+This example demonstrates the use of the `DockPane` widget. A `DockPane`
+can have at most one child, which must be a 'Container` widget. The 
+sizing of the `DockPane` is largely determined by the size constraints
+of the child `Container`. A `DockPane` must be used as the child of 
+a `MainWindow`. There are several attribute on a `DockPane` which allow
+the developer to control the behavior of the `DockPane`.
+
+Implementation Notes:
+    
+    The docking facilities in Wx are very weak. Due to various technical 
+    limitations, the sizing of `DockPane` widgets in Wx is not nearly as
+    good as it is on Qt. The cost of using a `DockPane` in Wx is also 
+    *much* higher than in Qt due to Wx's horribly inefficient docking 
+    implementation. If docking is required for a particular application, 
+    strongly prefer the Qt backend over Wx (this is generally a good 
+    life-rule).
+
+"""
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.core.api import Looper
+from os.path import abspath
+from alex.merge_bursts import DataManager
+from sm2burst import Sm2burstSettings
+from ..burstviewer.burstviewer import BurstViewerWindow
+
+
+def get_file_chooser_callback(obj, attr):
+    def file_chooser_callback(dlg):
+        if dlg.result == 'accepted':
+            setattr(obj, attr, dlg.path)
+
+    return file_chooser_callback
+
+enamldef OpenFiles(Container): file_window:
+    # Does all the sm2burst handeling in Python
+    attr data_manager : DataManager
+    padding = None
+    PushButton:
+        text = 'Select Directory'
+        clicked ::
+            dlg = FileDialog(
+                file_window,
+                title='Select directory',
+                mode='directory',
+                callback=get_file_chooser_callback(file_window.data_manager, 'sm_path'),
+            ).open()
+    Html:
+        source << "Select a directory to scan for .sm files. The dialog below allows you to select which files to use for analysis. The data from these files will then be merged and displayed using the view you select on the right."
+
+enamldef FileListItem(ListItem):
+    editable = False
+    tool_tip << text
+    checkable = True
+    checked = True
+    selectable = False
+    toggled :: print 'i was toggled', text
+    
+enamldef FileList(ListControl):
+    """ Build this list from the items in the selected dir """
+    # Hook it to the file window so we know when the sm_path is updated
+    attr data_manager : DataManager
+    Looper:
+        iterable << data_manager.files
+        FileListItem:
+            text << loop_item
+
+enamldef LoadWindow(Window): load_window:
+    attr data_manager : DataManager
+    always_on_top = True
+    Container:
+        ProgressBar:
+            id: progress
+            value << min(100, 100*load_window.data_manager.number_loaded/load_window.data_manager.number_of_dataset) if [i for i in load_window.data_manager.datasets] else 0
+        Label:
+            id: label
+            text << '{}/{}'.format(load_window.data_manager.number_loaded, load_window.data_manager.number_of_dataset)
+        
+enamldef FileTab(Container): file_tab:
+    # attr params
+    attr data_manager : DataManager
+
+    # constraints = [hbox(left_container, file_list_container),
+    #                align('width', left_container, file_list_container)]
+    # constraints = [vbox(left_container, file_list_container, spacer),
+    #                 hbox(left_container, right_container),
+    #                 align('width', left_container, file_list_container, right_container)
+    #                 ]
+    constraints = [grid([left_container, right_container],
+                       [file_list_container, None],
+                       # column_align='width',
+                       # row_align='width',
+                       ),
+                   align('width', left_container, file_list_container, right_container),
+                   vertical(top, left_container, file_list_container, spacer, bottom)
+                   ]
+
+    GroupBox: right_container:
+        title = 'Analysis Options'
+        flat = True
+        Container:
+            padding = None
+            PushButton: load:
+                text << 'E vs S Histogram'
+                clicked :: 
+                    # Change files to reflect selected items
+                    file_tab.data_manager.files = [item.text for item in file_list.list_items if item.checked]
+                    # Show loading bar, then do the pop-up
+                    file_tab.data_manager.load = 'evss'
+            # PushButton: load:
+            #     text << 'Burst Viewer'
+            #     clicked ::
+            #         # Change files to reflect selected items
+            #         file_tab.data_manager.files = [item.text for item in file_list.list_items if item.checked]
+            #         # Show loading bar, then do the pop-up
+            #         file_tab.data_manager.load = 'burst_viewer'
+            PushButton: load:
+                text << 'BVA'
+                clicked ::
+                    # Change files to reflect selected items
+                    file_tab.data_manager.files = [item.text for item in file_list.list_items if item.checked]
+                    # Show loading bar, then do the pop-up
+                    file_tab.data_manager.load = 'bva_viewer'
+    GroupBox: left_container:
+        title = 'Select Directory'
+        flat = True
+        OpenFiles: open_files_container:
+            data_manager := file_tab.data_manager
+        # Sm2burstSettings: sm2burst_container:
+        #     params := file_tab.params
+    GroupBox: file_list_container:
+        title = 'Files'
+        flat = True
+        padding = None
+        Container: buttons:
+            constraints = [hbox(select, deselect, spacer),
+                            align('v_center', select, deselect),
+                            align('width', select, deselect),
+                            vbox(select, file_list),
+                            file_list.width == contents_width,
+                            file_list.bottom == contents_bottom,
+                            ]
+            PushButton: select:
+                text << 'Select all'
+                clicked :: 
+                    for item in file_list.list_items:
+                        if item.checkable:
+                            item.checked = True
+            PushButton: deselect:
+                text << 'Deselect all'
+                clicked :: 
+                    for item in file_list.list_items:
+                        if item.checkable:
+                            item.checked = False
+            FileList: file_list:
+                data_manager := file_tab.data_manager

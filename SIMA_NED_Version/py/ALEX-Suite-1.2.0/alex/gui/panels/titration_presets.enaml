@@ -1,0 +1,24 @@
+# from enaml.widgets.text_editor import TextEditor
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.core.api import Looper
+from alex.models import TitrationPresets
+
+enamldef TitrationPresetsPanel(Container):
+    attr fitting_options : TitrationPresets
+
+    Form:
+        Label:
+            text << 'Plot Mode'
+        ComboBox:
+            items << fitting_options.mode_text
+            index := fitting_options.mode
+    Looper:
+        iterable << fitting_options.gui_text
+        PushButton:
+            text << loop_item
+            clicked ::
+                print loop_index, fitting_options
+                fitting_options.presets = loop_index
+                fitting_options.update = True
+                print 'presets clicked'

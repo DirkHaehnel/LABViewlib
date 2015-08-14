@@ -1,0 +1,5 @@
+from enaml.stdlib.fields import FloatField
+
+enamldef MyFloatField(FloatField):
+    """ Has other default triggers than FloatField. """
+    submit_triggers = ['lost_focus', 'return_pressed']

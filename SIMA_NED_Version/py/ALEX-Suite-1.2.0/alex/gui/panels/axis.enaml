@@ -1,0 +1,52 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import IntField
+# from alex.gui.fields.fields import MyFloatField
+    
+enamldef AxisPanel(Container): axis_container:
+    attr gui_option
+
+    Form: axis_form:
+        # constraints = [,]
+        Label:
+            text << 'x axis'
+        ComboBox: xaxis:
+            items << list(gui_option.trait('xaxis').trait_type.values[1:]) # This assumes the first item to be the default value.
+            index = xaxis.items.index(gui_option.trait('xaxis').trait_type.values[0]) # Display the default choice
+        Label:
+            text << 'y axis'
+        ComboBox: yaxis:
+            items << list(gui_option.trait('yaxis').trait_type.values[1:])
+            index = yaxis.items.index(gui_option.trait('yaxis').trait_type.values[0]) # Display the default choice
+        Label:
+            text << 'x label'
+        Field: xlabel:
+            text << xaxis.selected_item
+        Label:
+            text << 'y label'
+        Field: ylabel:
+            text << yaxis.selected_item
+
+        PushButton: famous_apply:
+            text << 'Apply'
+            clicked ::
+                axis_container.gui_option.xaxis = xaxis.selected_item
+                axis_container.gui_option.yaxis = yaxis.selected_item
+                axis_container.gui_option.xlabel = xlabel.text
+                axis_container.gui_option.ylabel = ylabel.text
+                axis_container.gui_option.updated = True
+                # print 'succes, gui_option was updated to x: {}, y: {}'.format(axis_container.gui_option.xaxis, axis_container.gui_option.yaxis)
+    GroupBox:
+        title << 'The length of both vectors must be equal for plotting to be succesful'
+        flat = True
+        Form:
+            Label:
+                text = 'Length x'
+            IntField:
+                read_only = True
+                value << axis_container.gui_option.xlen
+            Label:
+                text = 'Length y'
+            IntField:
+                read_only = True
+                value << axis_container.gui_option.ylen

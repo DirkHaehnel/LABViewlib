@@ -1,0 +1,7 @@
+Important changes from 0.7 to 0.9:
+- Weighing algorithm reclassified as a plot option, not a threshold.
+- Addition of S-range as threshold for the 1D E* histogram. This is now fully functional and also coupled to the hotbutton 'Select S range' in the toolbar.
+- Distinct default setting for every Burst Search Algorithm.
+- Cosmetic touchup on the axis labels: axis tickers are now in scientific notation and the order of magnitude is shown in the axis label.
+- Weighing is off by default. 
+- Apply button in Plot Options panel fixed for bins. It turns out there was no listener for the update event of the bins.

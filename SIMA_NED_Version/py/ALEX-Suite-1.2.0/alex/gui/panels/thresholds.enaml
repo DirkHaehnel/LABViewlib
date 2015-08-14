@@ -1,0 +1,106 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import IntField
+from alex.gui.fields.fields import MyFloatField
+from alex.gui.common_widgets import MinMaxBox
+
+enamldef ThresholdsPopUp(Window): popup:
+    attr gui_option
+    Thresholds:
+        gui_option := popup.gui_option
+
+enamldef StackedThreshold(StackItem):
+    """ Used when multiple options are stacked with a ComboBox
+    to select which one should be active.
+    """
+    attr min
+    attr max
+
+    Container:
+        padding = None
+        constraints = [
+            hbox(range_min, range_max),
+            range_min.width == range_max.width,
+        ]
+        MyFloatField: range_min:
+            value := min
+        MyFloatField: range_max:
+            value := max
+
+enamldef ThresholdsPanel(Container): thresholds_container:
+    attr gui_option
+    padding = None
+    constraints = [ vbox(flow_area, famous_apply, spacer.flex()),]
+                    # total_range.width == AA_range.width,
+                    # total_range.width == DD_DA_range.width,
+                    # total_range.width == famous_apply.width,]
+    FlowArea: flow_area:
+        MinMaxBox: total_range:
+            box_title = 'DD + DA + AA'
+            box_min = thresholds_container.gui_option.total_min
+            box_max = thresholds_container.gui_option.total_max
+
+        FlowItem:
+            GroupBox: range_box:
+                title << '1D Histogram Range (Min/Max)'
+                ComboBox: options:
+                    items = ['S-range for 1D E*', 'E-range for 1D S']
+                    index = 0
+
+                Stack:
+                    index << options.index
+                    StackedThreshold: s_range_1D:
+                        min = thresholds_container.gui_option.S_min_1D
+                        max = thresholds_container.gui_option.S_max_1D
+                    StackedThreshold: e_range_1D:
+                        min = thresholds_container.gui_option.E_min_1D
+                        max = thresholds_container.gui_option.E_max_1D
+
+        MinMaxBox: AA_range:
+            box_title = 'AA'
+            box_min = thresholds_container.gui_option.AexAem_min
+            box_max = thresholds_container.gui_option.AexAem_max
+
+        MinMaxBox: DD_DA_range:
+            box_title = 'DD + DA'
+            box_min = thresholds_container.gui_option.Dex_min
+            box_max = thresholds_container.gui_option.Dex_max
+
+        MinMaxBox: E_range:
+            box_title = 'E Range'
+            box_min = thresholds_container.gui_option.E_min
+            box_max = thresholds_container.gui_option.E_max
+
+        MinMaxBox: S_range:
+            box_title = 'S Range'
+            box_min = thresholds_container.gui_option.S_min
+            box_max = thresholds_container.gui_option.S_max
+
+        MinMaxBox: tau_range:
+            box_title = 'Tau (/ms)'
+            box_min = thresholds_container.gui_option.Tau_min
+            box_max = thresholds_container.gui_option.Tau_max
+
+
+    PushButton: famous_apply:
+        text << 'Apply'
+        clicked ::
+            thresholds_container.gui_option.AexAem_min = AA_range.box_min
+            thresholds_container.gui_option.AexAem_max = AA_range.box_max
+            thresholds_container.gui_option.Dex_min = DD_DA_range.box_min
+            thresholds_container.gui_option.Dex_max = DD_DA_range.box_max
+            thresholds_container.gui_option.total_min = total_range.box_min
+            thresholds_container.gui_option.total_max = total_range.box_max
+
+            thresholds_container.gui_option.E_min = E_range.box_min
+            thresholds_container.gui_option.E_max = E_range.box_max
+            thresholds_container.gui_option.S_min = S_range.box_min
+            thresholds_container.gui_option.S_max = S_range.box_max
+
+            thresholds_container.gui_option.Tau_min = tau_range.box_min * 10**(-3)
+            thresholds_container.gui_option.Tau_max = tau_range.box_max * 10**(-3)
+            thresholds_container.gui_option.S_min_1D = s_range_1D.min
+            thresholds_container.gui_option.S_max_1D = s_range_1D.max
+            thresholds_container.gui_option.E_min_1D = e_range_1D.min
+            thresholds_container.gui_option.E_max_1D = e_range_1D.max
+            thresholds_container.gui_option.updated = True

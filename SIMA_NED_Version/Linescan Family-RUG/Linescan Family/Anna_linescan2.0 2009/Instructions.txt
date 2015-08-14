@@ -1,0 +1,36 @@
+Sloppy version to automatically process a bunch of Scans with the same spotfinding settings.
+
+It basically does:
+
+new image
+Neuer Dateiname: V:Tinnefeld/data/waveguides/20110512Auswertung/20110427_nochmal/3R/i/i.xml.hdr
+2x load
+router auf 6
+Spotfinder
+TacWindow
+->Set 185 und 85
+-> Tac-Cube auf z.b. 6
+DONE
+-> Values: 25-1000 bei PSF 5
+Area 16-245 include=true
+Heywood circularity 0,95 - 1,53 include=true
+Update
+Done
+Stop
+Keep and save
+i->i+1
+repeat if ../i/i.xml.hdr exists
+
+
+
+
+In order to work the differnt Scans (and by default the header files) need to be in a single folder each with increasing numbers, the starting number does not matter.
+
+e.g.
+
+/1/1.xml.hdr   (only important thing is that the number in the folder name and header name match! the ".xml" does not matter)
+/2/2.xml.hdr
+/3....
+...
+..
+stops if the next increment does not exist

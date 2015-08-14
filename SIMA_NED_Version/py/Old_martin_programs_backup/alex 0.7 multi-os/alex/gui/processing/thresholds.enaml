@@ -1,0 +1,69 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import IntField
+from alex.gui.fields.fields import MyFloatField
+
+enamldef ThresholdsPopUp(Window): popup:
+    attr thresholds
+    Thresholds:
+        thresholds := popup.thresholds
+    
+enamldef ThresholdsPanel(Container): thresholds_container:
+    attr thresholds
+#         share_layout = True
+    Form:
+        constraints = [hbox(weighted, weighted_label, spacer)]
+        CheckBox: weighted:
+            checked = thresholds_container.thresholds.weighted
+        Label: weighted_label:
+            text = 'Weigh bursts by their statistical significance'
+    Form: threshold_form:
+#             share_layout = True
+        GroupBox:
+            title << 'Aexc Aem'
+            Label: 
+                text = 'Minimum'
+            MyFloatField: AexAem_min:
+                value = thresholds_container.thresholds.AexAem_min
+                submit_triggers = ['lost_focus', 'return_pressed']
+            Label:
+                text = 'Maximum'
+            MyFloatField: AexAem_max:
+                value = thresholds_container.thresholds.AexAem_max
+                submit_triggers = ['lost_focus', 'return_pressed']
+        GroupBox:
+            title << 'Dexc'
+            Label:
+                text = 'Minimum'
+            MyFloatField: Dex_min:
+                value = thresholds_container.thresholds.Dex_min
+                submit_triggers = ['lost_focus', 'return_pressed']
+            Label:
+                text = 'Maximum'
+            MyFloatField: Dex_max:
+                value = thresholds_container.thresholds.Dex_max
+                submit_triggers = ['lost_focus', 'return_pressed']
+        GroupBox:
+            title << 'Dexc + Aexc Aem + Aexc Dem'
+            Label:
+                text = 'Minimum'
+            MyFloatField: total_min:
+                value = thresholds_container.thresholds.total_min
+                submit_triggers = ['lost_focus', 'return_pressed']
+            Label:
+                text = 'Maximum'
+            MyFloatField: total_max:
+                value = thresholds_container.thresholds.total_max
+                submit_triggers = ['lost_focus', 'return_pressed']
+        PushButton:
+            text << 'Apply'
+            clicked ::
+                thresholds_container.thresholds.weighted = weighted.checked
+                thresholds_container.thresholds.AexAem_min = AexAem_min.value
+                thresholds_container.thresholds.AexAem_max = AexAem_max.value
+                thresholds_container.thresholds.Dex_min = Dex_min.value
+                thresholds_container.thresholds.Dex_max = Dex_max.value
+                thresholds_container.thresholds.total_min = total_min.value
+                thresholds_container.thresholds.total_max = total_max.value
+                thresholds_container.thresholds.update = True
+#                 print 'succes: {}'.format(thresholds_container.thresholds.AllPhotons)
