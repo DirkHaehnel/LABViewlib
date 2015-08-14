@@ -1,0 +1,67 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import FloatField, IntField
+from alex.gui.fields.fields import MyFloatField
+from alex.gui.common_widgets import MinMaxBox, MinMaxIntBox
+
+enamldef PlotOptionsPanel(Container): plot_options_container:
+    attr gui_option
+
+    # constraints = [threshold_form.width == contents_width]
+        # Label: weighted_label:
+        #     text = 'Weigh bursts by their statistical significance'
+            # share_layout = True
+    constraints = [ vbox(weighted_box, flow_area, famous_apply, spacer.flex()),]
+                    # total_range.width == AA_range.width,
+                    # total_range.width == DD_DA_range.width,
+                    # total_range.width == famous_apply.width,]
+    # GroupBox: weighted_box:
+    #     flat = True
+    #     title << 'Weigh bursts by their statistical significance'
+    #     CheckBox: weighted:
+    #         checked = plot_options_container.gui_option.weighted
+    Form: weighted_box:
+        Label:
+            text = 'Weigh bursts by their statistical significance'
+        CheckBox: weighted:
+            checked = plot_options_container.gui_option.weighted
+
+    FlowArea: flow_area:
+
+        MinMaxBox: s_box:
+            box_title = 'S range'
+            box_min = plot_options_container.gui_option.S_min
+            box_max = plot_options_container.gui_option.S_max
+
+        MinMaxBox: e_box:
+            box_title = 'E range'
+            box_min = plot_options_container.gui_option.E_min
+            box_max = plot_options_container.gui_option.E_max
+
+        MinMaxIntBox: bin_box:
+            box_title = 'Bins'
+            this_that = '(E/S)'
+            box_min = plot_options_container.gui_option.bins[1]
+            box_max = plot_options_container.gui_option.bins[0]
+
+        FlowItem:
+            Form:
+                Label:
+                    text = 'Logarithmic Color Scale'
+                CheckBox: log_scale:
+                    checked = plot_options_container.gui_option.log_scale
+
+    PushButton: famous_apply:
+        text << 'Apply'
+        clicked ::
+            print 'clicked!'
+            plot_options_container.gui_option.weighted = weighted.checked
+            plot_options_container.gui_option.S_min = s_box.box_min
+            plot_options_container.gui_option.S_max = s_box.box_max
+            plot_options_container.gui_option.E_min = e_box.box_min
+            plot_options_container.gui_option.E_max = e_box.box_max
+            plot_options_container.gui_option.bins[0] = bin_box.box_max
+            plot_options_container.gui_option.bins[1] = bin_box.box_min
+            plot_options_container.gui_option.log_scale = log_scale.checked
+            print 'realy clicked'
+            plot_options_container.gui_option.updated = True

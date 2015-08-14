@@ -1,0 +1,220 @@
+#------------------------------------------------------------------------------
+#  Copyright (c) 2012, Enthought, Inc.
+#  All rights reserved.
+#------------------------------------------------------------------------------
+""" An example of the `DockPane` widget.
+
+This example demonstrates the use of the `DockPane` widget. A `DockPane`
+can have at most one child, which must be a 'Container` widget. The 
+sizing of the `DockPane` is largely determined by the size constraints
+of the child `Container`. A `DockPane` must be used as the child of 
+a `MainWindow`. There are several attribute on a `DockPane` which allow
+the developer to control the behavior of the `DockPane`.
+
+Implementation Notes:
+    
+    The docking facilities in Wx are very weak. Due to various technical 
+    limitations, the sizing of `DockPane` widgets in Wx is not nearly as
+    good as it is on Qt. The cost of using a `DockPane` in Wx is also 
+    *much* higher than in Qt due to Wx's horribly inefficient docking 
+    implementation. If docking is required for a particular application, 
+    strongly prefer the Qt backend over Wx (this is generally a good 
+    life-rule).
+
+"""
+# from enaml.widgets.text_editor import TextEditor
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.core.api import Looper, Conditional
+# from enaml.stdlib.fields import FloatField, IntField
+# # from toolbar import ProcessingToolBar
+# from processing import Plot
+# from thresholds import ThresholdsPopUp, Thresholds
+from alex.functions import (
+    Gaussian, Constant, Zero,
+    )
+from .functions import (
+    GaussianForm, ConstantForm, ZeroForm
+    )
+   
+enamldef PopUp(Window):
+    Form:
+        Label:
+            text << 'test'
+        Field:
+            pass
+
+enamldef FitPopUp(Window): popup:
+    """ Popup to show the full fit report with options. """
+    # Very nasty, but prevents crashes due to uninitialized jada jada
+    attr fit #:= parent.fit
+    Container:
+        GroupBox:
+            title << 'Fit Parameters'
+            Form:
+                Looper: looper:
+                    iterable << popup.fit.get_popt_tuple()
+                    Label:
+                        text << u'{}'.format(loop_item[0])
+                    Field:
+                        read_only = True
+                        text << u'{}'.format(loop_item[1])
+                Looper: looper:
+                    iterable << popup.fit.Func.get_areas()
+                    Label:
+                        text << u'Area under curve {}'.format(loop_index)
+                    Field:
+                        read_only = True
+                        text << u'{}'.format(loop_item)
+        GroupBox:
+            title << 'Fit Report'
+            Form:
+                Label:
+                    text << u'R\u00B2'
+                Field:
+                    read_only = True
+                    text << u'{}'.format(popup.fit.get_r_squared())
+                Conditional:
+                    # In case of failure, show msg
+                    condition << hasattr(popup.fit, 'msg')
+                    Label:
+                        text << u'Status Message'
+                    Field:
+                        text << u'{}'.format(popup.fit.mesg)
+
+                # Label:
+                #     text << u'Area\'s'
+                # Field:
+                #     read_only = True
+                #     text << u'{}'.format(popup.fit.Func.get_areas())
+
+                Label:
+                    text << u'Text'
+                Field:
+                    read_only = True
+                    text << u'{}'.format(popup.fit.Func.get_params())
+
+enamldef GuessParamsPopUp(Window): popup:
+    # An instance of Guess
+    attr guess
+#     attr type_E = popup.guess.type_E
+#     attr type_S = popup.guess.type_S
+    Container:
+        constraints = [vbox(boxes, buttons),]
+        Container: boxes:
+            constraints = [horizontal(left, e_box, s_box, right),
+                           e_box.height == boxes.height,]
+            GroupBox: e_box:
+                title << 'E direction'
+                Form:
+                    Label:
+                        text << 'Function'
+                    ComboBox: option_E:
+                        items << ['Gaussian', 'Constant', 'Zero']
+                        # Select the proper model from the current setting
+                        index = items.index(popup.guess.type_E.__class__.__name__)
+                Stack: stack_E:
+                    index << option_E.index
+                    StackItem:
+                        GaussianForm: stack_E_gaussian:
+                            model = [popup.guess.type_E, Gaussian()][option_E.index]
+                    StackItem:
+                        ConstantForm: stack_E_constant:
+                            model = [Constant(), popup.guess.type_E][option_E.index]
+                    StackItem:
+                        ZeroForm:
+                            pass
+                         
+            GroupBox: s_box:
+                title << 'S direction'
+                Form:
+                    Label:
+                        text << 'Function'
+                    ComboBox: option_S:
+                        items << option_E.items # This way we only have to change one list
+                        index = items.index(popup.guess.type_S.__class__.__name__)
+                Stack:
+                    index << option_S.index
+                    StackItem:
+                        GaussianForm: stack_S_gaussian:
+                            model = [popup.guess.type_S, Gaussian(), None][option_S.index]
+                    StackItem:
+                        ConstantForm: stack_S_constant:
+                            model = [Constant(), popup.guess.type_E, None][option_S.index]
+                    StackItem:
+                        ZeroForm:
+                            pass
+                         
+        Container: buttons:
+#             constraints = [ok.width >= 300,]
+            PushButton: ok:
+                text << 'OK'
+                clicked ::
+                    popup.guess.type_E = [stack_E_gaussian.model, stack_E_constant.model, Zero()][option_E.index]
+                    popup.guess.type_S = [stack_S_gaussian.model, stack_S_constant.model, Zero()][option_S.index]
+                    popup.close()
+                    popup.guess.type_E.update = True
+                    # popup.guess.type_S.update = True
+                    # Incredebly nasty way to do it, but auto updating with << does not seem to work
+#                     popup.parent.text = unicode(popup.guess)
+
+# enamldef GuessParamsPopUp(Window): popup:
+#     # An instance of Guess
+#     attr guess
+#     attr models_E = {'Gaussian': (GaussianForm, Gaussian()), 'Constant': (ConstantForm, Constant())}
+#     attr item_E << [popup.models_E[option_E.selected_item][0](popup, model = popup.models_E[option_E.selected_item][1])]
+# #     attr models_S = {'Gaussian': GaussianForm(popup, model = Gaussian()), 'Constant': ConstantForm(popup, model = Constant())}
+# #     attr type_E = popup.guess.type_E
+# #     attr type_S = popup.guess.type_S
+#     event dummy
+#     Container:
+#         constraints = [vbox(boxes, buttons),]
+#         Container: boxes:
+#             constraints = [horizontal(left, e_box, s_box, right),
+#                            e_box.height == boxes.height,]
+#             GroupBox: e_box:
+#                 title << 'E direction'
+#                 Form:
+#                     Label:
+#                         text << 'Function'
+#                     ComboBox: option_E:
+#                         items << ['Gaussian', 'Constant']
+#                         # Select the proper model from the current setting
+#                         index = items.index(popup.guess.type_E.__class__.__name__)
+# #                         on_action_index_changed ::
+# #                             print option_E.selected_item
+#                 Container:
+#                     Include: looper_E:
+# #                         destroy_old = False
+#                         objects = popup.item_E
+# #                     Looper: looper_E:
+# #                         iterable << [popup.models_E[option_E.items[option_E.index]]]
+# #                         loop_item[0]:
+# #                             model = loop_item[1]
+#             GroupBox: s_box:
+#                 title << 'S direction'
+#                 Form:
+#                     Label:
+#                         text << 'Function'
+#                     ComboBox: option_S:
+#                         items << option_E.items # This way we only have to change one list
+#                         index = items.index(popup.guess.type_S.__class__.__name__)
+# #                 Container:
+# #                     Include: looper_S:
+# #                         objects << [popup.models_S[option_S.items[option_S.index]]]
+#                         
+#         Container: buttons:
+# #             constraints = [ok.width >= 300,]
+#             PushButton: ok:
+#                 text << 'OK'
+#                 clicked ::
+#                     popup.guess.type_E = looper_E.objects[0].model
+#                     popup.guess.type_S = looper_S.objects[0].model
+#                     popup.close()
+#                     # Incredebly nasty way to do it, but auto updating with << does not seem to work
+# #                     popup.parent.text = unicode(guess)
+#     dummy ::
+#         print option_E.items
+#         print option_E.index
+#         print popup.models_E[option_E.items[option_E.index]]
+#         print looper_E.objects

@@ -1,0 +1,39 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from alex.gui.fields.fields import MyFloatField
+from enaml.stdlib.fields import IntField
+    
+
+enamldef MinMaxBox(FlowItem): range_box:
+    attr box_title
+    attr box_min
+    attr box_max
+    attr this_that = '(Min/Max)'
+
+    GroupBox:
+        title << box_title + ' ' + this_that
+        constraints = [
+            vbox(total_min, total_max),
+            total_min.width == total_max.width,
+        ]
+        MyFloatField: total_min:
+            value := box_min
+        MyFloatField: total_max:
+            value := box_max
+
+enamldef MinMaxIntBox(FlowItem): range_box:
+    attr box_title
+    attr box_min
+    attr box_max
+    attr this_that = '(Min/Max)'
+
+    GroupBox:
+        title << box_title + ' ' + this_that
+        constraints = [
+            vbox(total_min, total_max),
+            total_min.width == total_max.width,
+        ]
+        IntField: total_min:
+            value := box_min
+        IntField: total_max:
+            value := box_max

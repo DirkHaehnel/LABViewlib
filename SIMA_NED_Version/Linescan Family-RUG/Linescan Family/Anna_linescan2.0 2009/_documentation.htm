@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AnnaLinescan</title>
+</head>
+
+<body>
+<h1>AnnaLinescan2009 Documentation</h1>
+
+<h2><a name="content">Content</a></h2>
+<a href="#batchAnalyze">Batch Analyze</a>
+
+<h2><a name="batchAnalyze">Batch Analyze</a></h2>
+<p>Chose a header file and push the button.<br />
+For the first Scan, the windows "settings", "TAC window" and "Spotfinding Settings" will pop up, you can fill in appropriate values (and immediately check on the Scan image). After "Update" and "Done", the program will crawl through all the other Scans in the folder and analyze the data with the same settings.<br />
+<br />
+some fun facts:<br />
+<br />
+still only works if the folders are labeled like<br />
+<br />
+.../1/1.xml.hdr<br />
+.../2/2.xml.hdr<br />
+<br />
+you can use a random name, but, name of the folder and the header file need to match. Also they have to be numbered in increments, the starting number doesnt matter<br />
+<br />
+for data of ingos setup it should work for both the "results.txt" (lifetimes, intensities, etc.) and the "decay of spotxxx.dat". For data from my setup, so far only the "results.txt" works, but that'S enough for you guillermo, right?<br />
+<br />
+in order to see some useful images, you need to set the threshold to approriate values, before starting the analysis. So either load a scan and adjust, or put the values before loading the first scan (which will cause an error, but doesn't matter)<br />
+<br />
+If you analyze the old-fashioned way, always use the TAC Window Button before the Spotfinder Button (for the first scan at least)<br />
+</p>
+</body>
+</html>

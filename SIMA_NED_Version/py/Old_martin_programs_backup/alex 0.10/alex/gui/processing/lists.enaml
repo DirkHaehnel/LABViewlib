@@ -1,0 +1,110 @@
+# from enaml.widgets.text_editor import TextEditor
+from enaml.widgets.api import *
+from enaml.layout.api import *
+# from enaml.core.api import Looper, Conditional
+# from enaml.stdlib.fields import FloatField, IntField
+# from toolbar import ProcessingToolBar
+# from processing import Plot
+from .popups import (
+    GuessParamsPopUp, FitPopUp
+)
+from alex.functions import Guess
+from alex.fit import Fit
+        
+enamldef GuessItem(ListItem): guess_params:
+    # A Pythonic Guess object
+    attr guess: Guess
+    
+    selectable = True
+    selected = False
+#     text << unicode(guess)
+#     text << u'E: {}\nS: {}'.format(guess.type_E, guess.type_S)
+    text << guess.name
+    editable = False
+    tool_tip << text
+    checkable = True
+    checked = True
+    double_clicked :: 
+        print guess_params.guess
+        GuessParamsPopUp(guess_params, guess = guess_params.guess, title = 'Edit Guess')
+    clicked :: guess_params.selected = not guess_params.selected
+    
+enamldef GuessListing(Container): guess_listing:
+    # List of pythonic guess instances
+    attr guesses : list
+    # Events to perform the described items
+    event add_guess
+    event delete
+    constraints = [hbox(add, delete),
+                   align('v_center', add, delete),
+                   vbox(add, list_ctrl),
+                   add.width == delete.width,]
+    PushButton: add:
+        text << 'Add'
+        clicked :: guess_listing.add_guess()
+    PushButton: delete:
+        text << 'Delete'
+        clicked :: 
+            guess_listing.delete()
+    ListControl: list_ctrl:
+        item_spacing = 5
+        Include: include:
+            objects << [GuessItem(include, guess = guess) for guess in guess_listing.guesses]
+#         Looper: include:
+#             iterable << guess_listing.guesses
+#             GuessItem:
+#                 model := list_item
+#     add_guess ::
+#         # The Guess is added in the controller
+#         guess_listing.item_added()
+    add_guess ::
+        guess = Guess()
+        print guess
+#         if guess_listing.guesses:
+        guess_listing.guesses = guess_listing.guesses + [guess]
+#         else:
+#             guess_listing.guesses = [guess]
+#         guess_listing.guesses += [guess]
+#         guess_listing.guesses.append(guess)
+#         print guess_listing.guesses
+#         print include.objects
+#         guess_params = GuessItem(list_ctrl, guess = guess)
+#         include.objects.append(guess_params)
+#         guess_params.double_clicked()
+        include.objects[-1].double_clicked()
+    delete ::
+        # Update the guesses list to reflect this deletion
+        guess_listing.guesses = [item.guess for item in include.objects if not item.selected]
+
+enamldef FitItem(ListItem): item:
+    attr fit# : Fit
+    attr prefix : unicode = u'' # Usually E: or S:
+    text << u'{}{}'.format(prefix, item.fit)
+    editable = False
+    tool_tip << text
+    checkable = False
+    double_clicked :: 
+        FitPopUp(item, fit = item.fit, title = 'Fit Report') #fit = item.fit?
+#     FitPopUp:
+#         fit := item.fit
+#         title << 'Fit Report'
+     
+enamldef FitListing(Container): fit_listing:
+#     attr fits
+#     attr run_fitting
+    attr fitting
+    Container:
+        PushButton:
+            text << 'Run Fitting'
+            clicked ::
+                # Fire the event so the controller knows to start
+#                                     processing.parent.run_fitting()
+#                 fit_listing.run_fitting()
+                fit_listing.fitting.run_fitting = True
+                print 'clicked run fitting'
+#                 fit_listing.processing.run_fitting()
+                
+        ListControl: fit_list:
+            Include: include:
+                objects << [FitItem(fit_list, fit = fit, prefix = prefix) for fit, prefix in zip(fit_listing.fitting.fits, [u'E: ', u'S: '])]
+#                 objects << [FitListing(fit_list, fit = fit, prefix = prefix) for fit, prefix in zip(fit_listing.processing.fits, ['E: ', 'S: '])]

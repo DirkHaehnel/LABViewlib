@@ -1,0 +1,856 @@
+####
+#Date: ma 21 mei 2012 14:21:09
+#OSName: Microsoft Windows XP Service Pack 3
+#OSVers: 5.1
+#OSBuild: 2600
+#AppName: LabVIEW
+#Version: 9.0 32-bit
+#AppKind: FDS
+#AppModDate: 06/23/2009 17:56 GMT
+#LabVIEW Base Address: 0x00400000
+
+
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(1105): Inconsistent L2 cache information. Searched for:
+.\source\lib\IntelDataCollector.cpp(1108): level: 2, role: 2; type: 0, entryType: 2, entrySize: 64, size: 262144, associativity: 8
+.\source\lib\IntelDataCollector.cpp(1110): Raw data was:  eax: 00000000, ebx: 00000000, ecx: 01006040, edx: 00000000
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+.\source\lib\IntelDataCollector.cpp(976): CPUID(4) provided cache that CPUID(2) did not. Intel cache parse may need an update.
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+
+c:\builds\penguin\labview\branches\Orion\dev\source\panel\loaddata.cpp(3079) : DWarn: XML arrayIndices does not match private-data arrayIndices at item 0.
+$Id: //labview/branches/Orion/dev/source/panel/loaddata.cpp#71 $
+0x01072E6F - LabVIEW <unknown> + 0
+0x00CF5CC3 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00C81698 - LabVIEW <unknown> + 0
+0x00CB536F - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01074CCE - LabVIEW <unknown> + 0
+0x01075395 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D33D66 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x01075307 - LabVIEW <unknown> + 0
+0x00C5DE61 - LabVIEW <unknown> + 0
+0x00D9482C - LabVIEW <unknown> + 0
+0x00DF4941 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074AF4 - LabVIEW <unknown> + 0
+0x00D2C8D7 - LabVIEW <unknown> + 0
+0x00C5E881 - LabVIEW <unknown> + 0
+0x0107430D - LabVIEW <unknown> + 0
+0x01074A1F - LabVIEW <unknown> + 0
+0x01075C49 - LabVIEW <unknown> + 0
+0x01075F7A - LabVIEW <unknown> + 0
+0x0106B29B - LabVIEW <unknown> + 0
+0x0106C42A - LabVIEW <unknown> + 0
+0x0106C5E0 - LabVIEW <unknown> + 0
+0x01523A0D - LabVIEW <unknown> + 0
+*** Dumping Bread Crumb Stack ***
+*** LabVIEW Base Address 0x00400000 ***
+Loading VI Heap, HeapClass "FPHP", X:\Data\Desktop\DAQLinescan_RUG_under_construction_almost_final\AO Write (waveform).vi
+*** End Dump ***
+Possible path leak, unable to purge elements of base #0

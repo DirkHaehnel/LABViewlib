@@ -1,0 +1,139 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import IntField
+from alex.gui.fields.fields import MyFloatField
+from alex.gui.common_widgets import MinMaxBox
+from enaml.core.api import Looper, Include
+
+def select_dir_callback(gui_option, key):
+    print gui_option.paths[key]
+    def select_dir(dlg):
+        # file_name, file_ext = os.path.splitext(dlg.path)
+        if dlg.result == 'accepted':
+            # del row[-1]
+            # row.append(dlg.path)
+            gui_option.paths[key] = dlg.path
+        # print row
+    return select_dir
+
+enamldef TitDialog(FileDialog): tit_dialog:
+    attr gui_option
+    attr key : int
+    title = 'Select a directory for this condition'
+    mode = 'directory'
+    callback = select_dir_callback(tit_dialog.gui_option, tit_dialog.key)
+    closed ::
+        if tit_dialog.result == 'accepted':
+            tit_dialog.parent.parent.parent.add_dir()
+
+
+enamldef TitCondition(FlowItem): tit_condition:
+    attr gui_option
+    # # attr row : list
+    # attr concentration : float
+    # attr path : unicode
+    attr key : int
+    attr dlg = TitDialog(
+        tit_condition,
+        gui_option=tit_condition.gui_option,
+        key=tit_condition.key,
+        # my_path=gui_option.paths[tit_condition.key],
+    )
+
+    Container:
+        padding = None
+        constraints = [hbox(float_field, path_field, browse_button)]
+        MyFloatField: float_field:
+            value := tit_condition.gui_option.concentrations[tit_condition.key]
+        Field: path_field:
+            text := tit_condition.gui_option.paths[tit_condition.key]
+        PushButton: browse_button:
+            text << 'Browse'
+            clicked ::
+                # TitDialog(tit_condition, path=tit_condition.path, mode='directory').open()
+                dlg.open()
+                # print row
+
+
+
+enamldef TitrationDirectoriesPanel(Container): tit_container:
+    attr gui_option
+    event add_dir
+    event delete_dir
+    # attr conditions = zip(gui_option.concentrations, gui_option.paths)
+
+    padding = None
+    constraints = [ 
+        vbox(
+            flow_area, 
+            hbox(add, delete),
+            famous_apply, 
+            spacer.flex()
+        ),
+    ]
+
+    FlowArea: flow_area:
+        # Looper:
+        #     iterable << tit_container.gui_option.conditions
+        #     TitCondition:
+        #         # concentration = loop_item[0]
+        #         # path = loop_item[1]
+        #         row := loop_item            
+        Include: include:
+            objects << [
+                TitCondition(
+                    include, 
+                    # concentration=concentration, 
+                    # path=path
+                    gui_option=tit_container.gui_option,
+                    key=key
+                ) for key, path in enumerate(gui_option.paths)
+            ]
+
+    PushButton: add:
+        text << 'Add Condition'
+        clicked ::
+            tit_container.add_dir()
+
+    PushButton: delete:
+        text << 'Delete Condition'
+        clicked ::
+            tit_container.delete_dir()
+
+    add_dir ::
+        # print gui_option.conditions
+        # conditions.append([0.0, ''])    # Append a new condition
+        # gui_option.concentrations.append(0.0)
+        # gui_option.paths.append('')
+        gui_option.paths = gui_option.paths + [u'']
+        gui_option.concentrations = gui_option.concentrations + [0.0]
+        print gui_option.concentrations, gui_option.paths
+
+
+    # PushButton: delete:
+    #     text << 'Delete Condition'
+    delete_dir ::
+        if len(gui_option.concentrations) > 1:
+            # gui_option.conditions = gui_option.conditions[:-1]
+            del gui_option.concentrations[-1]
+            del gui_option.paths[-1]
+
+
+    # PushButton: add:
+    #     text << 'Add Condition'
+    #     clicked ::
+    #         print gui_option.conditions
+    #         gui_option.conditions = gui_option.conditions + [[0.0, u'']]    # Append a new condition
+    #         print gui_option.conditions
+
+    # PushButton: delete:
+    #     text << 'Delete Condition'
+    #     clicked ::
+    #         if len(gui_option.conditions) > 1:
+    #             gui_option.conditions = gui_option.conditions[:-1]
+
+    PushButton: famous_apply:
+        text << 'Apply'
+        clicked ::
+            # tit_container.gui_option.conditions = dict(tit_container.conditions)
+            tit_container.gui_option.updated = True

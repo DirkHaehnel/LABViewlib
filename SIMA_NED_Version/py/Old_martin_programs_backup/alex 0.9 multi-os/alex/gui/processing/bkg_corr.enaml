@@ -1,0 +1,60 @@
+from enaml.widgets.api import *
+from enaml.layout.api import vertical
+from enaml.stdlib.fields import FloatField, IntField
+from alex.gui.fields.fields import MyFloatField
+from alex.models import FretCorrections
+
+enamldef BkgCorrOptionsPanel(Container): bkg_options_container:
+    attr corr : FretCorrections
+    constraints = [bkg.width == accurate.width,
+                   vertical(top, threshold_form, famous_apply, bottom),]
+    Form: threshold_form:
+        GroupBox: bkg:
+            title << 'Background (Counts /ms)'
+            Label:
+                text = 'DD'
+            MyFloatField: bkg_DD:
+                value << corr.bkg_DD
+                # submit_triggers = ['lost_focus', 'return_pressed']
+            Label:
+                text = 'DA'
+            MyFloatField: bkg_DA:
+                value << corr.bkg_DA
+            Label:
+                text = 'AA'
+            MyFloatField: bkg_AA:
+                value << corr.bkg_AA
+                # submit_triggers = ['lost_focus', 'return_pressed']
+            
+        GroupBox: accurate:
+            title << 'Accurate FRET Corrections'
+            Label:
+                text = 'Ebkg position of D-only'
+            MyFloatField: E_donly:
+                value << corr.E_donly
+                # submit_triggers = ['lost_focus', 'return_pressed']
+            Label:
+                text = 'Sbkg position of A-only'
+            MyFloatField: S_aonly:
+                value << corr.S_aonly
+            Label:
+                text = u'\u03B3'
+            MyFloatField: gamma:
+                value << corr.gamma
+            Label:
+                text = u'\u03B2'
+            MyFloatField: beta:
+                value << corr.beta
+        
+    PushButton: famous_apply:
+        text << 'Apply'
+        clicked ::
+            print 'clicked!'
+            bkg_options_container.corr.bkg_DD = bkg_DD.value
+            bkg_options_container.corr.bkg_DA = bkg_DA.value
+            bkg_options_container.corr.bkg_AA = bkg_AA.value
+            bkg_options_container.corr.E_donly = E_donly.value
+            bkg_options_container.corr.S_aonly = S_aonly.value
+            bkg_options_container.corr.gamma = gamma.value
+            bkg_options_container.corr.beta = beta.value
+            bkg_options_container.corr.updated = True

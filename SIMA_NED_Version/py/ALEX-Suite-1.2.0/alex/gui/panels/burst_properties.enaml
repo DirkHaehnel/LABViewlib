@@ -1,0 +1,78 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import IntField
+from enaml.core.api import Conditional
+from alex.gui.fields.fields import MyFloatField
+from alex.gui.common_widgets import MinMaxBox
+
+enamldef BurstPropertiesPanel(Container): burst_container:
+    attr gui_option
+    padding = None
+    constraints = [ vbox(flow_area, famous_apply, spacer.flex()),]
+                    # total_range.width == AA_range.width,
+                    # total_range.width == DD_DA_range.width,
+                    # total_range.width == famous_apply.width,]
+    FlowArea: flow_area:
+
+        FlowItem:
+            Form:
+                Label:
+                    text << u'Column'
+                ComboBox: column:
+                    items = [
+                        'Tau', 'Len', 'F_Aexc_Aem', 'F_Dexc_Dem',
+                        'F_Dexc_Aem', 'F_Aexc_Dem',
+                    ]
+                    index := gui_option.index
+
+        FlowItem:
+            Form:
+                Label:
+                    text << u'Normalisation'
+                CheckBox: normalised:
+                    checked := gui_option.normalised
+
+        FlowItem:
+            GroupBox:
+                title << 'Binning'
+                Form:
+                    padding=None
+                    Stack:
+                        index << gui_option.mode
+                        StackItem:
+                            Container:
+                                padding=None
+                                Label:
+                                    text << u'Seconds/bin'
+                                MyFloatField: time_size:
+                                    value := gui_option.bin_size_time
+                        StackItem:
+                            Container:
+                                padding=None
+                                Label:
+                                    text << u'Events/bin'
+                                IntField: bin_size_counts:
+                                    value := gui_option.bin_size_counts
+                        StackItem:
+                            Container:
+                                padding=None
+                                Label:
+                                    text << u'Hz/bin'
+                                MyFloatField: bin_size:
+                                    value := gui_option.bin_size_freq
+                    Container:
+                        padding=None
+                        Label:
+                            text << u'Number of bins'
+                        IntField: bin_size:
+                            read_only = True
+                            value << gui_option.no_bins
+
+
+    PushButton: famous_apply:
+        text << 'Apply'
+        clicked ::
+            burst_container.gui_option.column = column.selected_item
+            # burst_container.gui_option.normalised = normalised.checked
+            # burst_container.gui_option.bin_size = bin_size_counts.value
+            burst_container.gui_option.updated = True

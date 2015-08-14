@@ -1,0 +1,76 @@
+# from enaml.widgets.text_editor import TextEditor
+from enaml.widgets.api import *
+# from enaml.layout.api import *
+from ..fields.fields import MyFloatField
+
+enamldef BetaForm(Form): beta:
+    attr model
+    Label:
+        text << u'\u03B1'
+    MyFloatField:
+        value := beta.model.a
+    Label:
+        text << u'\u03B1 Fixed'
+    CheckBox:
+        checked := beta.model.a_fixed
+    
+    Label:
+        text << u'\u03B2'
+    MyFloatField:
+        value := beta.model.b
+    Label:
+        text << u'\u03B2 Fixed'
+    CheckBox:
+        checked := beta.model.b_fixed
+
+    Label:
+        text << u'Amplitude'
+    MyFloatField:
+        value := beta.model.A
+    Label:
+        text << u'Amplitude Fixed'
+    CheckBox:
+        checked := beta.model.A_fixed
+
+enamldef GaussianForm(Form): gaussian:
+    attr model
+    Label:
+        text << u'x0'
+    MyFloatField:
+        value := gaussian.model.x0
+    Label:
+        text << u'x0 Fixed'
+    CheckBox:
+        checked := gaussian.model.x0_fixed
+    
+    Label:
+        text << u'\u03c3'
+    MyFloatField:
+        value := gaussian.model.sig
+    Label:
+        text << u'\u03c3 Fixed'
+    CheckBox:
+        checked := gaussian.model.sig_fixed
+    
+    Label:
+        text << u'Amplitude'
+    MyFloatField:
+        value := gaussian.model.A
+    Label:
+        text << u'Amplitude Fixed'
+    CheckBox:
+        checked := gaussian.model.A_fixed
+
+enamldef ConstantForm(Form): constant:
+    attr model
+    Label:
+        text << u'A0'
+    MyFloatField:
+        value := constant.model.A0
+    Label:
+        text << u'A0 Fixed'
+    CheckBox:
+        checked := constant.model.A0_fixed
+        
+enamldef ZeroForm(Form):
+    pass

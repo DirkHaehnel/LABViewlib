@@ -1,0 +1,40 @@
+
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from alex.gui.fields.fields import MyFloatField
+from ..processing.thresholds import (
+    ThresholdsPanel
+)
+from ..processing.plot_options import PlotOptionsPanel
+
+enamldef BVAViewer(MainWindow): bva_viewer:
+    attr bva_view
+    attr thresholds
+    attr plot_options
+
+    Container:
+	    MPLCanvas:
+    	    figure << bva_view.fig
+    	    toolbar_visible = True
+
+   	DockPane:
+        title << 'Options'
+        dock_area = 'right'
+        closable = False
+        Container:
+            padding = None
+            Notebook:
+                tab_style = 'document'
+                tab_position = 'bottom'
+                Page:
+                    title << 'Thresholds'
+                    closable = False
+                    Container:
+                        ThresholdsPanel:
+                            thresholds := bva_viewer.thresholds
+                Page:
+                    title << 'Plot Options'
+                    closable = False
+                    Container:
+                        PlotOptionsPanel:
+                            plot_options := bva_viewer.plot_options

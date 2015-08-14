@@ -1,0 +1,63 @@
+from enaml.widgets.api import *
+from enaml.stdlib.fields import FloatField, IntField
+import os
+# from thresholds import Thresholds
+# from plot_options import PlotOptions
+
+def export_session_callback(manager):
+    def export_session(dlg):
+        file_name, file_ext = os.path.splitext(dlg.path)
+        manager.export = file_name
+    return export_session
+
+enamldef ProcessingToolBar(ToolBar): toolbar:
+    attr fitting
+    attr evss_view
+    attr manager
+    ActionGroup:
+        Action:
+            checkable = False
+            text << 'Export Data'
+            triggered :: 
+                dlg = FileDialog(
+                    toolbar,
+                    path='.csv',
+                    title='Export histograms to .csv',
+                    mode='save_file',
+                    callback=export_session_callback(toolbar.manager),
+                    filters=['.csv'],
+                    selected_filter = '.csv',
+                ).open()
+        Action:
+            checkable = False
+            text << 'Export to PDF'
+            triggered :: 
+                dlg = FileDialog(
+                    toolbar,
+                    path='.csv',
+                    title='Export histograms to .csv',
+                    mode='save_file',
+                    callback=export_session_callback(toolbar.manager),
+                    filters=['.csv'],
+                    selected_filter = '.csv',
+                ).open()
+        Action: fit:
+            checkable = False
+            enabled << True if [item for item in toolbar.fitting.guesses] else False 
+            text = 'Run Fitting'
+            triggered :: fitting.run_fitting = True
+        Action:
+            separator = True
+    ActionGroup:
+        exclusive = True
+        Action:
+            checkable = True
+            checked = True
+            text << 'Select Peaks'
+            toggled :: evss_view.selection_mode = 'guesses'
+        Action:
+            checkable = True
+            text << 'Select S Range'
+            toggled :: evss_view.selection_mode = 's_range'
+        Action:
+            separator = True

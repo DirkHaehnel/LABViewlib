@@ -1,0 +1,60 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+
+enamldef EvsSLayersPanel(Container): evss_layers_container:
+    attr gui_option
+
+    ListControl:
+        ListItem:
+            text = 'E vs S histogram'
+            editable = False
+            tool_tip << text
+            checkable = False
+            
+        ListItem:
+            text = 'E histogram'
+            editable = False
+            tool_tip << text
+            checkable = False
+            
+        ListItem:
+            text = 'S histogram'
+            editable = False
+            tool_tip << text
+            checkable = False
+            
+        ListItem:
+            text = 'E fit'
+            editable = False
+            tool_tip << text
+            checkable = True
+            checked := evss_layers_container.gui_option.show_E
+            
+        ListItem:
+            text = 'S fit'
+            editable = False
+            tool_tip << text
+            checkable = True
+            checked := evss_layers_container.gui_option.show_S
+            
+        ListItem:
+            text = 'Guesses'
+            editable = False
+            tool_tip << text
+            checkable = True
+            checked := evss_layers_container.gui_option.show_guesses
+            
+        ListItem:
+            text = 'S Range'
+            editable = False
+            tool_tip << text
+            checkable = True
+            checked := evss_layers_container.gui_option.show_S_range
+
+        ListItem:
+            text = 'E Range'
+            editable = False
+            tool_tip << text
+            checkable = True
+            checked := evss_layers_container.gui_option.show_E_range
+            

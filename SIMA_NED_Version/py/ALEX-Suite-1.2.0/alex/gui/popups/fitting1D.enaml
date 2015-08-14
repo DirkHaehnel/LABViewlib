@@ -1,0 +1,122 @@
+# from enaml.widgets.text_editor import TextEditor
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.core.api import Looper, Conditional
+from enaml.stdlib.fields import FloatField
+# # from toolbar import ProcessingToolBar
+# from processing import Plot
+# from thresholds import ThresholdsPopUp, Thresholds
+from alex.functions import (
+    Gaussian, Constant, Zero, Guess1D, func_dict
+    )
+# from .functions import (
+#     GaussianForm, ConstantForm, ZeroForm
+#     )
+
+enamldef FitPopUp(Window): popup:
+    """ Popup to show the full fit report with options. """
+    # Very nasty, but prevents crashes due to uninitialized jada jada
+    attr fit #:= parent.fit
+    Container:
+        GroupBox:
+            title << 'Fit Parameters'
+            Form:
+                Looper: looper:
+                    iterable << popup.fit.get_popt_tuple()
+                    Label:
+                        text << u'{}'.format(loop_item[0])
+                    Field:
+                        read_only = True
+                        text << u'{}'.format(loop_item[1])
+                Looper: looper:
+                    iterable << popup.fit.Func.get_areas()
+                    Label:
+                        text << u'Area under curve {}'.format(loop_index)
+                    Field:
+                        read_only = True
+                        text << u'{}'.format(loop_item)
+        GroupBox:
+            title << 'Fit Report'
+            Form:
+                Label:
+                    text << u'R\u00B2'
+                Field:
+                    read_only = True
+                    text << u'{}'.format(popup.fit.get_r_squared())
+                Conditional:
+                    # In case of failure, show msg
+                    condition << hasattr(popup.fit, 'msg')
+                    Label:
+                        text << u'Status Message'
+                    Field:
+                        text << u'{}'.format(popup.fit.mesg)
+
+                # Label:
+                #     text << u'Area\'s'
+                # Field:
+                #     read_only = True
+                #     text << u'{}'.format(popup.fit.Func.get_areas())
+
+                Label:
+                    text << u'Text'
+                Field:
+                    read_only = True
+                    text << u'{}'.format(popup.fit.Func.get_params())
+
+enamldef FunctionForm(Form): generic_form:
+    """ Generic Form for any AbstractFunction instance. """
+    attr guess : Guess1D
+    Looper: looper:
+        # iterable << map(lambda x, y: [x, y], function.get_param_names(), function.get_params()) # zip but with lists
+        iterable << generic_form.guess.function_type.get_param_names()
+        Label:
+            text = loop_item
+        FloatField:
+            value := getattr(generic_form.guess, loop_item)   # This assumes that the names returned by get_param_names are the exact names of the attributes.
+        Label:
+            text = '{} fixed'.format(loop_item)
+        CheckBox:
+            checked := getattr(generic_form.guess, '{}_fixed'.format(loop_item))
+
+
+enamldef GuessParamsPopUp(Window): popup:
+    # An instance of Guess
+    attr guess : Guess1D
+    attr function_form
+
+    Container:
+        GroupBox: box:
+            title << 'Guess'
+            # Form:
+            #     Label:
+            #         text << 'Function'
+            #     ComboBox: selector:
+            #         items << func_dict.keys()
+            #         # Select the proper model from the current setting
+            #         index << items.index(popup.guess.function_type.__class__.__name__)
+            Looper:
+                iterable << func_dict.keys()    # Names of allowed functions.
+                PushButton:
+                    text << loop_item
+                    clicked ::
+                        # guess.function_type = func_dict.values()[loop_index]()  # Fresh instance of such a function
+                        guess.set_function_type(func_dict.values()[loop_index]())
+                        # print 'In GUI x0: {}'.format(id(guess.looper.i))
+                        # function_form = FunctionForm(popup, guess = popup.guess)    # Overwrite the form with a new one.
+            FunctionForm: function_form:
+                guess := popup.guess
+                # guess := Guess1D()    # New instance
+        PushButton:
+            text << 'OK'
+            clicked ::
+                popup.guess = function_form.guess
+                popup.guess.function_type.updated = True
+                popup.close()
+           
+
+
+
+
+
+
+

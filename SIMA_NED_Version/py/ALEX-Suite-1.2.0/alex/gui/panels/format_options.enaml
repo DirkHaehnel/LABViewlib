@@ -1,0 +1,96 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.stdlib.fields import FloatField, IntField
+from alex.gui.fields.fields import MyFloatField
+from alex.models import PlotFormatOptions
+
+enamldef FormatOptionsPanel(Container): format_options_container:
+    attr gui_option 
+
+    Form: format_form:
+        constraints = [ fig_size_box.width == label_box.width,
+                        right_panel.width == font_box.width,
+                        ]
+        GroupBox: font_box:
+            flat = True
+            title << 'Font options'
+                # share_layout = True
+                # constraints = [ #hbox(weighted, weighted_label, spacer),
+                #                 bin_box.left == contents_left,
+                #                 s_box.width == e_box.width,
+                #                 s_box.width == bin_box.width,
+                #                 s_box.width == famous_button.width,
+                #                 ]
+                
+            Label:
+                text = 'Font family'
+            ComboBox: family_box:
+                index = 0
+                items = gui_option.get_fonts()
+
+            Label:
+                text = 'Style'
+            ComboBox: style_box:
+                index = 0
+                items = ['normal', 'italic', 'oblique']
+
+            Label:
+                text = 'Variant'
+            ComboBox: variant_box:
+                index = 0
+                items = ['normal', 'small-caps']
+
+            Label:
+                text = 'Weight'
+            ComboBox: weight_box:
+                index = 0
+                items = ['light', 'normal', 'medium', 'semibold', 'bold', 'heavy', 'black']
+
+            Label:
+                text = 'Size'
+            IntField: size_box:
+                value << format_options_container.gui_option.size
+
+        Container: right_panel:
+            padding  = None
+            GroupBox: label_box:
+                flat = True
+                title << 'Label placement'
+                Label:
+                    text = 'x label offset'
+                FloatField: x_box:
+                    value << format_options_container.gui_option.x_label_offset
+
+                Label:
+                    text = 'y label offset'
+                FloatField: y_box:
+                    value << format_options_container.gui_option.y_label_offset
+
+            GroupBox: fig_size_box:
+                flat = True
+                title << 'Figure size (Inch)'
+                Label:
+                    text = 'Width'
+                FloatField: width_box:
+                    value << format_options_container.gui_option.width
+
+                Label:
+                    text = 'Height'
+                FloatField: height_box:
+                    value << format_options_container.gui_option.height
+
+    PushButton:
+        text << 'Apply'
+        clicked ::
+            print 'clicked!'
+            format_options_container.gui_option.family = family_box.selected_item
+            format_options_container.gui_option.style = style_box.selected_item
+            format_options_container.gui_option.variant = variant_box.selected_item
+            format_options_container.gui_option.weight = weight_box.selected_item
+            format_options_container.gui_option.size = size_box.value
+            format_options_container.gui_option.x_label_offset = x_box.value
+            format_options_container.gui_option.y_label_offset = y_box.value
+            format_options_container.gui_option.width = width_box.value
+            format_options_container.gui_option.height = height_box.value
+            format_options_container.gui_option.updated = True
+            # print type(size_box)

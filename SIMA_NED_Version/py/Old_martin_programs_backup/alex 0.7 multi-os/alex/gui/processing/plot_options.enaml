@@ -1,0 +1,54 @@
+from enaml.widgets.api import *
+from enaml.stdlib.fields import FloatField, IntField
+from alex.gui.fields.fields import MyFloatField
+
+enamldef PlotOptionsPanel(Container): plot_options_container:
+    attr plot_options
+    Form: threshold_form:
+#             share_layout = True
+        GroupBox:
+            title << 'S range'
+            Label:
+                text = 'Minimum'
+            MyFloatField: S_min:
+                value << plot_options_container.plot_options.S_min
+                submit_triggers = ['lost_focus', 'return_pressed']
+            Label:
+                text = 'Maximum'
+            MyFloatField: S_max:
+                value << plot_options_container.plot_options.S_max
+                submit_triggers = ['lost_focus', 'return_pressed']
+        GroupBox:
+            title << 'E range'
+            Label:
+                text = 'Minimum'
+            MyFloatField: E_min:
+                value << plot_options_container.plot_options.E_min
+                submit_triggers = ['lost_focus', 'return_pressed']
+            Label:
+                text = 'Maximum'
+            MyFloatField: E_max:
+                value << plot_options_container.plot_options.E_max
+                submit_triggers = ['lost_focus', 'return_pressed']
+        GroupBox:
+            title << 'Bins'
+            Label:
+                text = 'E'
+            IntField: E_bins:
+                value = plot_options_container.plot_options.bins[1]
+                submit_triggers = ['lost_focus', 'return_pressed']
+            Label:
+                text = 'S'
+            IntField: S_bins:
+                value = plot_options_container.plot_options.bins[0]
+                submit_triggers = ['lost_focus', 'return_pressed']
+    PushButton:
+        text << 'Apply'
+        clicked ::
+            plot_options_container.plot_options.S_min = S_min.value
+            plot_options_container.plot_options.S_max = S_max.value
+            plot_options_container.plot_options.E_min = E_min.value
+            plot_options_container.plot_options.E_max = E_max.value
+            plot_options_container.plot_options.bins[0] = S_bins.value
+            plot_options_container.plot_options.bins[1] = E_bins.value
+            plot_options_container.plot_options.update = True

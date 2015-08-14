@@ -1,0 +1,71 @@
+# from enaml.widgets.text_editor import TextEditor
+from enaml.widgets.api import *
+from enaml.layout.api import *
+from enaml.core.api import Looper, Conditional, Include
+from alex.functions import GuessesToFitTitration
+from alex.gui.panels.fitting1D import Guess1DPanel, FitItem
+from alex.fit import Fit
+
+enamldef GuessStackItem(StackItem): guess_stack_item:
+    attr guesses
+    Guess1DPanel:
+        guesses := guess_stack_item.guesses
+
+enamldef GuessTitrationPanel(Container):
+    attr fitting : GuessesToFitTitration
+    # attr concentrations : list
+
+    ComboBox: combo_box:
+        items << [u'{}'.format(conc) for conc in fitting.data_container.concentrations]
+        index = 0
+    Stack:
+        index << combo_box.index
+        # Looper:
+        #     iterable << fitting.fittings
+        #     StackItem:
+        #         Guess1DPanel:
+        #             guesses := loop_item.guesses
+
+        Include:
+            objects << [GuessStackItem(guesses=fit_item.guesses) for fit_item in fitting.fittings]
+
+enamldef FitTitrationPanel(Container): fit_listing:
+    attr fitting : GuessesToFitTitration
+    # attr concentrations : list
+    Container:
+        PushButton:
+            text << 'Run Fitting'
+            clicked ::
+                fit_listing.fitting.run_fitting = True
+                print 'clicked run fitting'
+                
+        # ComboBox: combo_box:
+        #     items << [u'{}'.format(conc) for conc in concentrations]
+        #     index = 0
+        # Stack:
+        #     index << combo_box.index
+        #     Looper:
+        #         iterable << fitting.fittings
+        #         StackItem:
+        #             Container:
+        #                 # Label:
+        #                 #     text << 'We are still here!!!'
+        #                 ListControl: fit_list:
+        #                     # FitItem:
+        #                         # fit << fitting.fit
+        #                     Include: include:
+        #                         objects << [FitItem(fit_list, fit = fit, prefix = prefix) for fit, prefix in zip(loop_item.fits, [u'Fit: ',])]
+
+        ListControl: fit_list:
+            Conditional:
+                condition << isinstance(fitting.titration_fit, Fit)
+                FitItem:
+                    fit << fitting.titration_fit
+                    prefix = u'Titration Curve: '
+            # Include: include:
+                # objects << [FitItem(fit_list, fit = fit.fit_instance, prefix = prefix) for fit, prefix in zip(fitting.fittings, [u'{}nM: '.format(conc) for conc in concentrations])]
+            Looper:
+                iterable << zip(fitting.fittings, [u'{}nM: '.format(conc) for conc in fitting.data_container.concentrations])
+                FitItem:
+                    fit << loop_item[0].fit_instance
+                    prefix << loop_item[1]

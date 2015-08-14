@@ -1,0 +1,150 @@
+from enaml.widgets.api import *
+from enaml.layout.api import *
+# from enaml.core.api import Looper, Conditional
+# from enaml.stdlib.fields import FloatField, IntField
+from .toolbar import ProcessingToolBar
+# from processing import Plot
+from .thresholds import (
+    ThresholdsPopUp, ThresholdsPanel
+)
+# from functions import GaussianForm, ConstantForm
+from .lists import (
+    GuessListing, FitListing
+)
+from .plot_options import PlotOptionsPanel
+from .metadata import MetadataPanel
+# import matplotlib.pyplot as plt # Needed to prevent errors due to binding to an 'uninitialised figure object'
+
+# Be very strict about attr, we specify their type
+from alex.models import Thresholds, PlotOptions, Metadata
+from alex.views import EvsSView
+from alex.functions import GuessesToFit
+from alex.sessions import SessionManager
+# from matplotlib.figure import Figure
+                               
+enamldef Processing(MainWindow): processing:
+    # MPL figure wrapper
+    attr evss_view : EvsSView
+    # Thresholds to apply to graph
+    attr thresholds : Thresholds
+    # Plotoptions for the graph
+    attr plot_options : PlotOptions
+    # Fitting object contains Guesses, Fits
+    attr fitting : GuessesToFit
+    # SessionManager needed for loading and saving sessions
+    attr manager : SessionManager
+    attr metadata : Metadata
+    
+    ProcessingToolBar:
+        fitting := processing.fitting
+        evss_view := processing.evss_view
+        manager := processing.manager
+    Container:
+        # constraints = [(plot_container.width == plot_container.height),]
+        # Container: plot_container:
+            # hug_width = 'strong'
+            # constraints = [align('width', plot_container, plot),
+                           # align('height', plot_container, plot)]
+            MPLCanvas: plot:
+                figure << processing.evss_view.fig
+                toolbar_visible = True
+                bgcolor = 'White'
+                # hug_width = 'strong'
+    DockPane: dock_panel:
+        title << 'Options'
+        dock_area = 'right'
+        closable = False
+        Container:
+            padding = None
+            Notebook:
+                tab_style = 'document'
+                tab_position = 'bottom'
+                Page:
+                    title << 'Thresholds'
+                    closable = False
+                    Container:
+                        ThresholdsPanel:
+                            thresholds := processing.thresholds
+                Page:
+                    title << 'Plot Options'
+                    closable = False
+                    Container:
+                        PlotOptionsPanel:
+                            plot_options := processing.plot_options
+                Page:
+                    title << 'Layers'
+                    closable = False
+                    Container:
+                        ListControl:
+                            ListItem:
+                                text = 'E vs S histogram'
+                                editable = False
+                                tool_tip << text
+                                checkable = False
+                                double_clicked :: PopUp(processing, title = 'Test')
+                            ListItem:
+                                text = 'E histogram'
+                                editable = False
+                                tool_tip << text
+                                checkable = False
+                                double_clicked :: PopUp(processing, title = 'Test')
+                            ListItem:
+                                text = 'S histogram'
+                                editable = False
+                                tool_tip << text
+                                checkable = False
+                                double_clicked :: PopUp(processing, title = 'Test')
+                            ListItem:
+                                text = 'E fit'
+                                editable = False
+                                tool_tip << text
+                                checkable = True
+                                checked := processing.fitting.show_E
+                                double_clicked :: PopUp(processing, title = 'Test')
+                            ListItem:
+                                text = 'S fit'
+                                editable = False
+                                tool_tip << text
+                                checkable = True
+                                checked := processing.fitting.show_S
+                                double_clicked :: PopUp(processing, title = 'Test')
+                            ListItem:
+                                text = 'Guesses'
+                                editable = False
+                                tool_tip << text
+                                checkable = True
+                                checked := processing.fitting.show_guesses
+                                double_clicked :: PopUp(processing, title = 'Test')
+                Page:
+                    title << 'Metadata'
+                    closable = False
+                    Container:
+                        MetadataPanel:
+                            metadata := processing.metadata
+    DockPane: fit_dock:
+        title << 'Fitting'
+        dock_area = 'right'
+        closable = False
+        Container:
+            padding = None
+            Notebook:
+                tab_style = 'document'
+                tab_position = 'bottom'
+                Page:
+                    title << 'Guessed parameters'
+                    closable = False
+                    GuessListing:
+                        guesses := processing.fitting.guesses
+                        
+                Page: fitting:
+                    title << 'Fitted parameters'
+                    closable = False                     
+                    FitListing:
+#                         fits << processing.fitting.fits
+#                         run_fitting = processing.fitting.run_fitting
+                        fitting := processing.fitting
+                         
+                    
+enamldef Main(Processing):
+    """ Temp for debugiing only """
+    pass
